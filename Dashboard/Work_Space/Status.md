@@ -1,28 +1,36 @@
-# Project Dashboard
+# Project Status
 
 **Project Name:** [Your Project Name]
-**Current Status:** 🟢 Planning Phase
+**Current Phase:** Planning
 
 ---
 
-## 📍 Where Are We?
-*   **Active Agent:** 1_THE_PLANNER
-*   **Current Task:** Defining the first feature.
-*   **Latest Blueprint:** `BLUEPRINT.md` (Not started yet)
+## Where Are We?
+
+| Field | Value |
+|-------|-------|
+| **Active Agent** | Planner |
+| **Current Task** | Defining the first feature |
+| **Blueprint** | Not started |
 
 ---
 
-## 📋 To-Do List (The Backlog)
-*   [ ] **Step 1:** Planner defines the Blueprint.
-*   [ ] **Step 2:** Builder writes the code.
-*   [ ] **Step 3:** Checker audits the code.
-*   [ ] **Step 4:** Founder (You) gives final approval.
+## To-Do List
+
+- [ ] Planner creates Blueprint
+- [ ] Builder implements code
+- [ ] Checker audits code
+- [ ] You give final approval
+- [ ] GitDude commits release
 
 ---
 
-## 📜 History Log
-*(Agents will write their summaries here)*
+## History Log
 
-| Date | Agent | Action Taken |
-| :--- | :--- | :--- |
-| Today | System | Dashboard created. Ready for the Founder to start. |
+| Date | Agent | Action |
+|------|-------|--------|
+| - | System | Project initialized |
+
+---
+
+*Update this file as work progresses. Each agent reads this to understand context.*

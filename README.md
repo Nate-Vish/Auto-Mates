@@ -1,29 +1,139 @@
-# AutoMates.AI 🤖🤝
+# AutoMates.AI 🤖
+
 **Your AI Engineering Team in a Box.**
 
-AutoMates is a role-based multi-agent framework that transforms Large Language Models into a structured engineering department. It moves beyond "chatting" with AI and introduces a professional **Plan → Build → Audit → Release** workflow.
+> *"We believe everyone's imagination deserves to become their creation."*
 
-## 🏗️ The Department
-AutoMates organizes AI capabilities into specialized roles:
+---
 
-*   **📐 The Planner (Architect):** Translates your vision into technical blueprints and research requirements.
-*   **🧠 The BrainStorm (Ideator):** Explores unconventional alternatives and solves creative blocks.
-*   **🔨 The Builder (Engineer):** Implements the code strictly following the approved blueprints.
-*   **🕵️ The Checker (Auditor):** Conducts rigorous code reviews, security checks, and logic validation.
-*   **⚖️ The Legal (Compliance):** Ensures your project stays compliant with licenses and privacy laws.
-*   **📦 The GitDude (Release Manager):** Manages version control and acts as a security guardian against data leaks.
-*   **📚 The Fetcher (Librarian):** Scours the web to build the Agents' knowledge base for the project (`Library/Sources`).
+## 🚀 Quick Start
 
-## 🛠️ Key Innovation: The Study Phase
-AutoMates doesn't guess. Before acting, Agents use the **Library/Sources** to learn professional lessons. The **Fetcher** ensures this library is stocked with the latest documentation, preventing hallucinations and ensuring code adheres to modern standards.
+### 1. Describe Your Project
+Edit `Dashboard/Project_Description.md` with your vision.
 
-## 🛡️ Docker & Safety
-We strongly recommend running each AutoMates project in its own **Docker container** to ensure isolation, safety, and a clean environment.
+### 2. Set Your Rules
+Edit `Dashboard/Rules.md` with any constraints (tech stack, style, etc.).
 
-## 🔮 Coming to AutoMates v2.0
-*   **The Orchestrator:** A master agent to manage the entire workflow automatically.
-*   **Agent Factory:** An "Agent creating Agent" system to generate specialized teams (e.g., Game Dev vs. Web Dev) from templates.
-*   **Recursive Delegation:** Agents hiring their own specialized sub-agents.
-*   **Deep Agentic Memory:** Persistent context that evolves with your project.
-*   **The Memorizer Agent:** A dedicated agent that synthesizes project history to draw healthy conclusions.
-*   **Visual Context CLI:** Identity-aware terminal environments with role-specific color coding.
+### 3. Activate an Agent
+
+1. Open a terminal in the AutoMates folder
+2. Activate an AI model (Claude Code, Gemini CLI, your local model, etc.)
+3. Type `you are [Agent_Name]:` + drag the wanted identity file to terminal + Enter
+4. Agent pops up after reading his identity, his memory, and the dashboard. Ready to rumble.
+
+```
+you are BrainStorm: [drag Agents/BrainStorm/BrainStorm_Identity.md here]
+```
+
+### 4. Run Multiple Agents
+Open a few terminals, activate agents in each one. They collaborate through files in `Dashboard/Work_Space/`.
+
+---
+
+**💡 Tip:** Use Fetcher to collect educational material for the agents. Let them read it before they start working on a task (they'll find it in Library, don't worry).
+
+**💡 Hint:** Every agent can create a file for other agents to read and work by.
+
+**📖 Example:** Fetcher can read a Blueprint that Planner made, go fetch some sources and create `Builder_Study.md`, then Builder learns like a pro and starts writing some fine code.
+
+**🧠 Try this:** Got a quick idea while working? Just tell BrainStorm `💡 IDEA: [your idea]` — he'll log it instantly and keep working. No flow disruption, ideas never lost.
+
+---
+
+## ⚙️ How It Works
+
+### 👥 The Team (8 Agents)
+
+| Agent | Role | What They Do |
+|-------|------|--------------|
+| 🧠 **BrainStorm** | Ideator | Explores ideas, solves creative blocks |
+| 📐 **Planner** | Architect | Creates technical blueprints |
+| 🔨 **Builder** | Engineer | Writes code following blueprints |
+| 🕵️ **Checker** | Auditor | Reviews for bugs, security, quality |
+| ⚖️ **Legal** | Compliance | Checks licenses, privacy, governance |
+| 📦 **GitDude** | Release Manager | Version control, security scanning |
+| 📚 **Fetcher** | Librarian | Gathers knowledge, organizes sources |
+| 🎼 **Orca** | Orchestrator | Modifies agents, creates new ones, manages team structure |
+
+### 📂 The Three Zones
+
+```
+AutoMates/
+├── Agents/                    # Where agents live
+│   ├── BrainStorm/
+│   ├── Planner/
+│   ├── Builder/
+│   ├── Checker/
+│   ├── Legal/
+│   ├── GitDude/
+│   └── Orca/
+│
+├── Library/                   # Where information is stored
+│   ├── Fetcher/              # He lives here near his Sources
+│   └── Sources/              # Organized knowledge base
+│
+└── Dashboard/                 # Where agents work together
+    ├── Project_Description.md
+    ├── Rules.md
+    ├── Work_Space/           # The fun happens here
+    └── Version_Control/
+```
+
+**Agents/** — Where the agents live, including their identity and memory.
+
+**Library/** — Where information is stored and organized by Fetcher (he lives there near his Sources).
+
+**Dashboard/** — The place where all agents work together on your tasks and manage the versions for you (the fun happens there).
+
+### 🧠 Agent Memory
+
+Each agent remembers past sessions at `Agents/[Name]/Memory_Logs/`:
+- `Lessons.md` — Patterns that worked, mistakes to avoid
+- `Preferences.md` — How you like things done
+- `Sessions/` — Conversation history
+- `Checkpoint.md` — Save/resume complex tasks
+
+---
+
+## 🔮 Roadmap
+
+**Current (v1.x):**
+- 8 specialized agents with persistent memory
+- LEARN FIRST protocol with Study Files
+- File-based coordination via Work_Space
+- Orca for team customization and new agent creation
+
+**Coming (v2.0+):**
+- Orchestrator Automation (Orca managing workflows automatically)
+- Agent Factory (generate specialized teams)
+- CLI Package (`automates` command)
+
+---
+
+## ⚖️ Legal, License & Links
+
+### 🛡️ You Are the Pilot-in-Command
+
+- **Your Responsibility:** You control what agents do. You are responsible for URLs fetched and code generated.
+- **Third-Party Tools:** AutoMates uses `r.jina.ai` as a free utility. Users engaging in high-volume or commercial use are responsible for obtaining their own API key to comply with Jina AI's terms.
+- **AI Disclaimer:** AI-generated content can contain errors. Always review and test all output.
+- **Copyright:** Respect intellectual property when using Fetcher.
+
+### 🔒 Privacy
+
+- **Third-Party APIs:** Prompts are sent to AI providers (Anthropic, OpenAI, Google). See their privacy policies.
+- **Local Storage:** AutoMates works locally. We do not store your code or data.
+- **No Telemetry:** Everything stays on your machine.
+
+### 🐋 Docker Recommended
+
+We recommend running each project in its own Docker container for isolation and safety.
+
+### 📄 License
+
+MIT License © 2026 AutoMates.AI — See [LICENSE](LICENSE)
+
+### 🔗 Links
+
+- [CONTRIBUTING.md](CONTRIBUTING.md) — How to contribute
+- [TRADEMARK.md](TRADEMARK.md) — Brand guidelines
