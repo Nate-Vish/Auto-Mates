@@ -1,4 +1,4 @@
-# AutoMates.AI 🤖
+# AutoMates.AI 👾
 
 **Your AI Engineering Team in a Box.**
 
