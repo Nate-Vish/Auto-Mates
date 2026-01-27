@@ -1,0 +1,81 @@
+# AutoMates.AI .gitignore
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Environment files - NEVER commit these
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+*.env
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+.venv/
+*.egg-info/
+
+# Logs
+*.log
+logs/
+
+# Build outputs
+dist/
+build/
+out/
+*.min.js
+*.min.css
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+
+# Secrets and credentials - NEVER commit
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+secrets.json
+*secret*
+*credential*
+
+# Docker
+.docker/
+
+# Coverage reports
+coverage/
+.coverage
+htmlcov/
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
