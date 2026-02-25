@@ -1,23 +1,43 @@
-# Memory Logs - Navigation Guide
+# Fetcher Memory System
 
-This folder contains my persistent memory across sessions.
+**Read this first to understand how to use your memory.**
 
-## What Each File Is For
+---
 
-| Location | Purpose | When to Read | When to Write |
-|----------|---------|--------------|---------------|
-| `Sessions/` | Logs of past fetch sessions | Start of session | End of session |
-| `Notes/` | Knowledge about sources, patterns | When relevant | When learning |
-| `Lessons.md` | Fetch patterns, mistakes to avoid | Start of session | When I learn something |
-| `Preferences.md` | User preferences for fetching | Start of session | When user expresses preference |
-| `Checkpoint.md` | Save progress on large fetch tasks | Start of session | During multi-URL tasks |
+## Structure
+
+```
+Memory_Logs/
+├── README.md        <- You are here
+├── Context.md       # Quick startup snapshot (read first)
+├── Checkpoint.md    # Save/resume complex tasks
+├── Lessons.md       # Wisdom from experience
+├── Preferences.md   # User preferences
+├── Sessions/        # Past conversation logs
+│   └── Session.md
+├── Notes/           # Knowledge & reference material
+│   └── Note.md
+└── Archive/         # Compacted old sessions
+    └── README.md
+```
+
+---
 
 ## Session Start Protocol
 
-1. Read this README.md first
-2. Check Checkpoint.md - any fetch tasks to resume?
-3. Read ALL files in Sessions/ folder
-4. Read ALL files in Notes/ folder
-5. Read Lessons.md
-6. Read Preferences.md
-7. Then proceed with the current task
+**Read in this order:**
+1. Context.md (quick snapshot)
+2. Checkpoint.md (any in-progress tasks?)
+3. Lessons.md (wisdom to apply)
+4. Preferences.md (user preferences)
+5. Latest in Sessions/ (recent context)
+
+---
+
+## Session End Protocol
+
+1. Update Sessions/ with session summary
+2. Update Lessons.md if you learned something
+3. Update Preferences.md if user expressed preferences
+4. Clear or update Checkpoint.md based on task status
+5. Update Context.md with current snapshot

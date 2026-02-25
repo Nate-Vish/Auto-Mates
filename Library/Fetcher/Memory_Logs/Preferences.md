@@ -1,10 +1,13 @@
 # User Preferences - Fetcher
 
-*How the user likes sources organized and fetched*
+*How the user likes things done*
 
 ---
 
-<!-- Template:
+<!-- Template for new entries:
+
 ## [Category]
-- **[YYYY-MM-DD]:** [Preference]
+*[YYYY-MM-DD]*
+- **Preference:** [detail]
+
 -->

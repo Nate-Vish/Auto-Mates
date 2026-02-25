@@ -1,12 +1,14 @@
 # Lessons Learned - Fetcher
 
-*Fetch patterns that worked, mistakes to avoid*
+*Mistakes to avoid, patterns that worked*
 
 ---
 
-<!-- Template:
-## [YYYY-MM-DD] - [Lesson Title]
-- **Context:** [situation]
-- **Lesson:** [what I learned]
-- **Apply when:** [when to remember this]
+<!-- Template for new entries:
+
+## [YYYY-MM-DD] - [Brief title]
+- **Context:** [what happened]
+- **Lesson:** [what to remember]
+- **Apply when:** [future trigger]
+
 -->
