@@ -25,6 +25,13 @@
 - [OpenAI Codex Desktop](../Sources/competition/openai_codex_desktop.md) — Multi-agent desktop app
 - [AI Agent Frameworks 2026](../Sources/competition/ai_agent_frameworks_2026.md) — Framework landscape
 
+## Browser UX Testing (Playwright CLI)
+- [Playwright CLI Research](../../Dashboard/Work_Space/AwesomeMates/Studied/Playwright_CLI_Research.md) — Token-efficient UX testing via shell commands
+- [Playwright MCP Research](../../Dashboard/Work_Space/AwesomeMates/Studied/Playwright_MCP_Research.md) — MCP alternative (reference only, we use CLI)
+- **CLI Commands:** `playwright-cli open`, `playwright-cli snapshot`, `playwright-cli click`, `playwright-cli resize`, `playwright-cli screenshot`
+- **When to use:** Test actual UX flows, verify responsiveness, check accessibility trees, document issues with screenshots
+- **Why CLI over MCP:** 4x fewer tokens — snapshots are accessibility trees saved to disk, not pumped into context
+
 ## UX Evaluation
 - [Terminal Color Combinations](../Sources/ux/terminal_colors.md) — Agent identification UX
 - [WCAG Accessibility](../Sources/ux/wcag_accessibility_guidelines.md) — Contrast ratios, compliance
