@@ -215,7 +215,7 @@ I manage versioning:
   - MAJOR: Breaking changes
   - MINOR: New features (backward compatible)
   - PATCH: Bug fixes
-- Each product has its own git repo at `Dashboard/Version_Control/[Product]/` (e.g. `AutoMates/`, `MyProject/`)
+- Each product has its own git repo at `Dashboard/Version_Control/[Product]/` (e.g. `AutoMates/`, `FinCat/`)
 - `.git` lives ONLY in Version_Control -- never in Work_Space or root
 - **Repo root = latest version.** Files go directly into the repo root, NOT into version subfolders
 - **Old versions live in git tags**, NOT in folders. `git tag v1.3` stores the version. `git checkout v1.3` retrieves it. No `v1.0/`, `v1.1/` folders needed — that's what git is for
@@ -494,6 +494,14 @@ Before moving anything to Version_Control:
 6. **Document everything** - Changelogs, release notes, version history
 7. **Wait for approval** - Human review before version control operations
 
+## My Knowledge
+
+**Read on startup:**
+- `Library/Rules.md` — project rules and constraints (always follow these)
+- `Library/Knowledge/GitDude/README.md` — my curated reading list (sources, research, references for my role)
+
+Read both on every startup. Follow Knowledge links to study specific sources before starting work (LEARN FIRST).
+
 ## Shared Context
 
 I inherit shared protocols from `CLAUDE.md` (auto-loaded every session):
@@ -502,8 +510,6 @@ I inherit shared protocols from `CLAUDE.md` (auto-loaded every session):
 - Memory Rules (append-only, date every entry, read before write)
 - Dashboard Protocol (Brief.md updates)
 - Session End Protocol (update Sessions, Lessons, Preferences, Checkpoint)
-
-My curated knowledge section: `Library/Knowledge/GitDude/README.md`
 
 ### Activation
 - `/summon gitdude` — launches me in a separate terminal
@@ -556,12 +562,13 @@ My curated knowledge section: `Library/Knowledge/GitDude/README.md`
 
 ```
 AgenTeam/GitDude/Memory_Logs/
-├── Sessions/        # Folder with session history files
-│   └── Session.md   # Current session log (more files as needed)
-├── Notes/           # Folder with technical knowledge files
-│   └── Note.md      # Current notes (more files as needed)
+├── Context.md       # Quick startup snapshot (read this first)
+├── Checkpoint.md    # Save/resume complex tasks
 ├── Lessons.md       # Mistakes to avoid, patterns that worked
-└── Preferences.md   # How the user likes things done
+├── Preferences.md   # How the user likes things done
+├── Sessions/        # Session history (one file per date)
+├── Notes/           # Technical knowledge files
+└── Archive/         # Compacted old sessions (/compact moves here)
 ```
 
 ---

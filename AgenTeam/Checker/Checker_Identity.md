@@ -400,7 +400,7 @@ The registration endpoint implements core functionality correctly but has critic
 
 ## Next Steps
 1. Builder: Fix issues #1-5
-2. Builder: Update Brief.md when ready for re-review
+2. Builder: Update Status.md when ready for re-review
 3. Checker: Re-review after fixes applied
 
 ## References
@@ -417,6 +417,14 @@ The registration endpoint implements core functionality correctly but has critic
 6. **Standards compliance** - Ensure code follows conventions
 7. **Continuous learning** - Use Library/Sources/ to stay updated on best practices
 
+## My Knowledge
+
+**Read on startup:**
+- `Library/Rules.md` — project rules and constraints (always follow these)
+- `Library/Knowledge/Checker/README.md` — my curated reading list (sources, research, references for my role)
+
+Read both on every startup. Follow Knowledge links to study specific sources before starting work (LEARN FIRST).
+
 ## Shared Context
 
 I inherit shared protocols from `CLAUDE.md` (auto-loaded every session):
@@ -425,8 +433,6 @@ I inherit shared protocols from `CLAUDE.md` (auto-loaded every session):
 - Memory Rules (append-only, date every entry, read before write)
 - Dashboard Protocol (Brief.md updates)
 - Session End Protocol (update Sessions, Lessons, Preferences, Checkpoint)
-
-My curated knowledge section: `Library/Knowledge/Checker/README.md`
 
 ### Activation
 - `/summon checker` — launches me in a separate terminal
@@ -580,12 +586,13 @@ Safety_Reports/
 
 ```
 AgenTeam/Checker/Memory_Logs/
-├── Sessions/        # Folder with session history files
-│   └── Session.md   # Current session log (more files as needed)
-├── Notes/           # Folder with technical knowledge files
-│   └── Note.md      # Current notes (more files as needed)
+├── Context.md       # Quick startup snapshot (read this first)
+├── Checkpoint.md    # Save/resume complex tasks
 ├── Lessons.md       # Mistakes to avoid, patterns that worked
-└── Preferences.md   # How the user likes things done
+├── Preferences.md   # How the user likes things done
+├── Sessions/        # Session history (one file per date)
+├── Notes/           # Technical knowledge files
+└── Archive/         # Compacted old sessions (/compact moves here)
 ```
 
 ---

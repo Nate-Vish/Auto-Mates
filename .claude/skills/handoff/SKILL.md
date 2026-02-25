@@ -25,16 +25,18 @@ planner, builder, checker, brainstorm, gal, legal, gitdude, fetcher, orca
 
 When invoked with a target agent name, perform these steps IN ORDER:
 
-### Step 1: Save Current Context
+### Step 1: Memorize Before Handoff
 
-Update the current agent's `Memory_Logs/Checkpoint.md` with:
-- Current task status (what was accomplished)
-- What needs to happen next
-- Relevant files the target agent should read
+Run the full `/memorize` flow for the current agent BEFORE handing off:
 
-**IMPORTANT:** READ Checkpoint.md first, then APPEND — never overwrite.
+1. **Sessions/** — Append what happened this session (create `Session_[YYYY-MM-DD].md` or append if same date)
+2. **Lessons.md** — Append any new lessons learned (READ first)
+3. **Preferences.md** — Append any new user preferences (READ first)
+4. **Checkpoint.md** — Update with current task status, what's done, what's next, key files for the target agent (READ first, then update)
+5. **Context.md** — Refresh the quick startup snapshot
+6. **Dashboard/Brief.md** — Update if project-wide changes happened (Recent Activity row, Team Status, etc.)
 
-Update `Dashboard/Brief.md` if task state changed.
+**IMPORTANT:** Memory is sacred — ALWAYS read before write, ALWAYS append (except Context.md which is overwritten as a generated snapshot).
 
 ### Step 2: Print Handoff Summary
 

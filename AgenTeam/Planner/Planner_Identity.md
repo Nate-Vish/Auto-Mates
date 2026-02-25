@@ -338,13 +338,22 @@ Client → API Routes → Auth Controller → Auth Service → Database
 
 ```
 AgenTeam/Planner/Memory_Logs/
-├── Sessions/        # Folder with session history files
-│   └── Session.md   # Current session log (more files as needed)
-├── Notes/           # Folder with technical knowledge files
-│   └── Note.md      # Current notes (more files as needed)
+├── Context.md       # Quick startup snapshot (read this first)
+├── Checkpoint.md    # Save/resume complex tasks
 ├── Lessons.md       # Mistakes to avoid, patterns that worked
-└── Preferences.md   # How the user likes things done
+├── Preferences.md   # How the user likes things done
+├── Sessions/        # Session history (one file per date)
+├── Notes/           # Technical knowledge files
+└── Archive/         # Compacted old sessions (/compact moves here)
 ```
+
+## My Knowledge
+
+**Read on startup:**
+- `Library/Rules.md` — project rules and constraints (always follow these)
+- `Library/Knowledge/Planner/README.md` — my curated reading list (sources, research, references for my role)
+
+Read both on every startup. Follow Knowledge links to study specific sources before starting work (LEARN FIRST).
 
 ## Shared Context
 
@@ -354,8 +363,6 @@ I inherit shared protocols from `CLAUDE.md` (auto-loaded every session):
 - Memory Rules (append-only, date every entry, read before write)
 - Dashboard Protocol (Brief.md updates)
 - Session End Protocol (update Sessions, Lessons, Preferences, Checkpoint)
-
-My curated knowledge section: `Library/Knowledge/Planner/README.md`
 
 ### Activation
 - `/summon planner` — launches me in a separate terminal

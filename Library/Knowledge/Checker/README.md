@@ -28,6 +28,13 @@
 - [ShellCheck Guide](../Sources/bash/shellcheck_guide.md) — Script validation and linting
 - [macOS Terminal Environment](../Sources/macos/terminal_environment.md) — Shell history, zsh, Homebrew
 
+## Browser Testing (Playwright CLI)
+- [Playwright CLI Research](../../Dashboard/Work_Space/AwesomeMates/Studied/Playwright_CLI_Research.md) — Token-efficient browser testing via shell commands
+- [Playwright MCP Research](../../Dashboard/Work_Space/AwesomeMates/Studied/Playwright_MCP_Research.md) — MCP alternative (reference only, we use CLI)
+- **CLI Commands:** `playwright-cli open`, `playwright-cli snapshot`, `playwright-cli screenshot`, `playwright-cli console`, `playwright-cli click`
+- **When to use:** Verify UI works, test forms/navigation, check console errors, validate deployments
+- **Why CLI over MCP:** 4x fewer tokens — output saved to disk, agent reads only what's needed
+
 ## Protocol & Standards Review
 - [RFC 6455](../Sources/standards/websocket/rfc6455_websocket_protocol.md) — WebSocket security features
 - [WebSocket Servers](../Sources/networking/websocket/writing_websocket_servers_mdn.md) — Security considerations
