@@ -1,13 +1,15 @@
-# Checkpoint - Task Resume Point
-
-*Use this file to save and resume complex multi-step tasks.*
+# Checkpoint - Fetcher
+**Purpose:** Save and resume complex multi-step tasks.
 
 ---
 
-## Current Status
+## Current Task
 
-**Task in Progress:** None
+**Status:** No active task
 
-**Last Updated:** -
+---
 
-**Progress:** -
+## Checkpoint History
+
+| Date | Task | Outcome |
+|------|------|---------|

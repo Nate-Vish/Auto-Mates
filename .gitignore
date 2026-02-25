@@ -1,0 +1,34 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Claude Code local settings (user-specific)
+.claude/settings.local.json
+
+# Memory content (personal to each user)
+**/Memory_Logs/Sessions/*.md
+!**/Memory_Logs/Sessions/Session.md
+**/Memory_Logs/Notes/*.md
+!**/Memory_Logs/Notes/Note.md
+**/Memory_Logs/Archive/*.md
+!**/Memory_Logs/Archive/README.md
+
+# Research library (user-specific)
+Library/Sources/**
+!Library/Sources/.gitkeep
+
+# Environment files
+.env
+.env.*
+
+# Dashboard working files (project-specific)
+Dashboard/Work_Space/**
+!Dashboard/Work_Space/README.md
+Dashboard/Version_Control/
+Dashboard/Shipyard/

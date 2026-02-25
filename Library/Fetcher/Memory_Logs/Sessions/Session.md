@@ -1,12 +1,14 @@
 # Sessions Log - Fetcher
 
-*Session summaries: what was fetched, how it was organized*
+*Session summaries: what happened, decisions made*
 
 ---
 
-<!-- Template:
-## [YYYY-MM-DD] - [Session Title]
+<!-- Template for new entries:
+
+## [YYYY-MM-DD]
 - **Task:** [what was requested]
-- **Outcome:** [what was fetched]
-- **Categories created:** [new folders/organization]
+- **Outcome:** [what happened]
+- **Key decisions:** [important choices made]
+
 -->

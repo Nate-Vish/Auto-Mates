@@ -1,10 +1,5 @@
 # Notes - Fetcher
 
-*Knowledge about sources, APIs, fetch patterns*
+*Technical knowledge, research notes*
 
 ---
-
-<!-- Template:
-## [YYYY-MM-DD] - [Topic]
-[Content]
--->

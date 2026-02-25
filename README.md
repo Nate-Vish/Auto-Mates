@@ -8,25 +8,37 @@
 
 ## 🚀 Quick Start
 
-### 1. Describe Your Project
+### 1. Clone & Open
+```bash
+git clone https://github.com/Nate-Vish/Auto-Mates.git
+cd Auto-Mates
+```
+Open the folder in Claude Code.
+
+### 2. Describe Your Project
 Edit `Dashboard/Project_Description.md` with your vision.
+Edit `Library/Rules.md` with any constraints (tech stack, style, etc.).
 
-### 2. Set Your Rules
-Edit `Dashboard/Rules.md` with any constraints (tech stack, style, etc.).
-
-### 3. Activate an Agent
-
-1. Open a terminal in the AutoMates folder
-2. Activate an AI model (Claude Code, Gemini CLI, your local model, etc.)
-3. Type `you are [Agent_Name]:` + drag the wanted identity file to terminal + Enter
-4. Agent pops up after reading his identity, his memory, and the dashboard. Ready to rumble.
-
+### 3. Summon an Agent
 ```
-you are BrainStorm: [drag Agents/BrainStorm/BrainStorm_Identity.md here]
+/summon brainstorm
 ```
+A color-coded terminal opens. The agent reads its identity, memory, and dashboard. Ready to rumble.
 
 ### 4. Run Multiple Agents
-Open a few terminals, activate agents in each one. They collaborate through files in `Dashboard/Work_Space/`.
+```
+/summon builder,checker       # Launch two agents
+/summon team                  # Launch Planner + Builder + Checker
+/summon all                   # Launch all 9
+```
+Each agent gets its own terminal. They collaborate through files in `Dashboard/Work_Space/`.
+
+### 5. Switch Agents In-Session
+```
+/handoff checker              # Save context, become Checker
+/brief                        # See project state and team status
+/memorize                     # Save agent memory + update dashboard
+```
 
 ---
 
@@ -42,7 +54,7 @@ Open a few terminals, activate agents in each one. They collaborate through file
 
 ## ⚙️ How It Works
 
-### 👥 The Team (8 Agents)
+### 👥 The Team (9 Agents)
 
 | Agent | Role | What They Do |
 |-------|------|--------------|
@@ -54,32 +66,35 @@ Open a few terminals, activate agents in each one. They collaborate through file
 | 📦 **GitDude** | Release Manager | Version control, security scanning |
 | 📚 **Fetcher** | Librarian | Gathers knowledge, organizes sources |
 | 🎼 **Orca** | Orchestrator | Modifies agents, creates new ones, manages team structure |
+| 🧑‍💻 **Gal** | User Advocate | Skeptical senior dev persona, evaluates from user perspective |
 
 ### 📂 The Three Zones
 
 ```
 AutoMates/
-├── Agents/                    # Where agents live
+├── AgenTeam/                    # Where agents live
 │   ├── BrainStorm/
 │   ├── Planner/
 │   ├── Builder/
 │   ├── Checker/
+│   ├── Gal/
 │   ├── Legal/
 │   ├── GitDude/
 │   └── Orca/
 │
 ├── Library/                   # Where information is stored
 │   ├── Fetcher/              # He lives here near his Sources
+│   ├── Rules.md              # Project constraints
 │   └── Sources/              # Organized knowledge base
 │
 └── Dashboard/                 # Where agents work together
     ├── Project_Description.md
-    ├── Rules.md
+    ├── Brief.md              # Project state + team status
     ├── Work_Space/           # The fun happens here
     └── Version_Control/
 ```
 
-**Agents/** — Where the agents live, including their identity and memory.
+**AgenTeam/** — Where the agents live, including their identity and memory.
 
 **Library/** — Where information is stored and organized by Fetcher (he lives there near his Sources).
 
@@ -87,23 +102,45 @@ AutoMates/
 
 ### 🧠 Agent Memory
 
-Each agent remembers past sessions at `Agents/[Name]/Memory_Logs/`:
+Each agent remembers past sessions at `AgenTeam/[Name]/Memory_Logs/`:
 - `Lessons.md` — Patterns that worked, mistakes to avoid
 - `Preferences.md` — How you like things done
 - `Sessions/` — Conversation history
 - `Checkpoint.md` — Save/resume complex tasks
 
+### 📋 Agent Wake-Up Protocol
+
+When an agent starts a session, they follow a 3-step protocol:
+
+```
+Step 1: Read My Memory
+  → Sessions, Notes, Lessons, Preferences, Checkpoint
+
+Step 2: Read the Dashboard
+  → Project_Description.md  (vision & structure)
+  → Rules.md               (principles & constraints)
+  → Brief.md               (project state, team status, recent activity)
+
+Step 3: Prepare for Work
+  → Library/Sources/ as needed
+  → If not enough sources: create a Knowledge Request in Work_Space for Fetcher
+```
+
+This ensures every agent wakes up with full context — your project vision, current priorities, and what other agents have been doing. If they need more knowledge, they leave a request for Fetcher instead of working blind.
+
 ---
 
 ## 🔮 Roadmap
 
-**Current (v1.x):**
-- 8 specialized agents with persistent memory
-- LEARN FIRST protocol with Study Files
-- File-based coordination via Work_Space
-- Orca for team customization and new agent creation
+**Current (v1.3):**
+- 9 specialized agents with persistent memory
+- CLAUDE.md shared context (auto-loaded every session)
+- 9 slash commands (`/summon`, `/handoff`, `/brief`, `/memorize`, `/compact`, `/team-build`, `/team-research`, `/team-review`, `/watch-summary`)
+- Agent Teams for parallel work
+- Library/Knowledge/ per-agent curated reading lists
+- Brief.md for project-wide synchronization
 
-**Coming (v2.0+):**
+**Coming:**
 - Orchestrator Automation (Orca managing workflows automatically)
 - Agent Factory (generate specialized teams)
 - CLI Package (`automates` command)
@@ -135,5 +172,4 @@ MIT License © 2026 AutoMates.AI — See [LICENSE](LICENSE)
 
 ### 🔗 Links
 
-- [CONTRIBUTING.md](CONTRIBUTING.md) — How to contribute
-- [TRADEMARK.md](TRADEMARK.md) — Brand guidelines
+- [GitHub Repository](https://github.com/Nate-Vish/Auto-Mates) — Source & releases
