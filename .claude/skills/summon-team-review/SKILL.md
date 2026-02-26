@@ -1,5 +1,5 @@
 ---
-name: team-review
+name: summon-team-review
 description: Launch a review team (Checker + Legal + Gal + GitDude) for comprehensive quality assessment
 allowed-tools:
   - Task
@@ -10,23 +10,23 @@ allowed-tools:
   - Grep
 ---
 
-# /team-review - Review Team
+# /summon-team-review - Review Team
 
 Launch a coordinated review team: Checker audits code quality and security, Legal checks compliance, Gal evaluates from a user perspective, GitDude reviews version control safety — all in parallel.
 
 ## Usage
 
 ```
-/team-review <what to review> [path=<file or directory>]
+/summon-team-review <what to review> [path=<file or directory>]
 ```
 
 ## Examples
 
 ```
-/team-review MyProject before shipping path=Work_Space/MyProject/
-/team-review Authentication module path=src/auth/
-/team-review New agent identity path=AgenTeam/NewAgent/NewAgent_Identity.md
-/team-review README and documentation path=README.md
+/summon-team-review MyProject before shipping path=Work_Space/MyProject/
+/summon-team-review Authentication module path=src/auth/
+/summon-team-review New agent identity path=AgenTeam/NewAgent/NewAgent_Identity.md
+/summon-team-review README and documentation path=README.md
 ```
 
 ## Instructions

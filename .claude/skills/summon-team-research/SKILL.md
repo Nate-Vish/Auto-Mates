@@ -1,5 +1,5 @@
 ---
-name: team-research
+name: summon-team-research
 description: Launch a research team (Fetcher + BrainStorm + specialist) for deep investigation
 allowed-tools:
   - Task
@@ -13,14 +13,14 @@ allowed-tools:
   - WebSearch
 ---
 
-# /team-research - Research Team
+# /summon-team-research - Research Team
 
 Launch a coordinated research team: Fetcher gathers sources, BrainStorm generates ideas, and a specialist agent provides domain expertise — working in parallel.
 
 ## Usage
 
 ```
-/team-research <topic> [specialist=<agent>]
+/summon-team-research <topic> [specialist=<agent>]
 ```
 
 If no specialist is specified, Orca (you, the Team Lead) fills the synthesis role.
@@ -28,10 +28,10 @@ If no specialist is specified, Orca (you, the Team Lead) fills the synthesis rol
 ## Examples
 
 ```
-/team-research WebSocket vs SSE for real-time updates
-/team-research Hebrew NLP libraries specialist=builder
-/team-research EU AI Act compliance requirements specialist=legal
-/team-research Competitor analysis of Cursor IDE specialist=gal
+/summon-team-research WebSocket vs SSE for real-time updates
+/summon-team-research Hebrew NLP libraries specialist=builder
+/summon-team-research EU AI Act compliance requirements specialist=legal
+/summon-team-research Competitor analysis of Cursor IDE specialist=gal
 ```
 
 ## Instructions

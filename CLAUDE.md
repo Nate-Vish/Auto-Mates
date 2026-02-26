@@ -40,9 +40,9 @@ When `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` is set (it is), Orca can lead team
 
 | Team | Agents | When to Use |
 |------|--------|-------------|
-| `/team-build <task>` | Planner + Builder + Checker | Feature development (design, implement, review) |
-| `/team-research <topic>` | Fetcher + BrainStorm + specialist | Deep investigation (sources, ideas, analysis) |
-| `/team-review <target>` | Checker + Legal + Gal | Quality gate (security, compliance, UX) |
+| `/summon-team-build <task>` | Planner + Builder + Checker | Feature development (design, implement, review) |
+| `/summon-team-research <topic>` | Fetcher + BrainStorm + specialist | Deep investigation (sources, ideas, analysis) |
+| `/summon-team-review <target>` | Checker + Legal + Gal | Quality gate (security, compliance, UX) |
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: team-build
+name: summon-team-build
 description: Launch a build team (Fetcher + Planner + Builder + Checker) for parallel feature development
 allowed-tools:
   - Task
@@ -11,22 +11,22 @@ allowed-tools:
   - Grep
 ---
 
-# /team-build - Build Team
+# /summon-team-build - Build Team
 
 Launch a coordinated build team: Fetcher studies the domain, Planner designs, Builder implements, Checker reviews — working in parallel as Agent Teams teammates.
 
 ## Usage
 
 ```
-/team-build <task description>
+/summon-team-build <task description>
 ```
 
 ## Examples
 
 ```
-/team-build Add user authentication with JWT tokens
-/team-build Refactor the database layer for PostgreSQL support
-/team-build Create a REST API for the task management feature
+/summon-team-build Add user authentication with JWT tokens
+/summon-team-build Refactor the database layer for PostgreSQL support
+/summon-team-build Create a REST API for the task management feature
 ```
 
 ## Instructions

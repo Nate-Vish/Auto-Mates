@@ -135,7 +135,7 @@ This ensures every agent wakes up with full context — your project vision, cur
 **Current (v1.3):**
 - 9 specialized agents with persistent memory
 - CLAUDE.md shared context (auto-loaded every session)
-- 9 slash commands (`/summon`, `/handoff`, `/brief`, `/memorize`, `/compact`, `/team-build`, `/team-research`, `/team-review`, `/watch-summary`)
+- 9 slash commands (`/summon`, `/handoff`, `/brief`, `/memorize`, `/compact`, `/summon-team-build`, `/summon-team-research`, `/summon-team-review`, `/watch-summary`)
 - Agent Teams for parallel work
 - Library/Knowledge/ per-agent curated reading lists
 - Brief.md for project-wide synchronization
