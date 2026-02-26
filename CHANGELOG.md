@@ -18,9 +18,9 @@ AutoMates now uses Claude Code's built-in features instead of manual copy-paste 
 - `/brief` — Quick project state, team status, pending requests
 - `/memorize` — Save agent memory (Sessions, Lessons, Preferences, Checkpoint, Context) + update Brief.md
 - `/compact [agent]` — Archive old sessions, refresh Context.md
-- `/team-build <task>` — Fetcher → Planner → Builder → Checker pipeline
-- `/team-research <topic>` — Fetcher + BrainStorm + specialist
-- `/team-review <target>` — Checker + Legal + Gal + GitDude quality gate
+- `/summon-team-build <task>` — Fetcher → Planner → Builder → Checker pipeline
+- `/summon-team-research <topic>` — Fetcher + BrainStorm + specialist
+- `/summon-team-review <target>` — Checker + Legal + Gal + GitDude quality gate
 - `/watch-summary` — Generate a video-ready narration script of the latest session
 
 **Agent Teams**

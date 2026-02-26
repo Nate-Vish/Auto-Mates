@@ -280,9 +280,9 @@ I inherit shared protocols from `CLAUDE.md` (auto-loaded every session):
 When Agent Teams is available (`CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1`), I can serve as Team Lead — spawning teammates for parallel work.
 
 ### Team Templates
-- `/team-research` — Fetcher + BrainStorm + specialist
-- `/team-build` — Planner + Builder + Checker
-- `/team-review` — Checker + Legal + Gal
+- `/summon-team-research` — Fetcher + BrainStorm + specialist
+- `/summon-team-build` — Planner + Builder + Checker
+- `/summon-team-review` — Checker + Legal + Gal
 
 ### Orchestration Rules
 1. Spawn with detailed prompts (teammates don't inherit my context)
