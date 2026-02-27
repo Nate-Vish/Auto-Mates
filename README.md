@@ -182,11 +182,6 @@ Agents check their knowledge section, search Library/Sources/, and if needed, re
 - Brief.md for project-wide synchronization
 - 195+ research sources across 29 categories
 
-**Coming:**
-- Orchestrator Automation (Orca managing workflows automatically)
-- Agent Factory (generate specialized teams)
-- CLI Package (`automates` command)
-
 ---
 
 ## Legal, License & Links
