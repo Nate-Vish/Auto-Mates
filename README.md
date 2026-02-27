@@ -72,14 +72,14 @@ Each agent gets its own terminal. They collaborate through files in `Dashboard/W
 
 | Command | What It Does |
 |---------|-------------|
-| `/summon <agent>` | Launch agent in a new terminal |
-| `/handoff <agent>` | Switch agents in-session (saves memory first) |
+| `/summon [agent]` | Launch agent in a new terminal |
+| `/handoff [agent]` | Switch agents in-session (saves memory first) |
 | `/brief` | Project state, team status, pending work |
 | `/memorize` | Save agent memory + update dashboard |
 | `/compact [agent]` | Archive old sessions, refresh startup context |
-| `/summon-team-build <task>` | Planner + Builder + Checker pipeline |
-| `/summon-team-research <topic>` | Fetcher + BrainStorm + specialist |
-| `/summon-team-review <target>` | Checker + Legal + Gal quality gate |
+| `/summon-team-build [task]` | Planner + Builder + Checker pipeline |
+| `/summon-team-research [topic]` | Fetcher + BrainStorm + specialist |
+| `/summon-team-review [target]` | Checker + Legal + Gal quality gate |
 | `/watch-summary` | Generate a video-ready narration of the latest session |
 
 ### The Three Zones
@@ -194,7 +194,6 @@ Agents check their knowledge section, search Library/Sources/, and if needed, re
 ### You Are the Pilot-in-Command
 
 - **Your Responsibility:** You control what agents do. You are responsible for URLs fetched and code generated.
-- **Third-Party Tools:** AutoMates uses `r.jina.ai` as a free utility. Users engaging in high-volume or commercial use are responsible for obtaining their own API key to comply with Jina AI's terms.
 - **AI Disclaimer:** AI-generated content can contain errors. Always review and test all output.
 - **Copyright:** Respect intellectual property when using Fetcher.
 
@@ -203,10 +202,6 @@ Agents check their knowledge section, search Library/Sources/, and if needed, re
 - **Third-Party APIs:** Prompts are sent to AI providers (Anthropic). See their privacy policies.
 - **Local Storage:** AutoMates works locally. We do not store your code or data.
 - **No Telemetry:** Everything stays on your machine.
-
-### Docker Recommended
-
-We recommend running each project in its own Docker container for isolation and safety.
 
 ### License
 
