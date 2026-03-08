@@ -1,0 +1,2 @@
+# Archive
+Compacted old sessions.

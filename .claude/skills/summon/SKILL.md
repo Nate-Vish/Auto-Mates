@@ -32,6 +32,7 @@ Launch one or more agents in separate terminal windows with their identities, kn
 | gitdude | Violet | Commits, versioning, releases |
 | fetcher | Caramel | Gathers documentation, research |
 | orca | Charcoal | Designs agent workflows |
+| daisy | Pink | Branding, social media, PR, pitches |
 
 ## Instructions
 

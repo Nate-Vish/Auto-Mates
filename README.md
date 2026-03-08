@@ -1,74 +1,56 @@
 # AutoMates.AI
 
-**Where imagination becomes creation.**
+**Make people's imagination become their creation.**
 
-> *AutoMates is a Development Environment that empowers developers, entrepreneurs, and creators to build exactly what they imagine — through a coordinated team of 9 AI agents with persistent memory, transparent identities, and built-in quality gates that plan, research, code, review, and ship alongside you, so that the gap between what you can dream and what you can deliver disappears.*
+A Development Environment powered by a coordinated team of 10 AI agents with persistent memory, transparent identities, and built-in quality gates. They plan, research, code, review, and ship alongside you.
+
+Built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
 ---
 
 ## Quick Start
 
-### 1. Clone & Open
 ```bash
 git clone https://github.com/Nate-Vish/Auto-Mates.git
 cd Auto-Mates
 ```
-Open the folder in Claude Code.
 
-### 2. Describe Your Project
-Edit `Dashboard/Project_Description.md` with your vision.
-Edit `Library/Rules.md` with any constraints (tech stack, style, etc.).
+Open in Claude Code. Then:
 
-### 3. Summon an Agent
 ```
 /summon brainstorm
 ```
+
 A color-coded terminal opens. The agent reads its identity, memory, and dashboard — full context from the first message.
 
-### 4. Run Multiple Agents
 ```
 /summon builder,checker       # Launch two agents
 /summon team                  # Launch Planner + Builder + Checker
-/summon all                   # Launch all 9
+/summon all                   # Launch all 10
 ```
+
 Each agent gets its own terminal. They collaborate through files in `Dashboard/Work_Space/`.
 
-### 5. Switch Agents In-Session
-```
-/handoff checker              # Save context, become Checker
-/brief                        # See project state and team status
-/memorize                     # Save agent memory + update dashboard
-```
-
 ---
 
-**Tip:** Use Fetcher to collect educational material for the agents. Let them read it before they start working on a task (they'll find it in Library).
-
-**Hint:** Every agent can create a file for other agents to read and work by.
-
-**Example:** Fetcher can read a Blueprint that Planner made, go fetch some sources and create `Builder_Study.md`, then Builder learns like a pro and starts writing some fine code.
-
-**Try this:** Got a quick idea while working? Just tell BrainStorm `IDEA: [your idea]` — he'll log it instantly and keep working. No flow disruption, ideas never lost.
-
----
-
-## How It Works
-
-### The Team (9 Agents)
+## The Team
 
 | Agent | Role | What They Do |
 |-------|------|--------------|
 | **BrainStorm** | Ideator | Explores ideas, solves creative blocks |
-| **Planner** | Architect | Creates technical blueprints |
+| **Planner** | Architect | Creates technical blueprints and project plans |
 | **Builder** | Engineer | Writes code following blueprints |
-| **Checker** | Auditor | Reviews for bugs, security, quality |
+| **Checker** | Auditor | Adversarial security review, bug hunting, quality gates |
 | **Legal** | Compliance | Checks licenses, privacy, governance |
-| **GitDude** | Release Manager | Version control, security scanning |
-| **Fetcher** | Librarian | Gathers knowledge, organizes sources |
+| **GitDude** | Release Manager | Version control, security scanning, releases |
+| **Fetcher** | Librarian | Gathers knowledge, organizes research sources |
 | **Orca** | Orchestrator | Designs agents, leads teams, manages architecture |
 | **Gal** | User Advocate | Skeptical senior dev — evaluates from the user's perspective |
+| **Daisy** | Brand Director | Branding, copy, pitches, content strategy, ads |
 
-### 9 Slash Commands
+---
+
+## Commands
 
 | Command | What It Does |
 |---------|-------------|
@@ -82,11 +64,50 @@ Each agent gets its own terminal. They collaborate through files in `Dashboard/W
 | `/summon-team-review [target]` | Checker + Legal + Gal quality gate |
 | `/watch-summary` | Generate a video-ready narration of the latest session |
 
-### The Three Zones
+---
+
+## How It Works
+
+### Agent Memory
+
+Each agent remembers past sessions at `AgenTeam/[Name]/Memory_Logs/`:
+
+| File | Purpose |
+|------|---------|
+| `Sessions/` | Conversation history with outcomes |
+| `Lessons.md` | Patterns that worked, mistakes to avoid |
+| `Preferences.md` | How you like things done |
+| `Checkpoint.md` | Save/resume complex tasks |
+| `Context.md` | Quick startup snapshot |
+| `Notes/` | Technical knowledge captured |
+
+Never re-explain your project. Agents pick up where they left off.
+
+### Wake-Up Protocol
+
+Every agent starts a session with the same 5-step protocol:
+
+1. **Read identity** — who I am, what I do, how I decide
+2. **Read memory** — checkpoint, lessons, preferences, latest session
+3. **Read dashboard** — Brief.md (project state), Rules.md (constraints)
+4. **Read knowledge** — `Library/Knowledge/[MyAgent]/README.md`
+5. **Proceed** — ready to work with full context
+
+### LEARN FIRST
+
+Before doing any work, every agent asks: *"What do I need to learn to do this best?"*
+
+Agents check their knowledge section, search Library/Sources/, and if needed, request research from Fetcher. Like a senior dev studying documentation before writing code — not guessing.
+
+---
+
+## Project Structure
 
 ```
 AutoMates/
-├── AgenTeam/                    # Where agents live
+├── CLAUDE.md                    # Shared config (auto-loaded by Claude Code)
+│
+├── AgenTeam/                    # Agent identities + persistent memory
 │   ├── BrainStorm/
 │   ├── Planner/
 │   ├── Builder/
@@ -94,66 +115,26 @@ AutoMates/
 │   ├── Gal/
 │   ├── Legal/
 │   ├── GitDude/
-│   └── Orca/
+│   ├── Orca/
+│   └── Daisy/
 │
-├── Library/                     # Where information is stored
-│   ├── Fetcher/                # He lives here near his Sources
-│   ├── Knowledge/              # Per-agent curated reading lists
-│   ├── Rules.md                # Project constraints
-│   └── Sources/                # Organized knowledge base
+├── Library/                     # Knowledge base
+│   ├── Fetcher/                 # Fetcher agent (lives near his Sources)
+│   ├── Knowledge/               # Per-agent curated reading lists
+│   ├── Rules.md                 # Project constraints
+│   └── Sources/                 # Organized research (195+ sources, 29 categories)
 │
-└── Dashboard/                   # Where agents work together
-    ├── Project_Description.md
-    ├── Brief.md                # Project state + team status
-    ├── Work_Space/             # The fun happens here
-    └── Version_Control/
+└── Dashboard/                   # Coordination layer
+    ├── Brief.md                 # Project state + team status
+    ├── Project_Description.md   # Your project vision
+    └── Work_Space/              # Active projects, blueprints, reviews
 ```
 
-**AgenTeam/** — Where the agents live, including their identity and memory.
+**AgenTeam/** — Where agents live: identity files, memory logs, personal context.
 
-**Library/** — Where information is stored and organized by Fetcher (he lives there near his Sources). Per-agent curated reading lists in Knowledge/.
+**Library/** — Where knowledge lives: Fetcher's research, per-agent reading lists, project rules.
 
-**Dashboard/** — The place where all agents work together on your tasks and manage the versions for you.
-
-### Agent Memory
-
-Each agent remembers past sessions at `AgenTeam/[Name]/Memory_Logs/`:
-- `Sessions/` — Conversation history
-- `Notes/` — Technical knowledge captured
-- `Lessons.md` — Patterns that worked, mistakes to avoid
-- `Preferences.md` — How you like things done
-- `Checkpoint.md` — Save/resume complex tasks
-- `Context.md` — Quick startup snapshot
-
-### Agent Wake-Up Protocol
-
-When an agent starts a session, they follow a 5-step protocol:
-
-```
-Step 1: Read My Identity
-  → Who I am, what I do, how I decide
-
-Step 2: Read My Memory
-  → Checkpoint, Lessons, Preferences, latest Session
-
-Step 3: Read the Dashboard
-  → Brief.md (project state, team status, recent activity)
-  → Library/Rules.md (constraints)
-
-Step 4: Read My Knowledge Section
-  → Library/Knowledge/[MyAgent]/README.md
-
-Step 5: Proceed
-  → Ready to work with full context
-```
-
-This ensures every agent wakes up with full context — your project vision, current priorities, and what other agents have been doing. If they need more knowledge, they leave a request for Fetcher instead of working blind.
-
-### LEARN FIRST Protocol
-
-Before doing any work, every agent asks: *"What do I need to learn to do this best?"*
-
-Agents check their knowledge section, search Library/Sources/, and if needed, request research from Fetcher. Like a senior dev studying documentation before writing code.
+**Dashboard/** — Where agents coordinate: project brief, active work, shared files.
 
 ---
 
@@ -161,7 +142,7 @@ Agents check their knowledge section, search Library/Sources/, and if needed, re
 
 **Transparent Identities** — Every agent has a readable identity file, not hidden prompts. Open `Gal_Identity.md` and see exactly why she's skeptical.
 
-**Persistent Memory** — Agents remember across sessions: what they learned, what worked, how you like things done. Never re-explain your project.
+**Persistent Memory** — Agents remember across sessions: what they learned, what worked, how you like things done.
 
 **LEARN FIRST** — Agents research before they code. Fetcher gathers sources, agents study them. AI that learns before it acts.
 
@@ -171,26 +152,25 @@ Agents check their knowledge section, search Library/Sources/, and if needed, re
 
 ---
 
-## Roadmap
+## Getting Started Tips
 
-**Current (v1.3):**
-- 9 specialized agents with persistent memory
-- CLAUDE.md shared context (auto-loaded every session)
-- 9 slash commands for orchestration
-- Agent Teams for parallel work
-- Library/Knowledge/ per-agent curated reading lists
-- Brief.md for project-wide synchronization
-- 195+ research sources across 29 categories
+**Describe your project** — Edit `Dashboard/Project_Description.md` with your vision and `Library/Rules.md` with any constraints (tech stack, style, etc.).
+
+**Use Fetcher first** — Before building anything, let Fetcher collect educational material. Agents read it from Library before they start working.
+
+**Agents coordinate through files** — Fetcher reads a Blueprint from Planner, fetches sources, creates `Builder_Study.md`. Builder learns, then writes code.
+
+**Quick ideas** — Working and got an idea? Tell BrainStorm `IDEA: [your idea]`. He logs it instantly. No flow disruption, ideas never lost.
+
+**Switch mid-session** — `/handoff checker` saves your current agent's memory and switches to Checker in the same session.
 
 ---
 
-## Legal, License & Links
+## Legal
 
-### You Are the Pilot-in-Command
+### Pilot-in-Command
 
-- **Your Responsibility:** You control what agents do. You are responsible for URLs fetched and code generated.
-- **AI Disclaimer:** AI-generated content can contain errors. Always review and test all output.
-- **Copyright:** Respect intellectual property when using Fetcher.
+You control what agents do. You are responsible for URLs fetched and code generated. AI-generated content can contain errors — always review and test all output.
 
 ### Privacy
 
@@ -202,6 +182,6 @@ Agents check their knowledge section, search Library/Sources/, and if needed, re
 
 MIT License (c) 2026 AutoMates.AI — See [LICENSE](LICENSE)
 
-### Links
+---
 
-- [GitHub Repository](https://github.com/Nate-Vish/Auto-Mates) — Source & releases
+Built by [@Nate-Vish](https://github.com/Nate-Vish)

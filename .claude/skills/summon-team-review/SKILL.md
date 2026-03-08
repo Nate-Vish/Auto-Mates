@@ -23,7 +23,7 @@ Launch a coordinated review team: Checker audits code quality and security, Lega
 ## Examples
 
 ```
-/summon-team-review MyProject before shipping path=Work_Space/MyProject/
+/summon-team-review Claude-Mates before shipping path=Work_Space/Claude-Mates/
 /summon-team-review Authentication module path=src/auth/
 /summon-team-review New agent identity path=AgenTeam/NewAgent/NewAgent_Identity.md
 /summon-team-review README and documentation path=README.md

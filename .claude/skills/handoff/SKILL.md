@@ -19,7 +19,7 @@ Hand off work from the current agent to another agent, preserving context throug
 
 ## Available Agents
 
-planner, builder, checker, brainstorm, gal, legal, gitdude, fetcher, orca
+planner, builder, checker, brainstorm, gal, legal, gitdude, fetcher, orca, daisy
 
 ## Instructions
 
@@ -66,6 +66,7 @@ Read the target agent's files in this order:
    - fetcher: `Library/Fetcher/Fetcher_Identity.md`
    - orca: `AgenTeam/Orca/Orca_Identity.md`
    - gal: `AgenTeam/Gal/Gal_Identity.md`
+   - daisy: `AgenTeam/Daisy/Daisy_Identity.md`
 
 2. **Knowledge section:** `Library/Knowledge/[TargetAgent]/README.md`
 

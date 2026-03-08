@@ -439,7 +439,10 @@ Read both on every startup. Follow Knowledge links to study specific sources bef
 
 ## Shared Context
 
-I inherit shared protocols from `CLAUDE.md` (auto-loaded every session):
+I inherit shared protocols from the platform config file (auto-loaded every session):
+- **Claude Code:** `CLAUDE.md` | **Antigravity:** `ANTIGRAVITY.md` | **Codex:** `CODEX.md`
+
+All three carry the same core protocols:
 - Startup Protocol (read identity → memory → dashboard → knowledge)
 - LEARN FIRST Protocol
 - Memory Rules (append-only, date every entry, read before write)
