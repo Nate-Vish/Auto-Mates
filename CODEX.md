@@ -1,9 +1,10 @@
-# AutoMates.AI
+# AutoMates.AI — Codex Integration
 
 A coordinated AI development team. 10 specialized agents work together through a shared file-based workspace with persistent memory.
 
 **Vision:** Make people's imagination become their creation.
 **Method:** A simple & innovative Development Environment powered by a coordinated AI agent team.
+**Platform:** OpenAI Codex. This file is the Codex-specific operating system for AutoMates agents. `CLAUDE.md` is the equivalent for Claude Code, and `ANTIGRAVITY.md` is the equivalent for Google Antigravity. All three carry the same core protocols — each platform loads only its own file.
 
 ---
 
@@ -28,22 +29,20 @@ The user is the pilot. Agents are the crew. The user has final authority on all 
 | **Gal** | User Advocate | `AgenTeam/Gal/Gal_Identity.md` | Skeptical evaluation, UX testing |
 | **Daisy** | Brand Director | `AgenTeam/Daisy/Daisy_Identity.md` | Branding, social media, PR, pitches, speeches, ads |
 
-Use `/summon <agent>` to launch an agent in a separate terminal.
-Use `/handoff <agent>` to transition work to another agent in the current session.
-Use `/brief` to check project state and team status.
-Use `/memorize` to save agent memory (Sessions, Lessons, Preferences, Checkpoint, Context) and update Brief.md.
-Use `/compact [agent]` to archive old sessions and refresh startup context.
-Use `/watch-summary` to generate a video-ready narration of the latest session.
+---
 
-### Agent Teams (Parallel Work)
+## Command Mapping
 
-**Status:** Temporarily disabled (Anthropic fixing bugs). Available when `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` is set. Orca can lead teams:
+When the user issues these commands, execute the corresponding logic:
 
-| Team | Agents | When to Use |
-|------|--------|-------------|
-| `/summon-team-build <task>` | Planner + Builder + Checker | Feature development (design, implement, review) |
-| `/summon-team-research <topic>` | Fetcher + BrainStorm + specialist | Deep investigation (sources, ideas, analysis) |
-| `/summon-team-review <target>` | Checker + Legal + Gal | Quality gate (security, compliance, UX) |
+| Command | Action |
+|---------|--------|
+| `/summon [agent]` | Load the target agent's identity file and `Memory_Logs/` |
+| `/handoff [agent]` | Save current session (memorize), update `Checkpoint.md`, summarize for the next agent, then load the target agent |
+| `/memorize` | Append session to `Sessions/`, update `Lessons.md`, `Preferences.md`, `Checkpoint.md`, refresh `Context.md`, update `Dashboard/Brief.md` |
+| `/brief` | Read `Dashboard/Brief.md` and report project state, team status, recent activity |
+| `/watch-summary` | Generate a video-ready narration script summarizing the current session |
+| `/compact [agent]` | Archive old sessions and refresh startup context |
 
 ---
 
@@ -110,6 +109,38 @@ All agents update `Dashboard/Brief.md` after significant work:
 
 ---
 
+## Agent Teams (Claude Code Only)
+
+Agent Teams allow Orca to spawn parallel agents for coordinated work. This feature is **Claude Code only** (temporarily disabled while Anthropic fixes bugs). On Codex, agents work sequentially via `/summon` and `/handoff`.
+
+| Team | Agents | Purpose |
+|------|--------|---------|
+| `/summon-team-build` | Planner + Builder + Checker | Feature development |
+| `/summon-team-research` | Fetcher + BrainStorm + specialist | Deep investigation |
+| `/summon-team-review` | Checker + Legal + Gal | Quality gate |
+
+---
+
+## Codex-Specific Protocols
+
+### Autonomous Workflow
+Codex operates as an **Autonomous Digital Employee** — it plans, executes, and verifies tasks within the Codex Cloud Sandbox.
+
+1. **Assignment:** Read `Dashboard/Brief.md` and `Library/Rules.md` to understand the current state
+2. **Planning:** Create an Implementation Plan in `Dashboard/Work_Space/` (same location as Planner's `BLUEPRINT.md`)
+3. **Execution:** Perform the work in the Codex Sandbox
+4. **Verification:** Run all tests and linting in the sandbox. Provide Verification Logs in the final response.
+5. **Wrap-up:** After verification passes, run the Session End Protocol — update `Sessions/`, `Lessons.md`, `Preferences.md`, `Checkpoint.md`, and `Dashboard/Brief.md`
+
+### Sandbox
+- All code execution happens in the Codex cloud sandbox.
+- Results must be verified (tests pass, linting clean) before committing to the shared workspace.
+
+### Documentation
+- If you discover a new pattern during work, update the agent's `Notes/` folder for the rest of the team.
+
+---
+
 ## Data Sovereignty
 
 - **Local First:** Code and research stay local unless explicitly pushed to git
@@ -123,9 +154,9 @@ All agents update `Dashboard/Brief.md` after significant work:
 
 ```
 Auto-Mates.AI/
-├── CLAUDE.md                    # This file (shared context for all agents)
-├── ANTIGRAVITY.md               # Google Antigravity (Gemini) integration
-├── CODEX.md                     # OpenAI Codex integration
+├── CLAUDE.md                    # Claude Code shared context
+├── ANTIGRAVITY.md               # Google Antigravity integration
+├── CODEX.md                     # This file (Codex integration)
 ├── AgenTeam/                    # Agent identities + persistent memory
 │   ├── Planner/, Builder/, Checker/, BrainStorm/
 │   ├── Legal/, GitDude/, Gal/, Orca/
@@ -152,3 +183,7 @@ Auto-Mates.AI/
 | `[Agent]_Study.md` | Fetcher | Requesting agent | Research delivery |
 | `REVIEW_[feature].md` | Checker | Builder, Planner | Quality review |
 | `BRAINSTORM_[topic].md` | BrainStorm | Planner, Builder | Creative ideas |
+
+---
+
+*Updated by Orca (Orchestrator) for Codex Integration - 2026-02-28*

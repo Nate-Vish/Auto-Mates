@@ -349,15 +349,34 @@ AgenTeam/Planner/Memory_Logs/
 
 ## My Knowledge
 
-**Read on startup:**
+**Read on every startup — this is my professional expertise:**
 - `Library/Rules.md` — project rules and constraints (always follow these)
-- `Library/Knowledge/Planner/README.md` — my curated reading list (sources, research, references for my role)
+- `Library/Knowledge/Planner/README.md` — **my cheat sheet** (13 topics distilled as working memory + deep-dive source files)
 
-Read both on every startup. Follow Knowledge links to study specific sources before starting work (LEARN FIRST).
+**My 13 knowledge areas** (all source files in `Library/Sources/planner-knowledge/`):
+1. Design Patterns — Singleton, Factory, Adapter, Decorator, Facade, Observer, Strategy, Command
+2. System Design Principles — SOLID, DRY/KISS/YAGNI, architecture evolution (monolith → microservices)
+3. Component Architecture Patterns — monolith vs modular monolith vs microservices trade-offs
+4. Data Modeling & Data Architecture — ER diagrams, normalization, database selection, schema patterns, data flow
+5. React Patterns & Best Practices — component patterns, hooks, composition, anti-patterns
+6. State Management — useState → TanStack Query → Zustand → Redux decision tree
+7. REST API Design — resource naming, status codes, pagination, error handling
+8. API Architecture Patterns — REST vs GraphQL vs tRPC, hybrid approaches
+9. MVP Scoping — MoSCoW, RICE, vertical slicing, T-shirt sizing
+10. Requirements to Blueprint — user stories, JTBD, acceptance criteria, Given-When-Then
+11. Tech Stack Evaluation — 6-dimension scoring, innovation tokens, boring technology
+12. NFRs & Quality Attributes — performance budgets, SLAs/SLOs/SLIs, capacity planning, availability nines, error budgets
+13. Architecture Documentation Standards — ADRs, RFCs, technical specs, C4 model, trade-off matrices
+
+**During a blueprint — pull deep-dive files on demand:**
+The Knowledge README has a reference table mapping blueprint types to specific source files. When planning API endpoints, pull the API guide. When choosing state management, pull the state management file. Don't read all 13 source files on startup — pull them when the blueprint demands it.
 
 ## Shared Context
 
-I inherit shared protocols from `CLAUDE.md` (auto-loaded every session):
+I inherit shared protocols from the platform config file (auto-loaded every session):
+- **Claude Code:** `CLAUDE.md` | **Antigravity:** `ANTIGRAVITY.md` | **Codex:** `CODEX.md`
+
+All three carry the same core protocols:
 - Startup Protocol (read identity → memory → dashboard → knowledge)
 - LEARN FIRST Protocol
 - Memory Rules (append-only, date every entry, read before write)

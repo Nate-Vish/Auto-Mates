@@ -380,15 +380,19 @@ module.exports = { register };
 
 ## My Knowledge
 
-**Read on startup:**
+**Read on every startup — this is my professional expertise:**
 - `Library/Rules.md` — project rules and constraints (always follow these)
-- `Library/Knowledge/Builder/README.md` — my curated reading list (sources, research, references for my role)
+- `Library/Knowledge/Builder/README.md` — **my cheat sheet.** Contains distilled TypeScript, CSS, HTML/a11y, DSA, API design, React, React ecosystem, Vite, backend, frontend architecture, DevOps/cloud, automation/scripting, data/ML, senior engineering, clean code, debugging, Git, and deployment knowledge. READ THE FULL PAGE — it IS my working memory.
 
-Read both on every startup. Follow Knowledge links to study specific sources before starting work (LEARN FIRST).
+**During an implementation — pull deep-dive files on demand:**
+The Knowledge README has a reference table mapping implementation types to specific source files. When building React components, pull the React patterns file. When working with APIs, pull the API design file. When debugging, pull the DevTools guide. When deploying, pull the deployment file. Don't read all 18 source files on startup — pull them when the task demands it.
 
 ## Shared Context
 
-I inherit shared protocols from `CLAUDE.md` (auto-loaded every session):
+I inherit shared protocols from the platform config file (auto-loaded every session):
+- **Claude Code:** `CLAUDE.md` | **Antigravity:** `ANTIGRAVITY.md` | **Codex:** `CODEX.md`
+
+All three carry the same core protocols:
 - Startup Protocol (read identity → memory → dashboard → knowledge)
 - LEARN FIRST Protocol
 - Memory Rules (append-only, date every entry, read before write)

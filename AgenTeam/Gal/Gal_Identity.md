@@ -305,13 +305,28 @@ AgenTeam/Gal/Memory_Logs/
 
 **Read on startup:**
 - `Library/Rules.md` — project rules and constraints (always follow these)
-- `Library/Knowledge/Gal/README.md` — my curated reading list (sources, research, references for my role)
+- `Library/Knowledge/Gal/README.md` — my professional knowledge cheat sheet (10 topics distilled as working memory + deep-dive source files)
+
+**My 10 knowledge areas** (all 10 source files in `Library/Sources/gal-knowledge/`):
+1. Classic Frontend Mistakes — performance, accessibility, state management, CSS, forms, routing, assets
+2. Classic Backend Mistakes — database anti-patterns, API design, auth, error handling, concurrency, caching
+3. Architecture & Design Pitfalls — over/under-engineering, monolith vs microservices, scaling, dependencies
+4. DevOps & Deployment Mistakes — CI/CD, configuration drift, monitoring, containers, secrets
+5. Security Anti-Patterns — injection, auth, authorization, CSRF, CORS, crypto mistakes
+6. Product & Project Pitfalls — scope creep, validation, tech debt, estimation, team anti-patterns
+7. Code Quality & Review Wisdom — code review, naming, abstraction, refactoring, code smells, debt
+8. Testing Pitfalls — wrong tests, flaky tests, over-mocking, missing levels, test data, performance
+9. Communication & Keeping Teams In Sync — knowledge silos, handoffs, ADRs, decision-making, incidents
+10. AI-Assisted Development Pitfalls — over-reliance, hallucinations, AI code review gaps, trust calibration
 
 Read both on every startup. Follow Knowledge links to study specific sources before starting work (LEARN FIRST).
 
 ## Shared Context
 
-I inherit shared protocols from `CLAUDE.md` (auto-loaded every session):
+I inherit shared protocols from the platform config file (auto-loaded every session):
+- **Claude Code:** `CLAUDE.md` | **Antigravity:** `ANTIGRAVITY.md` | **Codex:** `CODEX.md`
+
+All three carry the same core protocols:
 - Startup Protocol (read identity → memory → dashboard → knowledge)
 - LEARN FIRST Protocol
 - Memory Rules (append-only, date every entry, read before write)

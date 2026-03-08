@@ -2,7 +2,7 @@
 # AutoMates Agent Summoner
 # Cross-platform script to launch Claude Code with agent identities
 # Compatible with Bash 3.2+ (macOS default)
-# Adapted for AgenTeam directory structure
+# Adapted from Claude-Mates for AgenTeam directory structure
 
 set -e
 
@@ -22,6 +22,7 @@ get_agent_identity_path() {
         gitdude)    echo "AgenTeam/GitDude/GitDude_Identity.md" ;;
         fetcher)    echo "Library/Fetcher/Fetcher_Identity.md" ;;
         orca)       echo "AgenTeam/Orca/Orca_Identity.md" ;;
+        daisy)      echo "AgenTeam/Daisy/Daisy_Identity.md" ;;
         *)          echo "" ;;
     esac
 }
@@ -37,6 +38,7 @@ get_agent_name() {
         gitdude)    echo "GitDude" ;;
         fetcher)    echo "Fetcher" ;;
         orca)       echo "Orca" ;;
+        daisy)      echo "Daisy" ;;
         *)          echo "" ;;
     esac
 }
@@ -53,6 +55,7 @@ get_agent_color() {
         gitdude)    echo "23387 8481 46774" ;;    # #5B21B6 Deep Violet
         fetcher)    echo "54484 42405 29812" ;;   # #D4A574 Caramel
         orca)       echo "6168 6168 6939" ;;      # #18181B Charcoal
+        daisy)      echo "65535 45232 50886" ;;    # #FFB0C6 Pink
         *)          echo "0 0 0" ;;
     esac
 }
@@ -69,14 +72,14 @@ get_agent_text_color() {
 
 is_valid_agent() {
     case "$1" in
-        planner|builder|checker|brainstorm|gal|legal|gitdude|fetcher|orca) return 0 ;;
+        planner|builder|checker|brainstorm|gal|legal|gitdude|fetcher|orca|daisy) return 0 ;;
         *) return 1 ;;
     esac
 }
 
 # Preset groups
 TEAM_AGENTS="planner builder checker"
-ALL_AGENTS="planner builder checker brainstorm gal legal gitdude fetcher orca"
+ALL_AGENTS="planner builder checker brainstorm gal legal gitdude fetcher orca daisy"
 
 # ============================================================================
 # PLATFORM DETECTION
@@ -113,6 +116,7 @@ launch_iterm2() {
         gitdude)    hex_color="#5B21B6"; text_color="#F8F8F2" ;;
         fetcher)    hex_color="#D4A574"; text_color="#1F2937" ;;
         orca)       hex_color="#18181B"; text_color="#F8F8F2" ;;
+        daisy)      hex_color="#FFB0C6"; text_color="#1F2937" ;;
         *)          hex_color="#000000"; text_color="#F8F8F2" ;;
     esac
 
@@ -433,7 +437,7 @@ main() {
         echo ""
         echo "Available agents:"
         echo "  planner, builder, checker, brainstorm, gal"
-        echo "  legal, gitdude, fetcher, orca"
+        echo "  legal, gitdude, fetcher, orca, daisy"
         exit 0
     fi
 
