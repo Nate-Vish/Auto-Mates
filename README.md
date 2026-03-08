@@ -25,7 +25,7 @@ A color-coded terminal opens. The agent reads its identity, memory, and dashboar
 
 ```
 /summon builder,checker       # Launch two agents
-/summon team                  # Launch Planner + Builder + Checker
+/summon-team-research AI auth # Fetcher + BrainStorm research a topic
 /summon all                   # Launch all 10
 ```
 
@@ -63,6 +63,7 @@ Each agent gets its own terminal. They collaborate through files in `Dashboard/W
 | `/summon-team-research [topic]` | Fetcher + BrainStorm + specialist |
 | `/summon-team-review [target]` | Checker + Legal + Gal quality gate |
 | `/watch-summary` | Generate a video-ready narration of the latest session |
+| `/automates` | Open the AutoMates root folder in Finder |
 
 ---
 
