@@ -30,5 +30,9 @@ Library/Sources/**
 # Dashboard working files (project-specific)
 Dashboard/Work_Space/**
 !Dashboard/Work_Space/README.md
-Dashboard/Version_Control/
+
+# Version Control contents (user-specific repos)
+Dashboard/Version_Control/**
+!Dashboard/Version_Control/README.md
+
 Dashboard/Shipyard/

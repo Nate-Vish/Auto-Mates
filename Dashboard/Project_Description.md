@@ -74,9 +74,9 @@ Every agent maintains memory across sessions:
 - `Context.md` — quick startup snapshot
 
 ### 3. Slash-Command Orchestration
-10 commands to coordinate the team:
+Commands to coordinate the team:
 - `/summon <agent>` — launch in separate terminal
-- `/handoff <agent>` — transition in-session
+- `/orca`, `/builder`, etc. — switch agents in-session
 - `/brief` — project state and team status
 - `/memorize` — save all agent memory
 - `/compact` — archive old sessions
@@ -84,12 +84,13 @@ Every agent maintains memory across sessions:
 - `/summon-team-research` — deep investigation team
 - `/summon-team-review` — quality gate team
 - `/watch-summary` — video-ready session narration
+- `/forge` — create a new agent (guided 6-phase process)
 
 ### 4. LEARN FIRST Protocol
 Agents research before acting. Fetcher gathers sources to `Library/Sources/`, agents study them before writing code. Like a senior dev would.
 
 ### 5. Transparent Identities
-Every agent has a readable identity file — not hidden prompts. Open `Gal_Identity.md` and see exactly why she's skeptical.
+Every agent has a readable identity file — not hidden prompts. Open `Gal_Identity.md` and see exactly why he's skeptical.
 
 ### 6. File-Based Everything
 No database. No cloud. No proprietary formats. Everything is markdown in folders. Zero lock-in.
@@ -98,19 +99,20 @@ No database. No cloud. No proprietary formats. Everything is markdown in folders
 Gal exists to question everything. No other tool has a built-in critic that catches problems before your users do.
 
 ### 8. Knowledge Library
-`Library/Sources/` contains 195+ organized, agent-accessible research sources across 29 categories. `Library/Knowledge/` has per-agent curated reading lists.
+`Library/Knowledge/` has per-agent professional expertise — cheat sheet READMEs with deep-dive reference files. Agents arrive with real knowledge on day one.
 
 ---
 
 ## How It Works
 
 ```
-/summon planner           → Creates blueprint from your idea
-/handoff builder          → Implements the blueprint
-/handoff checker          → Reviews code quality and security
-/handoff gitdude          → Commits and pushes to GitHub
+/orca                         → Guides you to the right agent
+/planner                      → Creates blueprint from your idea
+/builder                      → Implements the blueprint
+/checker                      → Reviews code quality and security
+/gitdude                      → Commits and pushes to GitHub
 
-/summon-team-build task   → Runs the full pipeline in parallel
+/summon-team-build [task]     → Runs the full pipeline in parallel
 ```
 
 BrainStorm helps when stuck. Legal ensures compliance. Fetcher gathers knowledge. Gal validates from a user perspective.
@@ -126,16 +128,19 @@ Auto-Mates.AI/
 ├── CODEX.md                     # OpenAI Codex platform config
 ├── AgenTeam/                    # Agent identities + persistent memory
 │   ├── Planner/, Builder/, Checker/, BrainStorm/
-│   ├── Legal/, GitDude/, Gal/, Orca/
+│   ├── Legal/, GitDude/, Gal/, Orca/, Daisy/
 │   └── [Agent]/Memory_Logs/     # Sessions, Notes, Lessons, Preferences, Checkpoint
 ├── Dashboard/
 │   ├── Brief.md                 # Project state, team status, recent activity
-│   ├── Work_Space/              # Active projects, blueprints, reviews
-│   └── Version_Control/         # Git repos (one per product)
+│   ├── Project_Description.md   # This file — project context for all agents
+│   ├── Work_Space/              # Where you build (drafts, blueprints, experiments)
+│   └── Version_Control/         # Where you commit (clean, reviewed, ready to ship)
 └── Library/
-    ├── Fetcher/                 # Fetcher agent (identity + memory)
-    ├── Knowledge/               # Per-agent curated reading lists
-    └── Sources/                 # Research library (195+ sources)
+    ├── Registry.md              # Agent routing — who handles what
+    ├── Rules.md                 # Project constraints
+    ├── Fetcher/                 # Fetcher agent (lives near his Sources)
+    ├── Knowledge/               # Per-agent professional knowledge (self-contained)
+    └── Sources/                 # Research library — agents study here before working
 ```
 
 ---
@@ -167,24 +172,20 @@ Auto-Mates.AI/
 
 ## Current Status
 
-**Version:** 1.3 (February 2026)
+**Version:** [X.X]
 **Platforms:** Claude Code, Google Antigravity (Gemini), OpenAI Codex
 
 ### What's Built
-- 10 agents with persistent memory (Context, Checkpoint, Sessions, Lessons, Preferences)
-- 10 slash commands for orchestration
-- Platform config files: CLAUDE.md, ANTIGRAVITY.md, CODEX.md (self-contained, auto-loaded per platform)
-- Library/Knowledge/ per-agent curated reading lists
-- Library/Sources/ with 195+ research sources
-- v1.3 on GitHub (github.com/Nate-Vish/Auto-Mates)
-- Claude-Mates shipped to GitHub
-- AutoMates-Web MVP live at [REDACTED]
+- 10 agents with persistent memory
+- Slash commands for orchestration
+- Platform configs: CLAUDE.md, ANTIGRAVITY.md, CODEX.md
+- Library/Knowledge/ with per-agent professional expertise
+- Published on GitHub
 
 ### Active Projects
-- **AutoMates-Web** — Spatial Development Environment (Phases 1-5 live)
-- **Sunny** — Personal AI assistant (persona designed)
-- **FinCat** — Financial categorization tool (v3 functional)
-- **AM-CLI** — Command-line tool (planning phase)
+| Project | Status | Next |
+|---------|--------|------|
+| [Your project] | [Status] | [Next step] |
 
 ---
 
@@ -194,4 +195,4 @@ Auto-Mates.AI/
 
 ---
 
-*This file is read by all agents to understand the project context.*
+*This file is read by all agents to understand the project context. Update it when the project scope changes.*
