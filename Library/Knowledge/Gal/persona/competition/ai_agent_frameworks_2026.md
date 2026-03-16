@@ -10,7 +10,7 @@ content_type: market-analysis
 difficulty: advanced
 description: Comprehensive comparison of top AI agent frameworks in 2026 including LangChain, CrewAI, AutoGen, and LangGraph
 keywords: frameworks, LangChain, CrewAI, AutoGen, LangGraph, LlamaIndex, orchestration
-copyright_notice: "See Library/Sources/Legal/FETCHING_DISCLAIMER.md"
+copyright_notice: "Content gathered under fair use for research purposes. See Legal agent for IP questions."
 ---
 
 # AI Agent Frameworks 2026 Landscape

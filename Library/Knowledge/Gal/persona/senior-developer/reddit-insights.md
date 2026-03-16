@@ -9,7 +9,7 @@ content_type: research-compilation
 difficulty: intermediate
 description: Compilation of Reddit developer discussions on AI coding tools - frustrations, limitations, and honest assessments
 keywords: experienced developers, AI skepticism, productivity paradox, tool fatigue, context loss, hallucinations
-copyright_notice: "See Library/Sources/Legal/FETCHING_DISCLAIMER.md"
+copyright_notice: "Content gathered under fair use for research purposes. See Legal agent for IP questions."
 ---
 
 > **Attribution:** Content aggregated from Reddit communities (r/ExperiencedDevs, r/programming, r/ClaudeAI) and analysis articles on 2026-01-26.

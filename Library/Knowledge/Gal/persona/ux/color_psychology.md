@@ -10,7 +10,7 @@ content_type: guide
 difficulty: intermediate
 description: How colors influence user emotions, behavior, and perception in UI/UX design, with practical application guidelines
 keywords: color psychology, emotions, trust, UI design, branding, user behavior, CTA buttons
-copyright_notice: "See Library/Sources/Legal/FETCHING_DISCLAIMER.md"
+copyright_notice: "Content gathered under fair use for research purposes. See Legal agent for IP questions."
 ---
 
 > **Attribution:** Research compiled from Toptal, MindInventory, Mockflow, and various UX design resources on 2026-02-04.

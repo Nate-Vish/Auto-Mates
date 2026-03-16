@@ -1,34 +1,39 @@
 # Legal Knowledge Section
 
-*Last updated: 2026-02-22*
+*Last updated: 2026-03-17*
 
-## API Terms & Liability
-- [Tavily Terms of Service](../Sources/Legal/API_Terms/tavily_terms_of_service.md) — Data ownership, indemnification
-- [Jina AI Terms](../Sources/Legal/API_Terms/jina_ai_terms_and_conditions.md) — IP, data ownership, liability
-- [Third-Party API Risks](../Sources/Legal/API_Terms/third_party_api_legal_risks_rag.md) — Legal risks for RAG apps
-- [API Pass-Through Liability](../Sources/Legal/Liability/api_pass_through_liability.md) — Indemnification in API terms
-- [Open Source AI Disclaimers](../Sources/Legal/Liability/open_source_ai_liability_disclaimers.md) — MIT/Apache warranty limits
-- [OWASP Top 10 LLM](../Sources/Legal/Liability/owasp_top_10_llm_applications.md) — Security risks for AI apps
-
-## Copyright
-- [NYT v. OpenAI](../Sources/Legal/Copyright/nyt_v_openai_case_status.md) — AI training copyright lawsuit
-- [US Copyright Office AI Initiative](../Sources/Legal/Copyright/us_copyright_office_ai_initiative.md) — Registration, fair use
-
-## Web Scraping
-- [hiQ v. LinkedIn](../Sources/Legal/Web_Scraping/hiq_v_linkedin_case_summary.md) — CFAA and public data scraping
-- [robots.txt Legal Status](../Sources/Legal/Web_Scraping/robots_txt_legal_status.md) — Binding force of robots.txt
-
-## Privacy & GDPR
-- [GDPR Article 5](../Sources/Legal/Privacy/gdpr_article_5_data_minimization.md) — Data minimization principle
-- [GDPR Scraping Best Practices](../Sources/Legal/Privacy/gdpr_web_scraping_best_practices.md) — Compliance for scrapers
-- [GDPR Right to Be Forgotten](../Sources/Legal/Privacy/gdpr_right_to_be_forgotten.md) — Data erasure requirements
-
-## International AI Law
-- [Israel MOJ AI Opinion](../Sources/Legal/International/israel_moj_ai_fair_use_opinion.md) — ML training fair use
-- [Israel Copyright Act S.19](../Sources/Legal/International/israel_copyright_act_section_19.md) — Fair use provision
-- [US Copyright Office AI Guidance](../Sources/Legal/International/us_copyright_office_ai_guidance.md) — Registration and policy
-- [EU AI Act Transparency](../Sources/Legal/International/eu_ai_act_transparency_requirements.md) — GPAI training data requirements
-- [EU AI Act Regulatory Framework](../Sources/Legal/International/eu_ai_act_regulatory_framework.md) — Risk classification, compliance
+Legal's professional knowledge for compliance review. Self-contained — no external dependencies. Request Fetcher to research specific topics and add source files when needed.
 
 ---
-*Request Fetcher to add sources when you identify knowledge gaps.*
+
+## API Terms & Liability
+
+- **Data Ownership:** Most API terms (Tavily, Jina AI, etc.) grant users ownership of their output but retain rights to input data for model improvement. Read the specific ToS before integrating.
+- **Indemnification:** API providers typically require users to indemnify against claims arising from user-generated content passed through the API. Pass-through liability means YOUR app inherits the API's limitations.
+- **Open Source AI Disclaimers:** MIT/Apache licenses include "AS IS" warranty disclaimers. AI-generated output carries no warranty — the user assumes all risk of using generated code.
+- **OWASP Top 10 for LLM Apps:** Prompt injection, insecure output handling, training data poisoning, model DoS, supply chain vulnerabilities, sensitive info disclosure, insecure plugin design, excessive agency, overreliance, model theft.
+
+## Copyright
+
+- **NYT v. OpenAI (ongoing):** Landmark case on whether AI training on copyrighted content constitutes fair use. No final ruling yet — implications for all AI-generated content.
+- **US Copyright Office AI Initiative:** AI-generated content with no human authorship is not copyrightable. Human-directed AI output MAY be registrable if human selection/arrangement is substantial.
+
+## Web Scraping
+
+- **hiQ v. LinkedIn (2022):** Scraping publicly accessible data does not violate the CFAA. Key precedent for web scraping legality — but does NOT override ToS, copyright, or privacy law.
+- **robots.txt:** Not legally binding in most jurisdictions, but violating it weakens your legal position. Courts consider it evidence of intent. Always respect robots.txt.
+
+## Privacy & GDPR
+
+- **GDPR Article 5 (Data Minimization):** Collect only what's necessary. Process only what's relevant. Delete when no longer needed. Applies to any processing of EU personal data.
+- **GDPR Scraping:** Scraping personal data requires a lawful basis (usually legitimate interest + balancing test). Must provide notice, honor opt-out, minimize data collected.
+- **Right to Be Forgotten (Article 17):** Data subjects can request erasure. Applies when data is no longer necessary, consent is withdrawn, or processing is unlawful.
+
+## International AI Law
+
+- **Israel MOJ AI Opinion:** Machine learning training on copyrighted works likely qualifies as fair use under Israeli law (Section 19 of Copyright Act).
+- **EU AI Act:** Risk-based classification (unacceptable → high → limited → minimal). General-purpose AI models (GPAI) must document training data, comply with copyright, publish summaries. Transparency requirements for all AI-generated content.
+
+---
+
+*Request Fetcher to add detailed source files when you identify knowledge gaps. Sources populate in `Library/Sources/Legal/` after Fetcher researches them.*

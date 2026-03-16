@@ -1,16 +1,30 @@
 # AutoMates
 
-A coordinated AI agent team that works with you. 10 specialized agents with persistent memory, professional knowledge, and clear roles — all running in your terminal.
+10 AI agents that remember, learn before they code, and hide nothing. Built because the current tools keep failing in the same ways.
 
 I built this because I felt like I wasn't using AI's full potential. So I solved a problem. Then another one. Then made something better, added a feature, removed something else. Three months of fine-tuning my workflow with Claude Code, doing it my way. Currently it's my favorite way of working.
 
-Built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) by [@Nate-Vish](https://github.com/Nate-Vish). Free and open source.
+Built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) by [@Nate-Vish](https://github.com/Nate-Vish). Also works with [OpenAI Codex](https://openai.com/index/codex/) and [Gemini CLI](https://github.com/google-gemini/gemini-cli), though Claude Code has the deepest integration (skills, hooks, native config). Free and open source.
+
+Currently used daily by the author for real projects. Early but stable.
+
+### Why
+
+AI coding tools are everywhere now. But something's off.
+
+They forget everything between sessions — you spend the first 15 minutes re-explaining your project. They give you code that looks right, passes tests, and breaks at 3am. They don't know about the pattern your team deprecated last month. And when something goes wrong, you can't see how they decided anything.
+
+Developer trust in AI accuracy has [dropped to 29%](https://stackoverflow.blog/2026/02/18/closing-the-developer-ai-trust-gap/). Almost half of developers say their #1 frustration is code that's ["almost right, but not quite"](https://stackoverflow.blog/2025/12/29/developers-remain-willing-but-reluctant-to-use-ai-the-2025-developer-survey-results-are-here/). AI-generated code ships with [1.75x more logic errors and nearly 3x more security vulnerabilities](https://thenewstack.io/vibe-coding-could-cause-catastrophic-explosions-in-2026/). Meanwhile, [40% of committed code is now AI-generated](https://developers.redhat.com/articles/2026/02/17/uncomfortable-truth-about-vibe-coding) — and review capacity can't keep up.
+
+AutoMates is my answer to that. Not "more AI" — but AI that works like a team: agents that remember, research before they code, review each other's work, and show you every decision in plain markdown files.
 
 <!-- GIF: summon demo -->
 
 ---
 
 ## Quick Start
+
+**Requires:** [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (free CLI from Anthropic — needs an API key or Claude Pro/Max subscription). Also compatible with Codex (`CODEX.md`) and Gemini CLI (`ANTIGRAVITY.md`).
 
 ```bash
 git clone https://github.com/Nate-Vish/Auto-Mates.git
@@ -153,7 +167,7 @@ AutoMates/
 │
 ├── Library/
 │   ├── Registry.md              # Agent routing truth — who handles what
-│   ├── Fetcher/                 # Fetcher agent (lives near his Sources)
+│   ├── Fetcher/                 # Fetcher agent (lives near Sources)
 │   ├── Knowledge/               # Per-agent professional knowledge (self-contained)
 │   ├── Rules.md                 # Project constraints
 │   └── Sources/                 # Research library — agents study here before working

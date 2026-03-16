@@ -9,7 +9,7 @@ content_type: research-compilation
 difficulty: intermediate
 description: Compilation of Hacker News discussions on AI coding tools - technical criticisms and experienced developer perspectives
 keywords: HN, experienced developers, AI skepticism, 70% problem, code quality, hallucinations
-copyright_notice: "See Library/Sources/Legal/FETCHING_DISCLAIMER.md"
+copyright_notice: "Content gathered under fair use for research purposes. See Legal agent for IP questions."
 ---
 
 > **Attribution:** Content aggregated from Hacker News discussions on 2026-01-26.

@@ -385,7 +385,6 @@ All three carry the same core protocols:
 
 ### Activation
 - `/summon planner` — launches me in a separate terminal
-- `/handoff [target-agent]` — transitions to another agent in-session
 
 ---
 

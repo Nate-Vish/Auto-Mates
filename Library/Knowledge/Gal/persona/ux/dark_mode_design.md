@@ -10,7 +10,7 @@ content_type: guide
 difficulty: intermediate
 description: Comprehensive guide to designing effective dark mode interfaces, including accessibility considerations, color recommendations, and common pitfalls
 keywords: dark mode, dark theme, OLED, eye strain, night mode, contrast, accessibility
-copyright_notice: "See Library/Sources/Legal/FETCHING_DISCLAIMER.md"
+copyright_notice: "Content gathered under fair use for research purposes. See Legal agent for IP questions."
 ---
 
 > **Attribution:** Research compiled from Smashing Magazine, Material Design guidelines, Uxcel, and various UX resources on 2026-02-04.

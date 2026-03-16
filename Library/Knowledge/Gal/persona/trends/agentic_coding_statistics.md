@@ -10,7 +10,7 @@ content_type: research
 difficulty: intermediate
 description: Hard data on AI coding agent adoption, failure rates, and quality metrics from Mike Mason and industry sources
 keywords: statistics, adoption, failure rates, bug rates, code quality, enterprise
-copyright_notice: "See Library/Sources/Legal/FETCHING_DISCLAIMER.md"
+copyright_notice: "Content gathered under fair use for research purposes. See Legal agent for IP questions."
 ---
 
 # Agentic Coding Statistics & Failure Rates 2026

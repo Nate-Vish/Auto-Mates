@@ -1,186 +1,69 @@
 # Project Description
 
+*Fill this out to give all agents context about what you're building. Tip: use `/brainstorm` — BrainStorm helps you think through your idea, ground it in reality, and structure it into something agents can act on.*
+
 ---
 
 ## Project Name
 
-**AutoMates.AI**
+**[Your project name]**
 
 ---
 
 ## Vision
 
-**To make people's imagination become their creation.**
-
-AutoMates is a simple & innovative Development Environment powered by a coordinated AI agent team. Instead of one AI assistant that does everything mediocrely, AutoMates provides 10 specialized agents that excel at their roles, remember across sessions, and coordinate through slash commands — running on Claude Code, Google Antigravity (Gemini), and OpenAI Codex.
+**[One sentence: what does the world look like if this succeeds?]**
 
 ---
 
-## The Problem We Solve
+## The Problem
 
-Current AI coding tools have fundamental issues:
-- **Trust is declining** — Developers went from 70% to 33% trust in AI code (2023-2025)
-- **"Almost right" syndrome** — AI gives code that looks correct but fails in production
-- **Context amnesia** — Re-explaining your project every session
-- **Black boxes** — You can't read what your AI is thinking or how it decides
-- **No coordination** — Users manually juggle between tools and prompts
+**[What's broken? Who feels the pain? Why hasn't it been solved?]**
 
 ---
 
-## Our Solution
+## The Solution
 
-**10 specialized AI agents with persistent memory, slash-command orchestration, and transparent file-based coordination — across Claude Code, Google Antigravity, and OpenAI Codex.**
-
-| Agent | Role | Specialty |
-|-------|------|-----------|
-| **Planner** | Architect | Blueprints, roadmaps, task breakdown |
-| **Builder** | Developer | Implementation, coding, debugging |
-| **Checker** | QA + Security | Code review, security, quality |
-| **BrainStorm** | Creative | Ideas, alternatives, innovation |
-| **Legal** | Compliance | Licensing, privacy, regulations |
-| **GitDude** | Release Manager | Version control, commits, releases |
-| **Fetcher** | Researcher | Knowledge acquisition, documentation |
-| **Orca** | Orchestrator | Agent system design, team coordination |
-| **Gal** | User Advocate | Skeptical evaluation, UX testing |
-| **Daisy** | Brand Director | Branding, social media, PR, pitches, ads |
+**[How does your project fix the problem? What's the core mechanism?]**
 
 ---
 
 ## Target Users
 
-### Primary: Developers
-- Solo developers who want a capable AI team
-- Small teams who need to move fast
-- Anyone frustrated with opaque AI coding tools
+### Primary
+- [Who uses this first?]
+- [What do they need?]
 
-### Secondary: Non-Technical Creators
-- Entrepreneurs with ideas but no coding skills
-- Designers who want to build their visions
-- Anyone who can imagine but can't implement
+### Secondary
+- [Who uses this later?]
 
 ---
 
 ## Key Features
 
-### 1. Specialized Agents
-Each agent has a focused identity, memory, and expertise. They don't try to do everything — they do one thing well.
+### 1. [Feature Name]
+[What it does and why it matters]
 
-### 2. Persistent Memory
-Every agent maintains memory across sessions:
-- `Sessions/` — what happened each day
-- `Lessons.md` — what worked and what didn't
-- `Preferences.md` — how you like things done
-- `Checkpoint.md` — resume mid-task
-- `Context.md` — quick startup snapshot
+### 2. [Feature Name]
+[What it does and why it matters]
 
-### 3. Slash-Command Orchestration
-Commands to coordinate the team:
-- `/summon <agent>` — launch in separate terminal
-- `/orca`, `/builder`, etc. — switch agents in-session
-- `/brief` — project state and team status
-- `/memorize` — save all agent memory
-- `/compact` — archive old sessions
-- `/summon-team-build` — parallel build pipeline
-- `/summon-team-research` — deep investigation team
-- `/summon-team-review` — quality gate team
-- `/watch-summary` — video-ready session narration
-- `/forge` — create a new agent (guided 6-phase process)
-
-### 4. LEARN FIRST Protocol
-Agents research before acting. Fetcher gathers sources to `Library/Sources/`, agents study them before writing code. Like a senior dev would.
-
-### 5. Transparent Identities
-Every agent has a readable identity file — not hidden prompts. Open `Gal_Identity.md` and see exactly why he's skeptical.
-
-### 6. File-Based Everything
-No database. No cloud. No proprietary formats. Everything is markdown in folders. Zero lock-in.
-
-### 7. Built-In Skepticism
-Gal exists to question everything. No other tool has a built-in critic that catches problems before your users do.
-
-### 8. Knowledge Library
-`Library/Knowledge/` has per-agent professional expertise — cheat sheet READMEs with deep-dive reference files. Agents arrive with real knowledge on day one.
-
----
-
-## How It Works
-
-```
-/orca                         → Guides you to the right agent
-/planner                      → Creates blueprint from your idea
-/builder                      → Implements the blueprint
-/checker                      → Reviews code quality and security
-/gitdude                      → Commits and pushes to GitHub
-
-/summon-team-build [task]     → Runs the full pipeline in parallel
-```
-
-BrainStorm helps when stuck. Legal ensures compliance. Fetcher gathers knowledge. Gal validates from a user perspective.
-
----
-
-## Project Structure
-
-```
-Auto-Mates.AI/
-├── CLAUDE.md                    # Claude Code platform config
-├── ANTIGRAVITY.md               # Google Antigravity (Gemini) platform config
-├── CODEX.md                     # OpenAI Codex platform config
-├── AgenTeam/                    # Agent identities + persistent memory
-│   ├── Planner/, Builder/, Checker/, BrainStorm/
-│   ├── Legal/, GitDude/, Gal/, Orca/, Daisy/
-│   └── [Agent]/Memory_Logs/     # Sessions, Notes, Lessons, Preferences, Checkpoint
-├── Dashboard/
-│   ├── Brief.md                 # Project state, team status, recent activity
-│   ├── Project_Description.md   # This file — project context for all agents
-│   ├── Work_Space/              # Where you build (drafts, blueprints, experiments)
-│   └── Version_Control/         # Where you commit (clean, reviewed, ready to ship)
-└── Library/
-    ├── Registry.md              # Agent routing — who handles what
-    ├── Rules.md                 # Project constraints
-    ├── Fetcher/                 # Fetcher agent (lives near his Sources)
-    ├── Knowledge/               # Per-agent professional knowledge (self-contained)
-    └── Sources/                 # Research library — agents study here before working
-```
-
----
-
-## What Makes AutoMates a Paradigm
-
-| Traditional AI Tools | AutoMates |
-|---------------------|-----------|
-| AI as **assistant** | AI as **team** |
-| Single generalist | 10 specialized agents |
-| Ephemeral (forgets everything) | **Persistent memory** across sessions |
-| Black box behavior | **Readable identity files** |
-| "Just generate" | **LEARN FIRST** — research, then code |
-| Always optimistic | **Built-in skepticism** (Gal) |
-| One AI, one conversation | **Team orchestration** (/summon-team-build) |
-| Tool-centric | **Human is the pilot** |
+### 3. [Feature Name]
+[What it does and why it matters]
 
 ---
 
 ## Success Criteria
 
-1. **A developer can start a project in under 5 minutes**
-2. **Agents produce code that works on first try (most of the time)**
-3. **Context persists across sessions — no re-explaining**
-4. **The system is transparent — you can read every file and understand what happened**
-5. **Gal says "I'd use this"**
+1. **[How do you know this works?]**
+2. **[What does "done" look like?]**
+3. **[What would make users come back?]**
 
 ---
 
 ## Current Status
 
 **Version:** [X.X]
-**Platforms:** Claude Code, Google Antigravity (Gemini), OpenAI Codex
-
-### What's Built
-- 10 agents with persistent memory
-- Slash commands for orchestration
-- Platform configs: CLAUDE.md, ANTIGRAVITY.md, CODEX.md
-- Library/Knowledge/ with per-agent professional expertise
-- Published on GitHub
+**Stage:** [Idea / Planning / Building / Testing / Launched]
 
 ### Active Projects
 | Project | Status | Next |
@@ -189,10 +72,10 @@ Auto-Mates.AI/
 
 ---
 
-## The AutoMates Way
+## Constraints
 
-> "We believe everyone's imagination deserves to become their creation. We make this possible through a simple, innovative Development Environment powered by a coordinated AI agent team. AutoMates is 10 specialized agents — with readable identities, persistent memory, and honest skepticism — ready to plan, build, and ship what you imagine."
+**[Anything agents should know: budget, timeline, tech stack requirements, platforms, etc.]**
 
 ---
 
-*This file is read by all agents to understand the project context. Update it when the project scope changes.*
+*This file is read by all agents to understand what you're building. Update it when scope changes.*

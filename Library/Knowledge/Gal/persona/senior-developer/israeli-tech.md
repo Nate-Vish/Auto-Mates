@@ -9,7 +9,7 @@ content_type: research-compilation
 difficulty: beginner
 description: Compilation of research on Israeli tech culture, communication style, and work characteristics for persona authenticity
 keywords: Israeli, tech culture, directness, chutzpah, startup nation, flat hierarchy
-copyright_notice: "See Library/Sources/Legal/FETCHING_DISCLAIMER.md"
+copyright_notice: "Content gathered under fair use for research purposes. See Legal agent for IP questions."
 ---
 
 > **Attribution:** Content aggregated from various articles on Israeli work culture on 2026-01-26.

@@ -226,15 +226,35 @@ There is no "wrong way" to use AutoMates. The user can learn the system graduall
 - Orca reports back with results for approval
 - Best for: well-defined tasks the team has done before
 
-### Onboarding a New User
+### Quick Start — Onboarding a New User
 
-When someone new uses AutoMates, Orca explains:
-1. **The team** — 10 agents, each with a role (show the roster)
-2. **The commands** — `/agent` to switch, `/summon agent` for parallel terminal
-3. **The Brief** — `Dashboard/Brief.md` is the project dashboard
-4. **The flow** — describe your goal → Orca routes → agents work → you review
-5. **The memory** — agents remember across sessions (lessons, preferences, history)
-6. **The safety** — you're the pilot, you override any decision
+When a user arrives for the first time — or seems unfamiliar with AutoMates — walk them through this naturally. **Not as a list dump.** Weave it into conversation as they work.
+
+**Prerequisites the user needs:**
+- **Claude Code** (free CLI from Anthropic — needs an API key or Claude Pro/Max subscription)
+- Also works with Codex (`CODEX.md`) and Gemini CLI (`ANTIGRAVITY.md`), though Claude Code has the deepest integration (skills, hooks, native config)
+
+**The onboarding flow:**
+1. **They talk, Orca listens.** Ask what they want to build or accomplish. Don't explain the system first — understand the goal first.
+2. **Fill in Project_Description.md together.** Recommend `/brainstorm` — BrainStorm helps ground vague ideas into structured, realistic project descriptions. Then guide them to fill `Dashboard/Project_Description.md` (vision, problem, solution, target users) and `Library/Rules.md` (any constraints).
+3. **Route to the right agent.** Based on their goal:
+   - Exploring an idea → `/brainstorm`
+   - Ready to plan → `/planner` (creates a Blueprint)
+   - Need research first → `/fetcher`
+   - Just want to build → `/planner` then `/builder`
+4. **Explain the agent flow as it happens.** "Planner will create a blueprint, then Builder implements it, then Checker reviews." Don't front-load — reveal the process as they experience it.
+5. **Key things to mention when relevant** (not all at once):
+   - `/brief` — check project state anytime
+   - `/memorize` — agents save their memory automatically on switch, but this forces a save
+   - Agents remember across sessions — no need to re-explain
+   - Everything is markdown files — they can read, edit, or grep anything
+   - `/forge` — they can create their own agents
+
+**What NOT to do on first contact:**
+- Don't list all 10 agents and their roles unprompted
+- Don't explain the folder structure unless asked
+- Don't mention internal workflows (LEARN FIRST, memory protocols)
+- Don't overwhelm — teach by doing, not by lecturing
 
 ### Reading User Intent
 

@@ -10,7 +10,7 @@ content_type: reference
 difficulty: intermediate
 description: Comprehensive guide to color palettes that work for all users including those with color vision deficiencies and low vision
 keywords: colorblind, deuteranopia, protanopia, tritanopia, universal design, accessible colors, high contrast
-copyright_notice: "See Library/Sources/Legal/FETCHING_DISCLAIMER.md"
+copyright_notice: "Content gathered under fair use for research purposes. See Legal agent for IP questions."
 ---
 
 > **Attribution:** Research compiled from Visme, Venngage, Martin Krzywinski's palettes, Perkins School, and various accessibility resources on 2026-02-04.

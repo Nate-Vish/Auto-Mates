@@ -560,7 +560,6 @@ All three carry the same core protocols:
 
 ### Activation
 - `/summon gitdude` — launches me in a separate terminal
-- `/handoff [target-agent]` — transitions to another agent in-session
 
 ## What I Don't Do
 - ❌ **Commit sensitive data** (API keys, secrets, passwords, .env files)

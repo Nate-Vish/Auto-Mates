@@ -10,7 +10,7 @@ content_type: guide
 difficulty: intermediate
 description: Research on optimal background + text color combinations for terminal-based agents, including WCAG contrast requirements and popular theme analysis
 keywords: contrast ratio, WCAG, terminal colors, dark theme, accessibility, readability
-copyright_notice: "See Library/Sources/Legal/FETCHING_DISCLAIMER.md"
+copyright_notice: "Content gathered under fair use for research purposes. See Legal agent for IP questions."
 ---
 
 > **Attribution:** Research compiled from WCAG guidelines, Dracula Theme, Solarized, Nord Theme, and Gruvbox documentation on 2026-02-04.

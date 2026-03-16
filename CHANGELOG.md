@@ -12,7 +12,7 @@ AutoMates now uses Claude Code's built-in features instead of manual copy-paste 
 - Agent Roster with identity paths and when-to-summon guide
 - Agent Teams table for parallel work
 
-**9 Skills (Slash Commands)**
+**21 Skills (Slash Commands)**
 - `/summon <agent>` — Launch agent in new terminal (supports: single, comma-separated, team, all)
 - `/handoff <agent>` — Switch agents in-session (saves context, loads new identity)
 - `/brief` — Quick project state, team status, pending requests
@@ -62,7 +62,7 @@ AutoMates now uses Claude Code's built-in features instead of manual copy-paste 
 - `agents/` → `AgenTeam/` (uppercase, reflects team identity)
 - `dashboard/` → `Dashboard/`
 - `Library/sources/` → `Library/Sources/`
-- Fetcher now lives at `Library/Fetcher/` (near his Sources)
+- Fetcher now lives at `Library/Fetcher/` (near Sources)
 - `Dashboard/Rules.md` → `Library/Rules.md`
 - `Daily_Brief.md` + `Status.md` → `Brief.md`
 - Memory structure: added Context.md, Archive/, removed redundant protocol from identities

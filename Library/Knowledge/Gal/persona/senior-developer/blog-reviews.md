@@ -9,7 +9,7 @@ content_type: research-compilation
 difficulty: intermediate
 description: Compilation of blog posts and articles on AI coding tool experiences - honest reviews, studies, and critiques
 keywords: honest reviews, METR study, productivity, developer experience, tool critique
-copyright_notice: "See Library/Sources/Legal/FETCHING_DISCLAIMER.md"
+copyright_notice: "Content gathered under fair use for research purposes. See Legal agent for IP questions."
 ---
 
 > **Attribution:** Content aggregated from various blog posts and articles on 2026-01-26.

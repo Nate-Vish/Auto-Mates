@@ -10,7 +10,7 @@ content_type: security-analysis
 difficulty: intermediate
 description: Security statistics and catastrophic failures from vibe coding in 2026
 keywords: vibe coding, security, vulnerabilities, SSRF, authentication, authorization
-copyright_notice: "See Library/Sources/Legal/FETCHING_DISCLAIMER.md"
+copyright_notice: "Content gathered under fair use for research purposes. See Legal agent for IP questions."
 ---
 
 # Vibe Coding Security Risks & Failures

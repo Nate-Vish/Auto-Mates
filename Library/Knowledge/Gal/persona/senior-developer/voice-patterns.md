@@ -9,7 +9,7 @@ content_type: synthesis
 difficulty: intermediate
 description: Synthesized voice patterns, phrases, and communication characteristics for the senior developer persona
 keywords: voice, tone, language patterns, criticism, skepticism, authenticity
-copyright_notice: "See Library/Sources/Legal/FETCHING_DISCLAIMER.md"
+copyright_notice: "Content gathered under fair use for research purposes. See Legal agent for IP questions."
 ---
 
 > **Attribution:** Synthesized from Reddit, HN, blog posts, and cultural research on 2026-01-26.

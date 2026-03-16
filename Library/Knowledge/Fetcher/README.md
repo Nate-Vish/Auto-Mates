@@ -1,34 +1,55 @@
 # Fetcher Knowledge Section
 
-*Last updated: 2026-02-22*
+*Last updated: 2026-03-17*
 
-## Core Tools
-- [Jina AI Overview](../Sources/AI_Services/Jina_AI/jina_ai_overview.md) — Search foundation platform
-- [Jina Reader](../Sources/AI_Services/Jina_AI/jina_reader.md) — URL to markdown extraction (primary tool)
-- [Jina Documentation](../Sources/AI_Services/Jina_AI/jina_documentation.md) — API reference
-- [Jina Embeddings](../Sources/AI_Services/Jina_AI/jina_embeddings.md) — Vector embeddings API
-- [Tavily Overview](../Sources/AI_Services/Tavily/tavily_overview.md) — Web search for agents
-- [Tavily Documentation](../Sources/AI_Services/Tavily/tavily_documentation.md) — Search/Extract APIs
+Fetcher's professional knowledge for research and content gathering. Core tool references are self-contained files in this directory. Legal and API source files populate in `Library/Sources/` after Fetcher researches them.
 
-## Legal Compliance (Read Before Fetching)
-- [hiQ v. LinkedIn](../Sources/Legal/Web_Scraping/hiq_v_linkedin_case_summary.md) — CFAA and public data scraping
-- [robots.txt Legal Status](../Sources/Legal/Web_Scraping/robots_txt_legal_status.md) — When to respect robots.txt
-- [GDPR Article 5](../Sources/Legal/Privacy/gdpr_article_5_data_minimization.md) — Data minimization for scraping
-- [GDPR Scraping Best Practices](../Sources/Legal/Privacy/gdpr_web_scraping_best_practices.md) — Compliance
-- [Third-Party API Risks](../Sources/Legal/API_Terms/third_party_api_legal_risks_rag.md) — Content liability
-- [Tavily Terms of Service](../Sources/Legal/API_Terms/tavily_terms_of_service.md) — Data usage terms
-- [Jina AI Terms](../Sources/Legal/API_Terms/jina_ai_terms_and_conditions.md) — IP and data ownership
+---
+
+## Core Tools (Self-Contained References)
+
+| File | What It Covers |
+|------|---------------|
+| [jina_tools_reference.md](jina_tools_reference.md) | Jina Reader, Search, Embeddings — URL-to-markdown extraction, API reference |
+| [legal_compliance_fetching.md](legal_compliance_fetching.md) | CFAA, robots.txt, GDPR, copyright — legal rules for web fetching |
+| [metadata_format_guide.md](metadata_format_guide.md) | YAML metadata format for source files, citation standards |
+| [playwright_cli_reference.md](playwright_cli_reference.md) | Browser automation via CLI — open, snapshot, click, fill commands |
+
+## Tool Selection
+
+| Scenario | Tool | Why |
+|----------|------|-----|
+| Simple static page | Jina Reader (`r.jina.ai`) | Fast, no browser needed |
+| Dynamic/JS page | Playwright CLI | Renders JavaScript |
+| Cookie consent / auth walls | Playwright CLI | Can interact with page |
+| Search for sources | Jina Search (`s.jina.ai`) | AI-powered web search |
+| Quick web search | WebSearch tool | Built-in, no API key |
 
 ## Browser Automation (Playwright CLI)
-- [Playwright CLI Research](../../Dashboard/Work_Space/AwesomeMates/Studied/Playwright_CLI_Research.md) — Token-efficient browser control via shell commands
-- [Playwright MCP Research](../../Dashboard/Work_Space/AwesomeMates/Studied/Playwright_MCP_Research.md) — MCP alternative (reference only, we use CLI)
+
 - **CLI Commands:** `playwright-cli open`, `playwright-cli snapshot`, `playwright-cli click`, `playwright-cli fill`, `playwright-cli type`
 - **When to use:** Dynamic/JS pages, cookie consent walls, auth-required docs, interactive widgets
 - **Fallback:** Use Jina (`r.jina.ai`) for simple static pages (faster, no browser needed)
 - **Why CLI over MCP:** 4x fewer tokens — snapshots/screenshots save to disk, not context window
 
-## Knowledge Management Patterns
-- [Bedrock Knowledge Bases](../Sources/Cloud_AI/Amazon_Bedrock/bedrock_knowledge_bases.md) — RAG patterns
+## Legal Compliance (Always Check Before Fetching)
+
+- Respect `robots.txt` — always check before scraping
+- GDPR: minimize personal data collection, honor opt-out
+- CFAA: public data is generally fair game (hiQ v. LinkedIn), but respect ToS
+- Copyright: fair use for research/analysis, not wholesale reproduction
+- API terms: check data ownership and indemnification clauses
+
+See [legal_compliance_fetching.md](legal_compliance_fetching.md) for the full compliance checklist.
+
+## Knowledge Delivery Pattern
+
+When fulfilling a knowledge request:
+1. Research the topic (Jina, Playwright, WebSearch)
+2. Create source file in `Library/Sources/[Category]/`
+3. Update the requesting agent's `Library/Knowledge/[Agent]/README.md` with the new source link
+4. Deliver summary to the requesting agent
 
 ---
-*When fulfilling knowledge requests, also update the requesting agent's Library/Knowledge/[Agent]/README.md with new source links.*
+
+*Fetcher's 4 core knowledge files are self-contained and ship with the repo. Additional sources populate in `Library/Sources/` during active research sessions.*

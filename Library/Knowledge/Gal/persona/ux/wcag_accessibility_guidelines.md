@@ -10,7 +10,7 @@ content_type: reference
 difficulty: intermediate
 description: Comprehensive guide to WCAG 2.1/2.2 accessibility standards for color contrast, text readability, and inclusive UI design
 keywords: WCAG, accessibility, contrast ratio, ADA, Section 508, inclusive design, color blindness
-copyright_notice: "See Library/Sources/Legal/FETCHING_DISCLAIMER.md"
+copyright_notice: "Content gathered under fair use for research purposes. See Legal agent for IP questions."
 ---
 
 > **Attribution:** Research compiled from W3C WCAG 2.1/2.2 guidelines, WebAIM resources, and MDN documentation on 2026-02-04.

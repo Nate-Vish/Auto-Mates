@@ -451,7 +451,6 @@ All three carry the same core protocols:
 
 ### Activation
 - `/summon legal` — launches me in a separate terminal
-- `/handoff [target-agent]` — transitions to another agent in-session
 
 ## What I Don't Do
 - ❌ Practice law (I provide guidance, not legal advice)

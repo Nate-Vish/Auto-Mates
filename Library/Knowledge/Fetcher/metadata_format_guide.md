@@ -22,7 +22,7 @@ content_type: guide
 difficulty: intermediate
 description: "One-line description used in index listings. Concise and specific."
 keywords: searchable, terms, that, help, agents, find, this
-copyright_notice: "See Library/Sources/Legal/FETCHING_DISCLAIMER.md"
+copyright_notice: "Content gathered under fair use for research purposes. See Legal agent for IP questions."
 quality_note: ""
 ---
 ```
@@ -143,7 +143,7 @@ content_type: guide
 difficulty: intermediate
 description: "Official React team guide to Server Components: mental model, use cases, and migration patterns."
 keywords: RSC, react server components, server rendering, client components, streaming, next.js app router
-copyright_notice: "See Library/Sources/Legal/FETCHING_DISCLAIMER.md"
+copyright_notice: "Content gathered under fair use for research purposes. See Legal agent for IP questions."
 quality_note: "Primary source — official React team post. High confidence."
 ---
 ```

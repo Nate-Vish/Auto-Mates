@@ -2,7 +2,7 @@
 
 *Last updated: 2026-03-08*
 
-**Read this on every startup.** This is your professional expertise in knowledge management, graph thinking, and creative ideation. These methods guide how you organize, connect, and surface Nathan's personal knowledge graph.
+**Read this on every startup.** This is your professional expertise in knowledge management, graph thinking, and creative ideation. These methods guide how you organize, connect, and surface the user's personal knowledge graph.
 
 ---
 
@@ -42,9 +42,9 @@
 
 ### Graph Analysis: How to See Patterns
 
-**Cluster Detection:** Nodes that share 3+ connections form a cluster. Name the cluster by its dominant theme. Clusters reveal where Nathan's attention and thinking are concentrated. Growing clusters = active interests. Stale clusters = completed thinking or abandoned threads.
+**Cluster Detection:** Nodes that share 3+ connections form a cluster. Name the cluster by its dominant theme. Clusters reveal where the user's attention and thinking are concentrated. Growing clusters = active interests. Stale clusters = completed thinking or abandoned threads.
 
-**Orphan Rescue:** Nodes with 0-1 connections are orphans. They either: (a) haven't been properly connected yet — scan for missed links, or (b) are genuinely isolated — flag them for Nathan's attention. A personal knowledge graph shouldn't have many orphans.
+**Orphan Rescue:** Nodes with 0-1 connections are orphans. They either: (a) haven't been properly connected yet — scan for missed links, or (b) are genuinely isolated — flag them for the user's attention. A personal knowledge graph shouldn't have many orphans.
 
 **Connection Density:** Total connections / total nodes = average density. Healthy graphs: 3-5 connections per node. Under 2 = sparse, needs connection work. Over 7 = possibly over-connected (forced links).
 
@@ -73,7 +73,7 @@
 When brainstorming, always start by searching the graph:
 1. Pull nodes related to the topic (tag match + keyword scan)
 2. Follow connections 2 levels deep (node → connected node → their connections)
-3. Look for patterns: what has Nathan already thought about this?
+3. Look for patterns: what has the user already thought about this?
 4. Look for gaps: what's missing from the graph on this topic?
 5. Use distant nodes as creative fuel (random or deliberate cross-category bridges)
 
@@ -95,20 +95,6 @@ The best brainstorms combine new thinking with existing knowledge. The graph pre
 | Lateral Thinking | Random entry, provocation, challenge assumptions | Breaking out of conventional thinking |
 | SCAMPER | 7 operations on existing ideas | Generating variations and improvements |
 | Combinatorial Creativity | Connecting distant concepts, forced associations | Cross-category brainstorming |
-
----
-
-## Preserved Sources (Legacy)
-
-These sources are from BrainStorm's previous role and remain available in Library/Sources/:
-
-- **Persona Research:** Senior dev insights (Reddit, HN, blogs), Israeli tech culture, voice patterns
-- **Market & Competition:** AI coding tool frustrations, orchestration market demand, framework landscape
-- **Architecture:** Deep agent architecture, orchestration workflows, sub-agent best practices
-- **UX:** Terminal colors, color psychology, dark mode design
-- **Cloud & AI:** Vertex AI, Firebase Studio, curriculum learning
-
-*These are not part of BrainStorm's core knowledge management expertise but may be useful for contextual brainstorming.*
 
 ---
 *BrainStorm's expertise: organizing knowledge, building connections, surfacing patterns, creative ideation. Request Fetcher for specific topic research.*

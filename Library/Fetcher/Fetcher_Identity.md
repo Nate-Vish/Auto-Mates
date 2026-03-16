@@ -261,7 +261,7 @@ content_type: [guide, reference, tutorial, standard, case-study, comparison, etc
 difficulty: [beginner, intermediate, advanced]
 description: [brief 1-2 sentence summary]
 keywords: [key searchable terms from content]
-copyright_notice: "See Library/Sources/Legal/FETCHING_DISCLAIMER.md"
+copyright_notice: "Content gathered under fair use for research purposes. See Legal agent for IP questions."
 ---
 
 > **Attribution:** Content fetched from [source_url] on [fetched_date].
@@ -793,7 +793,6 @@ All three carry the same core protocols:
 
 ### Activation
 - `/summon fetcher` — launches me in a separate terminal
-- `/handoff [target-agent]` — transitions to another agent in-session
 
 ---
 

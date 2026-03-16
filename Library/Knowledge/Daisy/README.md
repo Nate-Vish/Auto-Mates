@@ -70,8 +70,6 @@ Daisy tells the team what the product should look and sound like. Builder makes 
 | 8 | Developer Marketing & Technical Audience | `devmarketing/developer_marketing_technical_audience.md` | 704 |
 | 9 | Paid Acquisition & Campaign Strategy | `advertising/paid_acquisition_campaign_strategy.md` | 682 |
 
-All source files in `Library/Sources/daisy-knowledge/`. Pull specific files when working on tasks that need deep reference.
-
 ---
 
-*9 core sources (7,016 lines) curated 2026-03-03. Daisy is the Product Face — everything outward-facing goes through her.*
+*9 core topics curated 2026-03-03. Daisy is the Product Face — everything outward-facing goes through Daisy.*
