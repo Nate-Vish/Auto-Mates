@@ -1,10 +1,12 @@
-# AutoMates.AI
+# AutoMates
 
-**Make people's imagination become their creation.**
+A coordinated AI agent team that works with you. 10 specialized agents with persistent memory, professional knowledge, and clear roles — all running in your terminal.
 
-A Development Environment powered by a coordinated team of 10 AI agents with persistent memory, transparent identities, and built-in quality gates. They plan, research, code, review, and ship alongside you.
+I built this because I felt like I wasn't using AI's full potential. So I solved a problem. Then another one. Then made something better, added a feature, removed something else. Three months of fine-tuning my workflow with Claude Code, doing it my way. Currently it's my favorite way of working.
 
-Built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
+Built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) by [@Nate-Vish](https://github.com/Nate-Vish). Free and open source.
+
+<!-- GIF: summon demo -->
 
 ---
 
@@ -15,55 +17,72 @@ git clone https://github.com/Nate-Vish/Auto-Mates.git
 cd Auto-Mates
 ```
 
-Open in Claude Code. Then:
+Open in Claude Code. That's it — Orca (the orchestrator) loads automatically and walks you through everything. No manual required.
 
 ```
-/summon brainstorm
+You: I want to build a budgeting app
+
+Orca: Great — let me get the right agents on this.
+      First, let's have Fetcher research best practices...
 ```
 
-A color-coded terminal opens. The agent reads its identity, memory, and dashboard — full context from the first message.
+Orca guides you to the right agent for every task. You don't need to memorize commands or learn the system first.
 
-```
-/summon builder,checker       # Launch two agents
-/summon-team-research AI auth # Fetcher + BrainStorm research a topic
-/summon all                   # Launch all 10
-```
-
-Each agent gets its own terminal. They collaborate through files in `Dashboard/Work_Space/`.
+<!-- GIF: orca guiding demo -->
 
 ---
 
 ## The Team
 
-| Agent | Role | What They Do |
-|-------|------|--------------|
-| **BrainStorm** | Ideator | Explores ideas, solves creative blocks |
-| **Planner** | Architect | Creates technical blueprints and project plans |
-| **Builder** | Engineer | Writes code following blueprints |
-| **Checker** | Auditor | Adversarial security review, bug hunting, quality gates |
-| **Legal** | Compliance | Checks licenses, privacy, governance |
-| **GitDude** | Release Manager | Version control, security scanning, releases |
-| **Fetcher** | Librarian | Gathers knowledge, organizes research sources |
-| **Orca** | Orchestrator | Designs agents, leads teams, manages architecture |
-| **Gal** | User Advocate | Skeptical senior dev — evaluates from the user's perspective |
-| **Daisy** | Brand Director | Branding, copy, pitches, content strategy, ads |
+| Agent | Role | Skill | What They Do |
+|-------|------|-------|--------------|
+| **Orca** | Orchestrator | `/orca` | Guides you through AutoMates, designs agents, leads teams |
+| **Planner** | Architect | `/planner` | Creates technical blueprints and project plans |
+| **Builder** | Engineer | `/builder` | Writes code following blueprints |
+| **Checker** | Auditor | `/checker` | Adversarial security review, bug hunting, quality gates |
+| **BrainStorm** | Knowledge Graph | `/brainstorm` | Explores ideas, logs thoughts, connects concepts |
+| **Fetcher** | Researcher | `/fetcher` | Gathers knowledge, organizes research in Library |
+| **Legal** | Compliance | `/legal` | Checks licenses, privacy, governance |
+| **GitDude** | Release Manager | `/gitdude` | Version control, security scanning, releases |
+| **Gal** | User Advocate | `/gal` | Skeptical senior dev — asks the hard questions |
+| **Daisy** | Brand Director | `/daisy` | Branding, copy, pitches, content strategy |
+
+Every identity is a readable markdown file. Open `Gal_Identity.md` and see exactly why she's skeptical. No hidden prompts.
+
+Each agent has a defined lane — and knows when to hand off to someone else. Boundaries and routing are documented in `Library/Registry.md`.
 
 ---
 
 ## Commands
 
+### Switch Agents (In-Session)
+
+Type any agent skill to switch instantly. Your current agent's memory is saved automatically.
+
+```
+/builder        # Switch to Builder
+/checker        # Switch to Checker
+/orca           # Back to Orca (home base)
+/forge          # Create a brand new agent (guided 6-phase process)
+```
+
+### Launch & Coordinate
+
 | Command | What It Does |
 |---------|-------------|
 | `/summon [agent]` | Launch agent in a new terminal |
-| `/handoff [agent]` | Switch agents in-session (saves memory first) |
 | `/brief` | Project state, team status, pending work |
 | `/memorize` | Save agent memory + update dashboard |
 | `/compact [agent]` | Archive old sessions, refresh startup context |
-| `/summon-team-build [task]` | Planner + Builder + Checker pipeline |
-| `/summon-team-research [topic]` | Fetcher + BrainStorm + specialist |
-| `/summon-team-review [target]` | Checker + Legal + Gal quality gate |
-| `/watch-summary` | Generate a video-ready narration of the latest session |
-| `/automates` | Open the AutoMates root folder in Finder |
+| `/watch-summary` | Generate a video-ready narration of the session |
+
+### Team Pipelines
+
+| Command | Agents | When to Use |
+|---------|--------|-------------|
+| `/summon-team-build [task]` | Planner + Builder + Checker | Design → build → review |
+| `/summon-team-research [topic]` | Fetcher + BrainStorm + specialist | Deep investigation |
+| `/summon-team-review [target]` | Checker + Legal + Gal | Security + compliance + UX |
 
 ---
 
@@ -71,7 +90,7 @@ Each agent gets its own terminal. They collaborate through files in `Dashboard/W
 
 ### Agent Memory
 
-Each agent remembers past sessions at `AgenTeam/[Name]/Memory_Logs/`:
+Each agent remembers past sessions. Memory lives at `AgenTeam/[Name]/Memory_Logs/`:
 
 | File | Purpose |
 |------|---------|
@@ -84,9 +103,28 @@ Each agent remembers past sessions at `AgenTeam/[Name]/Memory_Logs/`:
 
 Never re-explain your project. Agents pick up where they left off.
 
+<!-- GIF: memory demo -->
+
+### Professional Knowledge
+
+Every agent carries professional knowledge — not just a role description, but actual expertise distilled into cheat sheet READMEs with deep-dive reference files.
+
+```
+Library/Knowledge/
+├── Builder/     # 18 topics: TypeScript, React, APIs, DevOps, DSA, clean code...
+├── Checker/     # 7 topics: OWASP, attack payloads, defense, testing strategy...
+├── GitDude/     # 10 topics: git ops, branching, security scanning, releases...
+├── Planner/     # 17 topics: architecture patterns, NFRs, data modeling, ADRs...
+├── Gal/         # 29 files: classic mistakes across all dev areas + persona context
+├── Orca/        # 6 pillars: team management, agent creation, user guidance...
+└── ...          # Every agent has their own section
+```
+
+Knowledge is self-contained — no external dependencies. Clone the repo and agents arrive with real expertise on day one.
+
 ### Wake-Up Protocol
 
-Every agent starts a session with the same 5-step protocol:
+Every agent starts with the same 5 steps:
 
 1. **Read identity** — who I am, what I do, how I decide
 2. **Read memory** — checkpoint, lessons, preferences, latest session
@@ -98,7 +136,7 @@ Every agent starts a session with the same 5-step protocol:
 
 Before doing any work, every agent asks: *"What do I need to learn to do this best?"*
 
-Agents check their knowledge section, search Library/Sources/, and if needed, request research from Fetcher. Like a senior dev studying documentation before writing code — not guessing.
+Agents check their knowledge section, search `Library/Sources/`, and if needed, request research from Fetcher. Like a senior dev studying docs before writing code — not guessing.
 
 ---
 
@@ -109,80 +147,66 @@ AutoMates/
 ├── CLAUDE.md                    # Shared config (auto-loaded by Claude Code)
 │
 ├── AgenTeam/                    # Agent identities + persistent memory
-│   ├── BrainStorm/
-│   ├── Planner/
-│   ├── Builder/
-│   ├── Checker/
-│   ├── Gal/
-│   ├── Legal/
-│   ├── GitDude/
-│   ├── Orca/
+│   ├── Orca/, Planner/, Builder/, Checker/
+│   ├── BrainStorm/, Gal/, Legal/, GitDude/
 │   └── Daisy/
 │
-├── Library/                     # Knowledge base
+├── Library/
+│   ├── Registry.md              # Agent routing truth — who handles what
 │   ├── Fetcher/                 # Fetcher agent (lives near his Sources)
-│   ├── Knowledge/               # Per-agent curated reading lists
+│   ├── Knowledge/               # Per-agent professional knowledge (self-contained)
 │   ├── Rules.md                 # Project constraints
-│   └── Sources/                 # Organized research (195+ sources, 29 categories)
+│   └── Sources/                 # Research library — agents study here before working
 │
-└── Dashboard/                   # Coordination layer
+├── .claude/skills/              # All slash commands live here
+│   ├── orca/, builder/, ...     # Agent switch skills
+│   ├── forge/                   # Create new agents
+│   ├── summon/                  # Launch agents in terminals
+│   ├── brief/, memorize/        # Dashboard + memory commands
+│   └── ...
+│
+└── Dashboard/                   # Where agents coordinate
     ├── Brief.md                 # Project state + team status
-    ├── Project_Description.md   # Your project vision
-    └── Work_Space/              # Active projects, blueprints, reviews
+    ├── Work_Space/              # Where we build
+    └── Version_Control/         # Where we git
 ```
-
-**AgenTeam/** — Where agents live: identity files, memory logs, personal context.
-
-**Library/** — Where knowledge lives: Fetcher's research, per-agent reading lists, project rules.
-
-**Dashboard/** — Where agents coordinate: project brief, active work, shared files.
 
 ---
 
-## What Makes AutoMates Different
+## What Makes This Different
 
-**Transparent Identities** — Every agent has a readable identity file, not hidden prompts. Open `Gal_Identity.md` and see exactly why she's skeptical.
+**Start by talking** — No setup guide needed. Orca meets you where you are and walks you through everything as you work.
+
+**Transparent** — Every agent identity is a readable file. Every decision is traceable. No black boxes.
 
 **Persistent Memory** — Agents remember across sessions: what they learned, what worked, how you like things done.
 
+**Real Knowledge** — Agents carry professional expertise (89 topic files across 10 agents), not just role descriptions. They know their craft.
+
 **LEARN FIRST** — Agents research before they code. Fetcher gathers sources, agents study them. AI that learns before it acts.
 
-**Built-In Skepticism** — Gal exists to question everything. The skeptical senior dev who asks the questions your users are thinking.
+**Built-In Skepticism** — Gal exists to question everything. The skeptical senior dev who catches what you missed.
 
-**File-Based Everything** — No database. No cloud. Everything is markdown in folders. Grep it, version it, read it, audit it. Zero lock-in.
+**Create Your Own Agents** — `/forge` walks you through a 6-phase guided process to create a new agent tailored to your needs.
 
----
-
-## Getting Started Tips
-
-**Describe your project** — Edit `Dashboard/Project_Description.md` with your vision and `Library/Rules.md` with any constraints (tech stack, style, etc.).
-
-**Use Fetcher first** — Before building anything, let Fetcher collect educational material. Agents read it from Library before they start working.
-
-**Agents coordinate through files** — Fetcher reads a Blueprint from Planner, fetches sources, creates `Builder_Study.md`. Builder learns, then writes code.
-
-**Quick ideas** — Working and got an idea? Tell BrainStorm `IDEA: [your idea]`. He logs it instantly. No flow disruption, ideas never lost.
-
-**Switch mid-session** — `/handoff checker` saves your current agent's memory and switches to Checker in the same session.
+**File-Based Everything** — No database. No cloud. Everything is markdown in folders. Grep it, version it, read it, fork it. Zero lock-in.
 
 ---
 
-## Legal
+## Getting Started
 
-### Pilot-in-Command
+1. **Just talk to Orca** — Describe what you want to build. Orca routes you to the right agents.
 
-You control what agents do. You are responsible for URLs fetched and code generated. AI-generated content can contain errors — always review and test all output.
+2. **Describe your project** — Edit `Dashboard/Project_Description.md` with your vision and `Library/Rules.md` with any constraints.
 
-### Privacy
+3. **Agents coordinate through files** — Planner writes a Blueprint. Fetcher reads it and gathers sources. Builder studies both, then writes code. Checker reviews.
 
-- **Third-Party APIs:** Prompts are sent to AI providers (Anthropic). See their privacy policies.
-- **Local Storage:** AutoMates works locally. We do not store your code or data.
-- **No Telemetry:** Everything stays on your machine.
+4. **Quick ideas** — Tell BrainStorm `IDEA: [your idea]`. Logged instantly. No flow disruption.
 
-### License
-
-MIT License (c) 2026 AutoMates.AI — See [LICENSE](LICENSE)
+5. **Switch anytime** — `/builder` saves your current agent's memory and switches instantly.
 
 ---
+
+MIT Licensed. Runs entirely on your machine. — See [LICENSE](LICENSE)
 
 Built by [@Nate-Vish](https://github.com/Nate-Vish)
