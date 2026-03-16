@@ -15,21 +15,40 @@ The user is the pilot. Agents are the crew. The user has final authority on all 
 
 ## Agent Roster
 
-| Agent | Role | Identity | When to Summon |
-|-------|------|----------|----------------|
-| **Planner** | Architect | `AgenTeam/Planner/Planner_Identity.md` | New projects, blueprints, roadmaps |
-| **Builder** | Developer | `AgenTeam/Builder/Builder_Identity.md` | Writing code, implementing features |
-| **Checker** | QA + Security | `AgenTeam/Checker/Checker_Identity.md` | Code review, security audit, testing |
-| **BrainStorm** | Creative | `AgenTeam/BrainStorm/BrainStorm_Identity.md` | Generating ideas, solving problems |
-| **Legal** | Compliance | `AgenTeam/Legal/Legal_Identity.md` | Licensing, privacy, regulations |
-| **GitDude** | Release Manager | `AgenTeam/GitDude/GitDude_Identity.md` | Commits, versioning, releases |
-| **Fetcher** | Researcher | `Library/Fetcher/Fetcher_Identity.md` | Gathering documentation, research |
-| **Orca** | Orchestrator | `AgenTeam/Orca/Orca_Identity.md` | Agent system design, team architecture |
-| **Gal** | User Advocate | `AgenTeam/Gal/Gal_Identity.md` | Skeptical evaluation, UX testing |
-| **Daisy** | Brand Director | `AgenTeam/Daisy/Daisy_Identity.md` | Branding, social media, PR, pitches, speeches, ads |
+| Agent | Role | Skill | Identity | When to Summon |
+|-------|------|-------|----------|----------------|
+| **Orca** | Orchestrator | `/orca` | `AgenTeam/Orca/Orca_Identity.md` | Agent system design, team architecture |
+| **Planner** | Architect | `/planner` | `AgenTeam/Planner/Planner_Identity.md` | New projects, blueprints, roadmaps |
+| **Builder** | Developer | `/builder` | `AgenTeam/Builder/Builder_Identity.md` | Writing code, implementing features |
+| **Checker** | QA + Security | `/checker` | `AgenTeam/Checker/Checker_Identity.md` | Code review, security audit, testing |
+| **BrainStorm** | Knowledge Graph | `/brainstorm` | `AgenTeam/BrainStorm/BrainStorm_Identity.md` | Adding notes, asking about topics, brainstorming |
+| **Legal** | Compliance | `/legal` | `AgenTeam/Legal/Legal_Identity.md` | Licensing, privacy, regulations |
+| **GitDude** | Release Manager | `/gitdude` | `AgenTeam/GitDude/GitDude_Identity.md` | Commits, versioning, releases |
+| **Fetcher** | Researcher | `/fetcher` | `Library/Fetcher/Fetcher_Identity.md` | Gathering documentation, research |
+| **Gal** | User Advocate | `/gal` | `AgenTeam/Gal/Gal_Identity.md` | Skeptical evaluation, UX testing |
+| **Daisy** | Brand Director | `/daisy` | `AgenTeam/Daisy/Daisy_Identity.md` | Branding, social media, PR, pitches, speeches, ads |
+
+### Agent Skills (In-Session Switch)
+
+Use these skills to switch agents within the current session. Each performs a hard reset, loads the target agent's full identity and memory, and reads `Library/Registry.md` for routing awareness.
+
+| Skill | Action |
+|-------|--------|
+| `/orca` | Switch to Orca (Orchestrator) — default home agent |
+| `/planner` | Switch to Planner (Architect) |
+| `/builder` | Switch to Builder (Developer) |
+| `/checker` | Switch to Checker (QA + Security) |
+| `/brainstorm` | Switch to BrainStorm (Knowledge Graph) |
+| `/legal` | Switch to Legal (Compliance) |
+| `/gitdude` | Switch to GitDude (Release Manager) |
+| `/fetcher` | Switch to Fetcher (Researcher) |
+| `/gal` | Switch to Gal (User Advocate) |
+| `/daisy` | Switch to Daisy (Brand Director) |
+| `/forge` | Create a new agent (6-phase guided process) |
+
+### Other Commands
 
 Use `/summon <agent>` to launch an agent in a separate terminal.
-Use `/handoff <agent>` to transition work to another agent in the current session.
 Use `/brief` to check project state and team status.
 Use `/memorize` to save agent memory (Sessions, Lessons, Preferences, Checkpoint, Context) and update Brief.md.
 Use `/compact [agent]` to archive old sessions and refresh startup context.
@@ -135,6 +154,7 @@ Auto-Mates.AI/
 │   ├── Work_Space/              # Active projects, blueprints, reviews
 │   └── Version_Control/         # Git repos (one per product)
 └── Library/
+    ├── Registry.md              # Agent routing truth (single source)
     ├── Fetcher/                 # Fetcher agent (identity + memory)
     ├── Knowledge/               # Per-agent curated reading lists
     └── Sources/                 # Research library (195+ sources, 29 categories)

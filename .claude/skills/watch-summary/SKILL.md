@@ -32,7 +32,14 @@ Review the current conversation and extract:
 
 ### Step 2: Write the Video Script
 
-Create the summary at `Dashboard/Work_Space/Watch_Summaries/Summary_[YYYY-MM-DD]_[HH-MM].md`
+**File location:** Place the summary file **inside the project folder** that was the focus of the session:
+- `Dashboard/Work_Space/[ProjectFolder]/Watch_Summary_[YYYY-MM-DD].md`
+- Example: If the session was about AutoMates-Brand → `Dashboard/Work_Space/AutoMates-Brand/Watch_Summary_2026-03-11.md`
+- Example: If the session was about Sunny → `Dashboard/Work_Space/Sunny/Watch_Summary_2026-03-11.md`
+- If the session spanned multiple projects, pick the primary one.
+- If no specific project folder applies (e.g. system-wide work), use `Dashboard/Work_Space/Watch_Summary_[YYYY-MM-DD].md` as a standalone file.
+
+**Do NOT create a Watch_Summaries/ folder.** Folders in Work_Space are for projects only.
 
 Use this format:
 
@@ -94,7 +101,7 @@ Structure the narration:
 === WATCH SUMMARY ===
 Session: [date]
 Agent:   [who was active]
-Script:  Dashboard/Work_Space/Watch_Summaries/Summary_[YYYY-MM-DD]_[HH-MM].md
+Script:  Dashboard/Work_Space/[ProjectFolder]/Watch_Summary_[YYYY-MM-DD].md
 Words:   [~word count of narration]
 Est:     [~minutes when read aloud]
 =====================

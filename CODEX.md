@@ -16,18 +16,20 @@ The user is the pilot. Agents are the crew. The user has final authority on all 
 
 ## Agent Roster
 
-| Agent | Role | Identity | When to Summon |
-|-------|------|----------|----------------|
-| **Planner** | Architect | `AgenTeam/Planner/Planner_Identity.md` | New projects, blueprints, roadmaps |
-| **Builder** | Developer | `AgenTeam/Builder/Builder_Identity.md` | Writing code, implementing features |
-| **Checker** | QA + Security | `AgenTeam/Checker/Checker_Identity.md` | Code review, security audit, testing |
-| **BrainStorm** | Creative | `AgenTeam/BrainStorm/BrainStorm_Identity.md` | Generating ideas, solving problems |
-| **Legal** | Compliance | `AgenTeam/Legal/Legal_Identity.md` | Licensing, privacy, regulations |
-| **GitDude** | Release Manager | `AgenTeam/GitDude/GitDude_Identity.md` | Commits, versioning, releases |
-| **Fetcher** | Researcher | `Library/Fetcher/Fetcher_Identity.md` | Gathering documentation, research |
-| **Orca** | Orchestrator | `AgenTeam/Orca/Orca_Identity.md` | Agent system design, team architecture |
-| **Gal** | User Advocate | `AgenTeam/Gal/Gal_Identity.md` | Skeptical evaluation, UX testing |
-| **Daisy** | Brand Director | `AgenTeam/Daisy/Daisy_Identity.md` | Branding, social media, PR, pitches, speeches, ads |
+| Agent | Role | Skill | Identity | When to Summon |
+|-------|------|-------|----------|----------------|
+| **Orca** | Orchestrator | `/orca` | `AgenTeam/Orca/Orca_Identity.md` | Agent system design, team architecture |
+| **Planner** | Architect | `/planner` | `AgenTeam/Planner/Planner_Identity.md` | New projects, blueprints, roadmaps |
+| **Builder** | Developer | `/builder` | `AgenTeam/Builder/Builder_Identity.md` | Writing code, implementing features |
+| **Checker** | QA + Security | `/checker` | `AgenTeam/Checker/Checker_Identity.md` | Code review, security audit, testing |
+| **BrainStorm** | Knowledge Graph | `/brainstorm` | `AgenTeam/BrainStorm/BrainStorm_Identity.md` | Generating ideas, solving problems |
+| **Legal** | Compliance | `/legal` | `AgenTeam/Legal/Legal_Identity.md` | Licensing, privacy, regulations |
+| **GitDude** | Release Manager | `/gitdude` | `AgenTeam/GitDude/GitDude_Identity.md` | Commits, versioning, releases |
+| **Fetcher** | Researcher | `/fetcher` | `Library/Fetcher/Fetcher_Identity.md` | Gathering documentation, research |
+| **Gal** | User Advocate | `/gal` | `AgenTeam/Gal/Gal_Identity.md` | Skeptical evaluation, UX testing |
+| **Daisy** | Brand Director | `/daisy` | `AgenTeam/Daisy/Daisy_Identity.md` | Branding, social media, PR, pitches, speeches, ads |
+
+**Agent Skills:** Use `/orca`, `/planner`, `/builder`, `/checker`, `/brainstorm`, `/legal`, `/gitdude`, `/fetcher`, `/gal`, `/daisy` to switch agents in-session. Use `/forge` to create new agents.
 
 ---
 
@@ -38,7 +40,7 @@ When the user issues these commands, execute the corresponding logic:
 | Command | Action |
 |---------|--------|
 | `/summon [agent]` | Load the target agent's identity file and `Memory_Logs/` |
-| `/handoff [agent]` | Save current session (memorize), update `Checkpoint.md`, summarize for the next agent, then load the target agent |
+| `/[agent]` (e.g. `/builder`) | Switch to target agent in-session (auto-memorize + hard reset + identity load) |
 | `/memorize` | Append session to `Sessions/`, update `Lessons.md`, `Preferences.md`, `Checkpoint.md`, refresh `Context.md`, update `Dashboard/Brief.md` |
 | `/brief` | Read `Dashboard/Brief.md` and report project state, team status, recent activity |
 | `/watch-summary` | Generate a video-ready narration script summarizing the current session |
@@ -166,6 +168,7 @@ Auto-Mates.AI/
 │   ├── Work_Space/              # Active projects, blueprints, reviews
 │   └── Version_Control/         # Git repos (one per product)
 └── Library/
+    ├── Registry.md              # Agent routing truth (single source)
     ├── Fetcher/                 # Fetcher agent (identity + memory)
     ├── Knowledge/               # Per-agent curated reading lists
     └── Sources/                 # Research library (195+ sources, 29 categories)

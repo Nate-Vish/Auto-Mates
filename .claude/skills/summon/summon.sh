@@ -425,20 +425,8 @@ parse_agents() {
 
 main() {
     if [[ -z "$1" ]]; then
-        echo "AutoMates Agent Summoner"
-        echo ""
-        echo "Usage: summon.sh <agent1,agent2,...|team|all>"
-        echo ""
-        echo "Examples:"
-        echo "  summon.sh planner           # Launch Planner"
-        echo "  summon.sh builder,checker   # Launch Builder and Checker"
-        echo "  summon.sh team              # Launch Planner, Builder, Checker"
-        echo "  summon.sh all               # Launch all 9 agents"
-        echo ""
-        echo "Available agents:"
-        echo "  planner, builder, checker, brainstorm, gal"
-        echo "  legal, gitdude, fetcher, orca, daisy"
-        exit 0
+        echo "No agent specified — defaulting to Orca (Orchestrator)"
+        set -- "orca"
     fi
 
     PROJECT_ROOT="$(pwd)"

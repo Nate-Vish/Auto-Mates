@@ -26,7 +26,11 @@
 *   **Licensing:** Always check the license of fetched code.
 *   **Robots.txt:** Respect `Disallow` directives by default. User must explicitly authorize overrides for restricted paths.
 
-## 4. Security
+## 4. Agent Routing
+All agents follow the routing rules in `Library/Registry.md`.
+This is the single source of truth for who handles what.
+
+## 5. Security
 *   **No Secrets in Git:** Never commit API keys, tokens, or passwords.
 *   **Sanitization:** Fetcher must sanitize all external content (no script execution).
 *   **Code Review:** All AI-generated code must be reviewed by the **Checker** agent before execution.
