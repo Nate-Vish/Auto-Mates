@@ -41,4 +41,4 @@ Work_Space/
 - **One folder per project** — keep things organized
 - **Agents own their output** — each agent writes to the project folder it's working on
 - **Clean up when done** — archive or remove completed project folders
-- **Never commit directly from here** — Work_Space is for building, Version_Control is for shipping
+- **Never commit directly from here** — Work_Space is for building, Version_Control is for shipping. Use `/gitdude` to sync and commit, or do it manually

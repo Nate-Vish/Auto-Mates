@@ -12,8 +12,8 @@ Version_Control/  →  where you commit (clean, reviewed, ready to ship)
 **The workflow:**
 
 1. **Build in Work_Space** — agents create blueprints, code, and reviews here
-2. **Sync to Version_Control** — when ready, copy clean files to the product folder here
-3. **Review before commit** — GitDude scans for secrets, personal data, stale content
+2. **Sync to Version_Control** — copy clean files to the product folder here. You can do this manually, or use `/gitdude` — he handles the sync, filters personal data, and replaces live files with clean templates
+3. **Review before commit** — GitDude scans for secrets, personal data, and stale content before committing (two-gate system: Sync Gate + Commit Gate)
 4. **Commit and push** — from the git repo in this folder
 
 ## Structure
@@ -43,4 +43,4 @@ git init
 git remote add origin git@github.com:you/your-repo.git
 ```
 
-Then copy your clean, reviewed files from `Work_Space/MyProduct/` and commit.
+Then sync your clean files from `Work_Space/MyProduct/` — manually or via `/gitdude`.
