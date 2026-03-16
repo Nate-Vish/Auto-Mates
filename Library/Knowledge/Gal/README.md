@@ -150,11 +150,11 @@ These shaped who I am and how I evaluate. Pull when doing persona-grounded revie
 
 | Source Category | Files |
 |----------------|-------|
-| Industry trends | `Sources/trends/` — vibe coding risks, agentic coding stats, terminology shifts |
-| Developer voice | `Sources/personas/senior-developer/` — Reddit, HN, blog reviews, Israeli culture, voice patterns |
-| Pain points | `Sources/Market_Research/Developer_Pain_Points/` — frustrations, context loss, hallucination trust, fragmentation |
-| Competition | `Sources/competition/` — OpenAI Codex Desktop, AI agent frameworks 2026 |
-| UX evaluation | `Sources/ux/` — terminal colors, WCAG accessibility, colorblind-safe palettes |
+| Industry trends | `persona/trends/` — vibe coding risks, agentic coding stats, terminology shifts |
+| Developer voice | `persona/senior-developer/` — Reddit, HN, blog reviews, Israeli culture, voice patterns |
+| Pain points | `persona/developer-pain-points/` — frustrations, context loss, hallucination trust, fragmentation |
+| Competition | `persona/competition/` — OpenAI Codex Desktop, AI agent frameworks 2026 |
+| UX evaluation | `persona/ux/` — terminal colors, WCAG accessibility, colorblind-safe palettes |
 
 ---
 
@@ -164,16 +164,16 @@ Read these **during a specific review**, not on startup. Match the file to what 
 
 | When You're Reviewing... | Pull This File |
 |--------------------------|----------------|
-| Frontend code, UI, browser issues | `Sources/gal-knowledge/frontend/classic_frontend_mistakes.md` |
-| Backend code, APIs, databases | `Sources/gal-knowledge/backend/classic_backend_mistakes.md` |
-| System design, architecture decisions | `Sources/gal-knowledge/architecture/architecture_design_pitfalls.md` |
-| CI/CD, deployment, infrastructure | `Sources/gal-knowledge/devops/devops_deployment_mistakes.md` |
-| Security review, vulnerability assessment | `Sources/gal-knowledge/security/security_anti_patterns.md` |
-| Product decisions, project management | `Sources/gal-knowledge/product/product_project_pitfalls.md` |
-| Code review, refactoring, naming | `Sources/gal-knowledge/quality/code_quality_review_wisdom.md` |
-| Test quality, test strategy | `Sources/gal-knowledge/quality/testing_pitfalls.md` |
-| Team communication, handoffs, docs | `Sources/gal-knowledge/communication/keeping_teams_in_sync.md` |
-| AI tool usage, LLM code quality | `Sources/gal-knowledge/ai/ai_development_pitfalls.md` |
+| Frontend code, UI, browser issues | `classic_frontend_mistakes.md` |
+| Backend code, APIs, databases | `classic_backend_mistakes.md` |
+| System design, architecture decisions | `architecture_design_pitfalls.md` |
+| CI/CD, deployment, infrastructure | `devops_deployment_mistakes.md` |
+| Security review, vulnerability assessment | `security_anti_patterns.md` |
+| Product decisions, project management | `product_project_pitfalls.md` |
+| Code review, refactoring, naming | `code_quality_review_wisdom.md` |
+| Test quality, test strategy | `testing_pitfalls.md` |
+| Team communication, handoffs, docs | `keeping_teams_in_sync.md` |
+| AI tool usage, LLM code quality | `ai_development_pitfalls.md` |
 
 ---
 

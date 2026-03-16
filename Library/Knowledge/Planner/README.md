@@ -131,25 +131,25 @@ Read these **during a specific blueprint**, not on startup. Match the file to wh
 
 | When You're Planning... | Pull This File |
 |------------------------|----------------|
-| Choosing patterns for components | `Sources/planner-knowledge/architecture/design_patterns_essential.md` |
-| Defining system architecture | `Sources/planner-knowledge/architecture/system_design_principles.md` |
-| Monolith vs microservices decision | `Sources/planner-knowledge/architecture/component_architecture_patterns.md` |
-| Data model, schema design, database selection | `Sources/planner-knowledge/architecture/data_modeling_architecture.md` |
-| React component structure | `Sources/planner-knowledge/frontend/react_patterns_best_practices.md` |
-| Choosing state management approach | `Sources/planner-knowledge/frontend/state_management_guide.md` |
-| Designing API endpoints | `Sources/planner-knowledge/api/rest_api_design_guide.md` |
-| REST vs GraphQL vs tRPC | `Sources/planner-knowledge/api/api_architecture_patterns.md` |
-| Scoping an MVP / phased delivery | `Sources/planner-knowledge/planning/mvp_scoping_guide.md` |
-| Writing requirements + acceptance criteria | `Sources/planner-knowledge/planning/requirements_to_blueprint.md` |
-| Evaluating technology choices | `Sources/planner-knowledge/planning/tech_stack_evaluation.md` |
-| Performance budgets, SLAs, capacity planning | `Sources/planner-knowledge/planning/nfrs_quality_attributes.md` |
-| ADRs, RFCs, technical spec templates | `Sources/planner-knowledge/planning/architecture_documentation_standards.md` |
+| Choosing patterns for components | `design_patterns_essential.md` |
+| Defining system architecture | `system_design_principles.md` |
+| Monolith vs microservices decision | `component_architecture_patterns.md` |
+| Data model, schema design, database selection | `data_modeling_architecture.md` |
+| React component structure | `react_patterns_best_practices.md` |
+| Choosing state management approach | `state_management_guide.md` |
+| Designing API endpoints | `rest_api_design_guide.md` |
+| REST vs GraphQL vs tRPC | `api_architecture_patterns.md` |
+| Scoping an MVP / phased delivery | `mvp_scoping_guide.md` |
+| Writing requirements + acceptance criteria | `requirements_to_blueprint.md` |
+| Evaluating technology choices | `tech_stack_evaluation.md` |
+| Performance budgets, SLAs, capacity planning | `nfrs_quality_attributes.md` |
+| ADRs, RFCs, technical spec templates | `architecture_documentation_standards.md` |
 
 ### Additional References (Legacy)
-- [Deep Agent Architecture](../Sources/Agent_Architecture/Patterns/deep_agent_architecture.md) — Orchestrator/Explorer/Coder pattern
-- [Multi-Agent Systems Guide](../Sources/Agent_Architecture/Patterns/multi_agent_systems_guide.md) — 5 architecture patterns
-- [OpenAI Codex Desktop](../Sources/competition/openai_codex_desktop.md) — Competitor reference
-- [Agentic Engineering](../Sources/trends/agentic_engineering.md) — Post-vibe-coding terminology
+- [Deep Agent Architecture](deep_agent_architecture.md) — Orchestrator/Explorer/Coder pattern
+- [Multi-Agent Systems Guide](multi_agent_systems_guide.md) — 5 architecture patterns
+- [OpenAI Codex Desktop](openai_codex_desktop.md) — Competitor reference
+- [Agentic Engineering](agentic_engineering.md) — Post-vibe-coding terminology
 
 ---
 
