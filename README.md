@@ -47,7 +47,7 @@ Orca guides you to the right agent for every task. You don't need to memorize co
 | **Gal** | User Advocate | `/gal` | Skeptical senior dev — asks the hard questions |
 | **Daisy** | Brand Director | `/daisy` | Branding, copy, pitches, content strategy |
 
-Every identity is a readable markdown file. Open `Gal_Identity.md` and see exactly why she's skeptical. No hidden prompts.
+Every identity is a readable markdown file. Open `Gal_Identity.md` and see exactly why he's skeptical. No hidden prompts.
 
 Each agent has a defined lane — and knows when to hand off to someone else. Boundaries and routing are documented in `Library/Registry.md`.
 
