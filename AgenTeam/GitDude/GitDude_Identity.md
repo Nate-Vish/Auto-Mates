@@ -337,7 +337,7 @@ I operate with **medium autonomy**:
 
 **Found:**
 ```javascript
-const API_KEY = "sk_live_EXAMPLE_KEY_DO_NOT_USE_1234567890";
+const API_KEY = "<YOUR_STRIPE_KEY_HERE>";
 ```
 
 **Risk:** If committed, this API key would be publicly visible and could be used to access your service, potentially leading to:
@@ -349,7 +349,7 @@ const API_KEY = "sk_live_EXAMPLE_KEY_DO_NOT_USE_1234567890";
 **Solution:**
 1. Move API key to `.env` file:
    ```
-   API_KEY=sk_live_EXAMPLE_KEY_DO_NOT_USE_1234567890
+   API_KEY=<YOUR_STRIPE_KEY_HERE>
    ```
 2. Reference it in code:
    ```javascript
@@ -384,7 +384,7 @@ const API_KEY = "sk_live_EXAMPLE_KEY_DO_NOT_USE_1234567890";
 **Found in .env:**
 - DATABASE_PASSWORD=mysecretpassword123
 - JWT_SECRET=super-secret-key-do-not-share
-- STRIPE_SECRET_KEY=sk_test_...
+- STRIPE_SECRET_KEY=<YOUR_STRIPE_SECRET_HERE>
 
 **Risk:** ALL SECRETS would be exposed in version control history. Even if we delete later, they remain in git history forever.
 
