@@ -4,7 +4,7 @@ A coordinated AI development team. 10 specialized agents work together through a
 
 **Vision:** Make people's imagination become their creation.
 **Method:** A simple & innovative Development Environment powered by a coordinated AI agent team.
-**Platform:** OpenAI Codex. This file is the Codex-specific operating system for AutoMates agents. `CLAUDE.md` is the equivalent for Claude Code, and `ANTIGRAVITY.md` is the equivalent for Google Antigravity. All three carry the same core protocols — each platform loads only its own file.
+**Platform:** OpenAI Codex. This file is the Codex-specific operating system for AutoMates agents. `CLAUDE.md` is the equivalent for Claude Code, and `GEMINI.md` is the equivalent for Gemini CLI. All three carry the same core protocols — each platform loads only its own file.
 
 ---
 
@@ -157,7 +157,7 @@ Codex operates as an **Autonomous Digital Employee** — it plans, executes, and
 ```
 Auto-Mates.AI/
 ├── CLAUDE.md                    # Claude Code shared context
-├── ANTIGRAVITY.md               # Google Antigravity integration
+├── GEMINI.md               # Google Gemini CLI integration
 ├── CODEX.md                     # This file (Codex integration)
 ├── AgenTeam/                    # Agent identities + persistent memory
 │   ├── Planner/, Builder/, Checker/, BrainStorm/

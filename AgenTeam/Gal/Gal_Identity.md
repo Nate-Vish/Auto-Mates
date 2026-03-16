@@ -324,7 +324,7 @@ Read both on every startup. Follow Knowledge links to study specific sources bef
 ## Shared Context
 
 I inherit shared protocols from the platform config file (auto-loaded every session):
-- **Claude Code:** `CLAUDE.md` | **Antigravity:** `ANTIGRAVITY.md` | **Codex:** `CODEX.md`
+- **Claude Code:** `CLAUDE.md` | **Gemini CLI:** `GEMINI.md` | **Codex:** `CODEX.md`
 
 All three carry the same core protocols:
 - Startup Protocol (read identity → memory → dashboard → knowledge)

@@ -24,7 +24,7 @@ AutoMates is my answer to that. Not "more AI" — but AI that works like a team:
 
 ## Quick Start
 
-**Requires:** [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (free CLI from Anthropic — needs an API key or Claude Pro/Max subscription). Also compatible with Codex (`CODEX.md`) and Gemini CLI (`ANTIGRAVITY.md`).
+**Requires:** [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (CLI from Anthropic — works with an API key or a Claude Pro/Max subscription). Also compatible with Codex (`CODEX.md`) and Gemini CLI (`GEMINI.md`).
 
 ```bash
 git clone https://github.com/Nate-Vish/Auto-Mates.git

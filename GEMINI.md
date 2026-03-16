@@ -1,10 +1,10 @@
-# AutoMates.AI — Antigravity Integration
+# AutoMates.AI — Gemini CLI Integration
 
 A coordinated AI development team. 10 specialized agents work together through a shared file-based workspace with persistent memory.
 
 **Vision:** Make people's imagination become their creation.
 **Method:** A simple & innovative Development Environment powered by a coordinated AI agent team.
-**Platform:** Google Antigravity (Gemini). This file is the Antigravity-specific operating system for AutoMates agents. `CLAUDE.md` is the equivalent for Claude Code, and `CODEX.md` is the equivalent for OpenAI Codex. All three carry the same core protocols — each platform loads only its own file.
+**Platform:** Gemini CLI. This file is the Gemini CLI-specific operating system for AutoMates agents. `CLAUDE.md` is the equivalent for Claude Code, and `CODEX.md` is the equivalent for OpenAI Codex. All three carry the same core protocols — each platform loads only its own file.
 
 ---
 
@@ -113,7 +113,7 @@ All agents update `Dashboard/Brief.md` after significant work:
 
 ## Agent Teams (Claude Code Only)
 
-Agent Teams allow Orca to spawn parallel agents for coordinated work. This feature is **Claude Code only** (temporarily disabled while Anthropic fixes bugs). On Antigravity, agents work sequentially via `/summon` and `/handoff`.
+Agent Teams allow Orca to spawn parallel agents for coordinated work. This feature is **Claude Code only** (temporarily disabled while Anthropic fixes bugs). On Gemini CLI, agents work sequentially via `/summon` and `/handoff`.
 
 | Team | Agents | Purpose |
 |------|--------|---------|
@@ -123,19 +123,19 @@ Agent Teams allow Orca to spawn parallel agents for coordinated work. This featu
 
 ---
 
-## Antigravity-Specific Protocols
+## Gemini CLI-Specific Protocols
 
 ### Tasks
 - Every task should have a clear objective and acceptance criteria.
-- Antigravity may refer to tasks as "Missions" in its UI — these map to AutoMates tasks.
-- Execute all code and rendering within the secure Antigravity sandbox.
+- Gemini CLI may refer to tasks as "Missions" in its UI — these map to AutoMates tasks.
+- Execute all code and rendering within the secure Gemini CLI sandbox.
 
 ### Artifacts
-- When creating designs (logos, UI mockups, diagrams), generate a verifiable **Antigravity Artifact** preview.
+- When creating designs (logos, UI mockups, diagrams), generate a verifiable **Gemini CLI Artifact** preview.
 - Before saving to the workspace, use the AG Browser/Terminal to verify the artifact's quality.
 
 ### Sandbox
-- Use the Antigravity sandbox for code execution, rendering, and testing.
+- Use the Gemini CLI sandbox for code execution, rendering, and testing.
 - Results must be verified before committing to the shared workspace.
 
 ---
@@ -154,7 +154,7 @@ Agent Teams allow Orca to spawn parallel agents for coordinated work. This featu
 ```
 Auto-Mates.AI/
 ├── CLAUDE.md                    # Claude Code shared context
-├── ANTIGRAVITY.md               # This file (Antigravity integration)
+├── GEMINI.md               # This file (Gemini CLI integration)
 ├── CODEX.md                     # OpenAI Codex integration
 ├── AgenTeam/                    # Agent identities + persistent memory
 │   ├── Planner/, Builder/, Checker/, BrainStorm/
@@ -186,4 +186,4 @@ Auto-Mates.AI/
 
 ---
 
-*Updated by Orca (Orchestrator) for Antigravity Integration - 2026-02-28*
+*Updated by Orca (Orchestrator) for Gemini CLI Integration - 2026-02-28*

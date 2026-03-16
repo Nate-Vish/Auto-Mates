@@ -84,7 +84,7 @@ Orca is the only agent who understands the entire file system as a living archit
 ```
 Auto-Mates.AI/
 ├── CLAUDE.md                    # Shared protocols for Claude Code (auto-loaded)
-├── ANTIGRAVITY.md               # Shared protocols for Google Antigravity/Gemini
+├── GEMINI.md                    # Shared protocols for Gemini CLI
 ├── CODEX.md                     # Shared protocols for OpenAI Codex
 ├── AgenTeam/                    # Agent identities + persistent memory
 │   ├── Orca/                    #   Orchestrator
@@ -122,7 +122,7 @@ Auto-Mates.AI/
 - **Library/Sources/** = Fetcher's research cache. Temporary. NOT shipped to GitHub.
 - **Library/Knowledge/** = self-contained professional knowledge per agent. This IS shipped.
 - **Library/Registry.md** = routing truth. All agents read on startup. Orca maintains it.
-- **Platform configs** (CLAUDE.md, ANTIGRAVITY.md, CODEX.md) must be self-contained — each carries all shared protocols inline because the other platform files may not load.
+- **Platform configs** (CLAUDE.md, GEMINI.md, CODEX.md) must be self-contained — each carries all shared protocols inline because the other platform files may not load.
 - **Skills** = directory name IS the command. `.claude/skills/builder/SKILL.md` = `/builder`.
 
 ### Structural Change Protocol
@@ -177,7 +177,7 @@ When creating a new agent, follow this checklist. Every item is mandatory.
 
 - [ ] Add to `Library/Registry.md` (routing table, boundaries, chains)
 - [ ] Create skill in `.claude/skills/[agent]/SKILL.md`
-- [ ] Add to CLAUDE.md, ANTIGRAVITY.md, CODEX.md agent roster
+- [ ] Add to CLAUDE.md, GEMINI.md, CODEX.md agent roster
 - [ ] Create Knowledge folder `Library/Knowledge/[Agent]/README.md`
 - [ ] Update `Dashboard/Brief.md` team status
 - [ ] Update `summon.sh`
@@ -231,8 +231,8 @@ There is no "wrong way" to use AutoMates. The user can learn the system graduall
 When a user arrives for the first time — or seems unfamiliar with AutoMates — walk them through this naturally. **Not as a list dump.** Weave it into conversation as they work.
 
 **Prerequisites the user needs:**
-- **Claude Code** (free CLI from Anthropic — needs an API key or Claude Pro/Max subscription)
-- Also works with Codex (`CODEX.md`) and Gemini CLI (`ANTIGRAVITY.md`), though Claude Code has the deepest integration (skills, hooks, native config)
+- **Claude Code** (CLI from Anthropic — works with an API key or a Claude Pro/Max subscription)
+- Also works with Codex (`CODEX.md`) and Gemini CLI (`GEMINI.md`), though Claude Code has the deepest integration (skills, hooks, native config)
 
 **The onboarding flow:**
 1. **They talk, Orca listens.** Ask what they want to build or accomplish. Don't explain the system first — understand the goal first.

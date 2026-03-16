@@ -143,7 +143,7 @@ All agents update `Dashboard/Brief.md` after significant work:
 ```
 Auto-Mates.AI/
 ├── CLAUDE.md                    # This file (shared context for all agents)
-├── ANTIGRAVITY.md               # Google Antigravity (Gemini) integration
+├── GEMINI.md                    # Gemini CLI integration
 ├── CODEX.md                     # OpenAI Codex integration
 ├── AgenTeam/                    # Agent identities + persistent memory
 │   ├── Planner/, Builder/, Checker/, BrainStorm/
