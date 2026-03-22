@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoMates.AI — Where Your Imagination Becomes Creation</title>
+  <meta name="description" content="A coordinated AI development team. 10 specialized agents work together through shared memory and professional knowledge to turn your ideas into working software.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #e8e0f0;
+      line-height: 1.6;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      background: #1a1241;
+    }
+
+    /* ===== SUNRISE BACKGROUND ===== */
+    .sunrise-bg {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 0;
+      pointer-events: none;
+      transition: none;
+    }
+
+    .sky {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+    }
+
+    .sun-system {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .sun-rays-system {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .sun {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+
+    .sun-rays {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .sun-bloom {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .horizon-glow {
+      position: absolute;
+      left: 0; right: 0;
+      height: 40%;
+      bottom: 0;
+      pointer-events: none;
+    }
+
+    /* Mountain silhouettes — solid, in front of sun */
+    .mountains {
+      position: absolute;
+      left: 0; right: 0;
+      bottom: 0;
+      height: 35%;
+      pointer-events: none;
+    }
+
+    .mountain-layer {
+      position: absolute;
+      left: -5%; right: -5%;
+      bottom: 0;
+      width: 110%;
+    }
+
+    /* ===== CONTENT LAYER ===== */
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, #4a9ad4, #d4736a, #f0c75e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ===== LAYOUT ===== */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(74, 154, 212, 0.2), rgba(212, 115, 106, 0.2), rgba(240, 199, 94, 0.2), transparent);
+    }
+
+    /* ===== STICKY NAV ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(8, 6, 15, 0.65);
+      backdrop-filter: blur(24px) saturate(1.4);
+      -webkit-backdrop-filter: blur(24px) saturate(1.4);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      background: linear-gradient(135deg, #9068b0, #d4736a, #f0c75e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #b0a0be;
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.25s;
+    }
+    .nav-links a:hover { color: #f0e8f5; }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 64px;
+    }
+
+    .hero-content { position: relative; z-index: 1; }
+
+    .hero-logo { margin-bottom: -0.5rem; }
+
+    .hero-brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      background: linear-gradient(90deg, #6db8e8, #c080d0, #e8856a, #f5d06a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 12px rgba(212, 115, 106, 0.3));
+    }
+
+    .hero-tagline {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #a0c0e0, #d4b880);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-headline {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #9068b0, #d4736a, #e09a3a, #f0c75e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.5rem;
+      max-width: 750px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-subtitle {
+      font-size: 1.125rem;
+      color: #c0b0d0;
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.75rem 2rem;
+      border-radius: 100px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #e09a3a, #f0c75e);
+      color: #0f0a23;
+      box-shadow: 0 4px 20px rgba(224, 154, 58, 0.25);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #f0c75e, #ffe080);
+      box-shadow: 0 4px 30px rgba(240, 199, 94, 0.4);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: rgba(15, 10, 35, 0.5);
+      color: #e8e0f0;
+      border: 1px solid rgba(180, 160, 210, 0.4);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 2px 12px rgba(144, 104, 176, 0.12);
+    }
+    .btn-ghost:hover {
+      border-color: rgba(180, 160, 210, 0.7);
+      background: rgba(15, 10, 35, 0.65);
+      box-shadow: 0 4px 24px rgba(144, 104, 176, 0.25);
+      transform: translateY(-1px);
+    }
+
+    /* ===== WHAT IS ===== */
+    .what-is { text-align: center; }
+
+    .what-is-text {
+      font-size: 1.2rem;
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+    .what-is-text strong { font-weight: 500; }
+
+    /* ===== AGENTS ===== */
+    .agents-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    .agent-card {
+      background: rgba(15, 10, 35, 0.55);
+      border: 1px solid rgba(122, 82, 149, 0.2);
+      border-radius: 16px;
+      padding: 1.25rem 1.5rem;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .agent-card:hover {
+      border-color: rgba(122, 82, 149, 0.4);
+      background: rgba(15, 10, 35, 0.65);
+    }
+
+    .agent-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .agent-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .agent-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      flex: 1;
+    }
+
+    .agent-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .agent-role {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: #b0a0be;
+      letter-spacing: 0.05em;
+    }
+
+    .agent-desc {
+      font-size: 0.85rem;
+      color: #b0a0be;
+      line-height: 1.5;
+      padding-left: 3.75rem;
+    }
+
+    /* ===== FEATURES (Built Different) ===== */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+
+    .feature-card {
+      background: rgba(15, 10, 35, 0.55);
+      border: 1px solid rgba(122, 82, 149, 0.2);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .feature-card:hover {
+      border-color: rgba(224, 154, 58, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .feature-icon {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      display: block;
+      line-height: 1;
+    }
+    svg.feature-icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .feature-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .feature-desc {
+      font-size: 0.875rem;
+      color: #b0a0be;
+      line-height: 1.7;
+    }
+
+    /* ===== WORKSPACE (Expandable Folders) ===== */
+    .workspace-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+      align-items: start;
+    }
+
+    .folder-card {
+      background: rgba(15, 10, 35, 0.55);
+      border: 1px solid rgba(122, 82, 149, 0.2);
+      border-radius: 20px;
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .folder-card:hover {
+      border-color: rgba(122, 82, 149, 0.4);
+    }
+    .folder-card.open {
+      box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+    }
+
+    .folder-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.5rem;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.2s;
+    }
+    .folder-header:hover {
+      background: rgba(122, 82, 149, 0.08);
+    }
+
+    .folder-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .folder-info { flex: 1; }
+
+    .folder-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .folder-desc {
+      font-size: 0.8rem;
+      color: #b0a0be;
+      margin-top: 0.2rem;
+    }
+
+    .folder-toggle {
+      font-size: 1.2rem;
+      color: #b0a0be;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    .folder-card.open .folder-toggle {
+      transform: rotate(180deg);
+    }
+
+    .folder-contents {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .folder-card.open .folder-contents {
+      max-height: 800px;
+    }
+
+    .folder-items {
+      padding: 0 1rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .folder-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(122, 82, 149, 0.06);
+      border: 1px solid rgba(122, 82, 149, 0.1);
+      border-radius: 12px;
+      padding: 0.7rem 1rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .folder-item:hover {
+      border-color: rgba(122, 82, 149, 0.25);
+      background: rgba(122, 82, 149, 0.1);
+    }
+
+    .folder-item-icon {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      min-height: 36px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .folder-item-info { flex: 1; }
+
+    .folder-item-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .folder-item-desc {
+      font-size: 0.72rem;
+      color: #b0a0be;
+    }
+
+    /* ===== OSS CTA ===== */
+    .oss-cta { text-align: center; }
+
+    .oss-card {
+      background: rgba(15, 10, 35, 0.55);
+      border: 1px solid rgba(122, 82, 149, 0.2);
+      border-radius: 24px;
+      padding: 4rem 3rem;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .oss-card h2 { font-size: 2rem; margin-bottom: 0.5rem; }
+
+    .oss-subtitle {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #e09a3a;
+      margin-bottom: 1.5rem;
+    }
+
+    .oss-desc {
+      font-size: 1rem;
+      color: #b0a0be;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      padding: 2.5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-left, .footer-center, .footer-right { flex: 1; }
+    .footer-left { font-size: 0.8rem; color: #8a7a9a; }
+    .footer-center {
+      text-align: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      background: linear-gradient(90deg, #4a9ad4, #f0c75e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .footer-right { text-align: right; }
+    .footer-right a {
+      color: #8a7a9a;
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: color 0.25s;
+    }
+    .footer-right a:hover { color: #f0e8f5; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .features-grid { grid-template-columns: 1fr 1fr; }
+      .workspace-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 70px 0; }
+      .nav-links { gap: 1.25rem; }
+      .nav-links a { font-size: 0.8rem; }
+      .agents-grid { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: 1fr; }
+      .hero-headline { font-size: 2rem; }
+      .oss-card { padding: 3rem 1.5rem; }
+      .footer-inner { flex-direction: column; gap: 0.75rem; text-align: center; }
+      .footer-left, .footer-center, .footer-right { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== SUNRISE BACKGROUND ===== -->
+  <div class="sunrise-bg">
+    <div class="sky"></div>
+    <div class="horizon-glow"></div>
+    <!-- Sun core + bloom: z-index 1 (BEHIND mountains) -->
+    <div class="sun-system" style="z-index: 1;">
+      <div class="sun-bloom"></div>
+      <div class="sun"></div>
+    </div>
+    <!-- Mountains: z-index 2 (SOLID, fully opaque, in front of sun) -->
+    <div class="mountains" style="z-index: 2;">
+      <!-- Back layer: distant peaks -->
+      <svg class="mountain-layer" id="mountain-back" viewBox="0 0 1200 300" preserveAspectRatio="none" style="height: 75%;">
+        <path d="M0,300 L0,180 Q50,120 100,155 Q150,105 200,140 Q280,60 360,120 Q400,90 440,110 Q500,50 560,95 Q620,40 680,80 Q740,55 800,100 Q860,70 920,90 Q980,45 1040,85 Q1100,60 1140,100 Q1180,80 1200,110 L1200,300 Z" fill="currentColor"/>
+      </svg>
+      <!-- Mid layer: rolling hills -->
+      <svg class="mountain-layer" id="mountain-mid" viewBox="0 0 1200 300" preserveAspectRatio="none" style="height: 55%;">
+        <path d="M0,300 L0,200 Q60,150 120,180 Q180,130 240,160 Q320,90 400,140 Q460,100 520,130 Q580,80 640,120 Q720,70 800,115 Q860,85 920,110 Q1000,60 1080,100 Q1140,80 1200,120 L1200,300 Z" fill="currentColor"/>
+      </svg>
+      <!-- Front layer: close foreground -->
+      <svg class="mountain-layer" id="mountain-front" viewBox="0 0 1200 300" preserveAspectRatio="none" style="height: 40%;">
+        <path d="M0,300 L0,220 Q80,180 160,210 Q240,160 320,195 Q400,150 480,180 Q540,155 600,175 Q680,140 760,170 Q840,145 920,165 Q1000,140 1080,160 Q1150,150 1200,170 L1200,300 Z" fill="currentColor"/>
+      </svg>
+    </div>
+    <!-- Sun rays: z-index 3 (ABOVE mountains — hints sun is coming) -->
+    <div class="sun-rays-system" style="z-index: 3;">
+      <div class="sun-rays"></div>
+    </div>
+  </div>
+
+  <!-- ===== CONTENT ===== -->
+  <div class="content">
+
+    <!-- Nav -->
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo">AM</a>
+        <ul class="nav-links">
+          <li><a href="#agents">Agents</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#workspace">Structure</a></li>
+          <li><a href="https://github.com/Nate-Vish/Auto-Mates" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-logo">
+          <svg width="240" height="240" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="hero-am" x1="0%" y1="50%" x2="100%" y2="50%">
+                <stop offset="0%" style="stop-color:#9068b0"/>
+                <stop offset="40%" style="stop-color:#d4736a"/>
+                <stop offset="75%" style="stop-color:#e09a3a"/>
+                <stop offset="100%" style="stop-color:#f0c75e"/>
+              </linearGradient>
+              <linearGradient id="hero-frame" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#7a5295;stop-opacity:0.55"/>
+                <stop offset="50%" style="stop-color:#d4736a;stop-opacity:0.35"/>
+                <stop offset="100%" style="stop-color:#f0c75e;stop-opacity:0.55"/>
+              </linearGradient>
+              <linearGradient id="hero-facet" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#7a5295;stop-opacity:0.06"/>
+                <stop offset="100%" style="stop-color:#d4736a;stop-opacity:0.03"/>
+              </linearGradient>
+              <filter id="hero-glow-f">
+                <feGaussianBlur stdDeviation="2" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <polygon points="150,16 245,62 245,178 150,224 55,178 55,62" fill="url(#hero-facet)" stroke="url(#hero-frame)" stroke-width="1.8"/>
+            <line x1="150" y1="16" x2="150" y2="224" stroke="url(#hero-frame)" stroke-width="0.3" opacity="0.06"/>
+            <line x1="55" y1="62" x2="245" y2="178" stroke="url(#hero-frame)" stroke-width="0.3" opacity="0.05"/>
+            <line x1="245" y1="62" x2="55" y2="178" stroke="url(#hero-frame)" stroke-width="0.3" opacity="0.05"/>
+            <text x="150" y="148" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="80" font-weight="800" fill="url(#hero-am)" letter-spacing="2">AM</text>
+            <circle cx="150" cy="16" r="4" fill="#9068b0" filter="url(#hero-glow-f)"/>
+            <circle cx="245" cy="62" r="4" fill="#d4736a" filter="url(#hero-glow-f)"/>
+            <circle cx="245" cy="178" r="4" fill="#f0c75e" filter="url(#hero-glow-f)"/>
+            <circle cx="150" cy="224" r="4" fill="#d4736a" filter="url(#hero-glow-f)"/>
+            <circle cx="55" cy="178" r="4" fill="#7a5295" filter="url(#hero-glow-f)"/>
+            <circle cx="55" cy="62" r="4" fill="#5a3a70" filter="url(#hero-glow-f)"/>
+          </svg>
+        </div>
+        <div class="hero-brand">AutoMates</div>
+        <div class="hero-tagline">connect the dots</div>
+        <h1 class="hero-headline">Where your imagination becomes creation</h1>
+        <p class="hero-subtitle">A coordinated AI development team that turns your ideas into structured, working software.</p>
+        <div class="hero-ctas">
+          <a href="https://github.com/Nate-Vish/Auto-Mates" target="_blank" rel="noopener" class="btn btn-primary">Star on GitHub</a>
+          <a href="#agents" class="btn btn-ghost">See the Agents</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- What Is -->
+    <section class="what-is">
+      <div class="container">
+        <p class="what-is-text">
+          <strong>10 AI agents. Shared memory. Professional knowledge.</strong><br>
+          One team, one codebase. You're the pilot &mdash; they're the crew.<br>
+          Each agent brings a specialty. Together, they build what you imagine.
+        </p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Agents -->
+    <section id="agents">
+      <div class="container">
+        <h2>Meet the Agents</h2>
+        <div class="agents-grid">
+          <div class="agent-card">
+            <div class="agent-card-header">
+              <img src="Icons/Orca_Logo.png" alt="Orca" class="agent-icon">
+              <div class="agent-info">
+                <span class="agent-name">Orca</span>
+                <span class="agent-role">Orchestrator</span>
+              </div>
+            </div>
+            <p class="agent-desc">Guides you through AutoMates, designs agents, leads the team</p>
+          </div>
+          <div class="agent-card">
+            <div class="agent-card-header">
+              <img src="Icons/Planner.png" alt="Planner" class="agent-icon">
+              <div class="agent-info">
+                <span class="agent-name">Planner</span>
+                <span class="agent-role">Architect</span>
+              </div>
+            </div>
+            <p class="agent-desc">Creates technical blueprints, roadmaps, and project plans</p>
+          </div>
+          <div class="agent-card">
+            <div class="agent-card-header">
+              <img src="Icons/Builder.png" alt="Builder" class="agent-icon">
+              <div class="agent-info">
+                <span class="agent-name">Builder</span>
+                <span class="agent-role">Engineer</span>
+              </div>
+            </div>
+            <p class="agent-desc">Writes production code, implements features, ships products</p>
+          </div>
+          <div class="agent-card">
+            <div class="agent-card-header">
+              <img src="Icons/Checker.png" alt="Checker" class="agent-icon">
+              <div class="agent-info">
+                <span class="agent-name">Checker</span>
+                <span class="agent-role">Auditor</span>
+              </div>
+            </div>
+            <p class="agent-desc">Adversarial security review, bug hunting, quality gates</p>
+          </div>
+          <div class="agent-card">
+            <div class="agent-card-header">
+              <img src="Icons/BrainStorm.png" alt="BrainStorm" class="agent-icon">
+              <div class="agent-info">
+                <span class="agent-name">BrainStorm</span>
+                <span class="agent-role">Knowledge Graph</span>
+              </div>
+            </div>
+            <p class="agent-desc">Explores ideas, logs thoughts, connects concepts across domains</p>
+          </div>
+          <div class="agent-card">
+            <div class="agent-card-header">
+              <img src="Icons/Legal.png" alt="Legal" class="agent-icon">
+              <div class="agent-info">
+                <span class="agent-name">Legal</span>
+                <span class="agent-role">Compliance</span>
+              </div>
+            </div>
+            <p class="agent-desc">Checks licenses, privacy, regulations, governance</p>
+          </div>
+          <div class="agent-card">
+            <div class="agent-card-header">
+              <img src="Icons/GitDude.png" alt="GitDude" class="agent-icon">
+              <div class="agent-info">
+                <span class="agent-name">GitDude</span>
+                <span class="agent-role">Release Manager</span>
+              </div>
+            </div>
+            <p class="agent-desc">Version control, security scanning, commits, releases</p>
+          </div>
+          <div class="agent-card">
+            <div class="agent-card-header">
+              <img src="Icons/Fetcher.png" alt="Fetcher" class="agent-icon">
+              <div class="agent-info">
+                <span class="agent-name">Fetcher</span>
+                <span class="agent-role">Researcher</span>
+              </div>
+            </div>
+            <p class="agent-desc">Gathers knowledge, organizes research, finds sources</p>
+          </div>
+          <div class="agent-card">
+            <div class="agent-card-header">
+              <img src="Icons/Gal_Logo.png" alt="Gal" class="agent-icon">
+              <div class="agent-info">
+                <span class="agent-name">Gal</span>
+                <span class="agent-role">User Advocate</span>
+              </div>
+            </div>
+            <p class="agent-desc">Skeptical senior dev &mdash; asks the hard questions</p>
+          </div>
+          <div class="agent-card">
+            <div class="agent-card-header">
+              <img src="Icons/Daisy_Logo.png" alt="Daisy" class="agent-icon">
+              <div class="agent-info">
+                <span class="agent-name">Daisy</span>
+                <span class="agent-role">Brand Director</span>
+              </div>
+            </div>
+            <p class="agent-desc">Branding, copy, pitches, content strategy, design direction</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Built Different -->
+    <section id="features">
+      <div class="container">
+        <h2>Built Different</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <svg class="feature-icon" width="28" height="28" viewBox="0 0 28 28"><circle cx="6" cy="6" r="3" fill="#4a9ad4"/><circle cx="22" cy="6" r="3" fill="#d4736a"/><circle cx="14" cy="22" r="3" fill="#f0c75e"/><line x1="6" y1="6" x2="22" y2="6" stroke="#4a9ad4" stroke-width="1" opacity="0.5"/><line x1="22" y1="6" x2="14" y2="22" stroke="#d4736a" stroke-width="1" opacity="0.5"/><line x1="14" y1="22" x2="6" y2="6" stroke="#f0c75e" stroke-width="1" opacity="0.5"/></svg>
+            <h3 class="feature-title">Connecting the Dots</h3>
+            <p class="feature-desc">New AI tools, MCPs, repos, and skills drop daily. AutoMates reviews, filters, and integrates what's actually worth your time &mdash; so you don't burn out figuring it out yourself.</p>
+          </div>
+          <div class="feature-card">
+            <svg class="feature-icon" width="28" height="28" viewBox="0 0 28 28"><rect x="4" y="6" width="20" height="16" rx="2" fill="none" stroke="#9068b0" stroke-width="1.5"/><line x1="8" y1="11" x2="20" y2="11" stroke="#9068b0" stroke-width="1" opacity="0.6"/><line x1="8" y1="15" x2="16" y2="15" stroke="#9068b0" stroke-width="1" opacity="0.4"/><circle cx="21" cy="5" r="4" fill="none" stroke="#f0c75e" stroke-width="1.5"/><line x1="21" y1="3" x2="21" y2="5" stroke="#f0c75e" stroke-width="1.2"/><line x1="21" y1="5" x2="23" y2="5" stroke="#f0c75e" stroke-width="1.2"/></svg>
+            <h3 class="feature-title">Learn First</h3>
+            <p class="feature-desc">Agents research before they code. Fetcher gathers sources, agents study them. Like a senior dev reading the docs &mdash; not guessing.</p>
+          </div>
+          <div class="feature-card">
+            <svg class="feature-icon" width="28" height="28" viewBox="0 0 28 28"><rect x="5" y="4" width="18" height="20" rx="2" fill="none" stroke="#4ae080" stroke-width="1.5" opacity="0.7"/><line x1="9" y1="9" x2="19" y2="9" stroke="#4ae080" stroke-width="1" opacity="0.5"/><line x1="9" y1="13" x2="17" y2="13" stroke="#4ae080" stroke-width="1" opacity="0.5"/><line x1="9" y1="17" x2="15" y2="17" stroke="#4ae080" stroke-width="1" opacity="0.5"/><circle cx="22" cy="8" r="4" fill="none" stroke="#4ae080" stroke-width="1.5"/><path d="M20.5 8l1 1 2.5-2.5" fill="none" stroke="#4ae080" stroke-width="1.2" stroke-linecap="round"/></svg>
+            <h3 class="feature-title">Transparent</h3>
+            <p class="feature-desc">Every agent identity is a readable file. Every decision is traceable in plain markdown. No black boxes, no hidden prompts.</p>
+          </div>
+          <div class="feature-card">
+            <svg class="feature-icon" width="28" height="28" viewBox="0 0 28 28"><path d="M4 20V8c0-1 0.5-2 2-2h6l2 2h8c1.5 0 2 1 2 2v10c0 1-0.5 2-2 2H6c-1.5 0-2-1-2-2z" fill="none" stroke="#e09a3a" stroke-width="1.5"/><line x1="10" y1="13" x2="18" y2="13" stroke="#f0c75e" stroke-width="1" opacity="0.6"/><line x1="10" y1="16" x2="16" y2="16" stroke="#f0c75e" stroke-width="1" opacity="0.4"/></svg>
+            <h3 class="feature-title">Real Knowledge</h3>
+            <p class="feature-desc">Professional topic files across 10 agents. Not just role descriptions &mdash; actual expertise. Agents arrive with real craft on day one.</p>
+          </div>
+          <div class="feature-card">
+            <svg class="feature-icon" width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="12" r="8" fill="none" stroke="#d4736a" stroke-width="1.5"/><path d="M11 11c0.5-1 1.5-2 3-2s2.5 1 3 2" fill="none" stroke="#d4736a" stroke-width="1.2"/><line x1="11" y1="15" x2="17" y2="15" stroke="#d4736a" stroke-width="1.2"/><text x="14" y="25" text-anchor="middle" font-size="6" font-family="sans-serif" fill="#d4736a" font-weight="bold">?!</text></svg>
+            <h3 class="feature-title">Built-In Skepticism</h3>
+            <p class="feature-desc">Gal exists to question everything. The skeptical senior dev who catches what you missed. AI that reviews AI &mdash; before it ships.</p>
+          </div>
+          <div class="feature-card">
+            <svg class="feature-icon" width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="11" r="7" fill="none" stroke="#4a9ad4" stroke-width="1.5"/><path d="M10 10c1-2 3-3 4-3s3 1 4 3" fill="none" stroke="#4a9ad4" stroke-width="1"/><circle cx="11" cy="10" r="1" fill="#4a9ad4"/><circle cx="17" cy="10" r="1" fill="#4a9ad4"/><path d="M11 14c1 1.5 5 1.5 6 0" fill="none" stroke="#4a9ad4" stroke-width="1" stroke-linecap="round"/><path d="M8 21l6-4 6 4" fill="none" stroke="#f0c75e" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <h3 class="feature-title">Orca Guides You</h3>
+            <p class="feature-desc">No setup guide needed. Orca meets you where you are, orchestrates the team, and walks you through everything. You don't learn AutoMates &mdash; AutoMates learns you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Workspace Structure -->
+    <section id="workspace">
+      <div class="container">
+        <h2>The Structure</h2>
+        <div class="workspace-grid">
+
+          <!-- AgenTeam -->
+          <div class="folder-card" id="folder-agenteam">
+            <div class="folder-header" onclick="toggleFolder('folder-agenteam')">
+              <img src="Icons/Agents.png" alt="AgenTeam" class="folder-icon">
+              <div class="folder-info">
+                <div class="folder-name">AgenTeam</div>
+                <div class="folder-desc">Agent identities + persistent memory</div>
+              </div>
+              <span class="folder-toggle">&#9662;</span>
+            </div>
+            <div class="folder-contents">
+              <div class="folder-items">
+                <div class="folder-item">
+                  <img src="Icons/Orca_Logo.png" alt="Orca" class="folder-item-icon">
+                  <div class="folder-item-info">
+                    <div class="folder-item-name">Orca</div>
+                    <div class="folder-item-desc">Orchestrator &mdash; routes tasks, leads the team</div>
+                  </div>
+                </div>
+                <div class="folder-item">
+                  <img src="Icons/Planner.png" alt="Planner" class="folder-item-icon">
+                  <div class="folder-item-info">
+                    <div class="folder-item-name">Planner</div>
+                    <div class="folder-item-desc">Architect &mdash; blueprints and project plans</div>
+                  </div>
+                </div>
+                <div class="folder-item">
+                  <img src="Icons/Builder.png" alt="Builder" class="folder-item-icon">
+                  <div class="folder-item-info">
+                    <div class="folder-item-name">Builder</div>
+                    <div class="folder-item-desc">Engineer &mdash; writes production code</div>
+                  </div>
+                </div>
+                <div class="folder-item">
+                  <img src="Icons/Checker.png" alt="Checker" class="folder-item-icon">
+                  <div class="folder-item-info">
+                    <div class="folder-item-name">Checker</div>
+                    <div class="folder-item-desc">Auditor &mdash; security review and quality gates</div>
+                  </div>
+                </div>
+                <div class="folder-item">
+                  <img src="Icons/BrainStorm.png" alt="BrainStorm" class="folder-item-icon">
+                  <div class="folder-item-info">
+                    <div class="folder-item-name">BrainStorm</div>
+                    <div class="folder-item-desc">Knowledge Graph &mdash; ideas and connections</div>
+                  </div>
+                </div>
+                <div class="folder-item">
+                  <img src="Icons/Legal.png" alt="Legal" class="folder-item-icon">
+                  <div class="folder-item-info">
+                    <div class="folder-item-name">Legal</div>
+                    <div class="folder-item-desc">Compliance &mdash; licenses, privacy, governance</div>
+                  </div>
+                </div>
+                <div class="folder-item">
+                  <img src="Icons/GitDude.png" alt="GitDude" class="folder-item-icon">
+                  <div class="folder-item-info">
+                    <div class="folder-item-name">GitDude</div>
+                    <div class="folder-item-desc">Release Manager &mdash; version control, releases</div>
+                  </div>
+                </div>
+                <div class="folder-item">
+                  <img src="Icons/Gal_Logo.png" alt="Gal" class="folder-item-icon">
+                  <div class="folder-item-info">
+                    <div class="folder-item-name">Gal</div>
+                    <div class="folder-item-desc">User Advocate &mdash; skeptical senior dev</div>
+                  </div>
+                </div>
+                <div class="folder-item">
+                  <img src="Icons/Daisy_Logo.png" alt="Daisy" class="folder-item-icon">
+                  <div class="folder-item-info">
+                    <div class="folder-item-name">Daisy</div>
+                    <div class="folder-item-desc">Brand Director &mdash; branding, copy, pitches</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Library -->
+          <div class="folder-card" id="folder-library">
+            <div class="folder-header" onclick="toggleFolder('folder-library')">
+              <img src="Icons/Library.png" alt="Library" class="folder-icon">
+              <div class="folder-info">
+                <div class="folder-name">Library</div>
+                <div class="folder-desc">Knowledge, research, and routing</div>
+              </div>
+              <span class="folder-toggle">&#9662;</span>
+            </div>
+            <div class="folder-contents">
+              <div class="folder-items">
+                <div class="folder-item">
+                  <svg class="folder-item-icon" viewBox="0 0 36 36"><rect rx="6" width="36" height="36" fill="#1a3a5a"/><path d="M10 10h16v2H10zM10 15h12v2H10zM10 20h14v2H10zM10 25h10v2H10z" fill="#4ac0e0" opacity="0.8"/><circle cx="27" cy="11" r="3" fill="#f0c75e"/><path d="M25.5 24l1.5-2.5 1.5 2.5z" fill="#f0c75e"/></svg>
+                  <div class="folder-item-info">
+                    <div class="folder-item-name">Knowledge/</div>
+                    <div class="folder-item-desc">Per-agent professional expertise &mdash; curated topic files</div>
+                  </div>
+                </div>
+                <div class="folder-item">
+                  <img src="Icons/Sources.png" alt="Sources" class="folder-item-icon">
+                  <div class="folder-item-info">
+                    <div class="folder-item-name">Sources/</div>
+                    <div class="folder-item-desc">Research library &mdash; agents study here before working</div>
+                  </div>
+                </div>
+                <div class="folder-item">
+                  <img src="Icons/Fetcher.png" alt="Fetcher" class="folder-item-icon">
+                  <div class="folder-item-info">
+                    <div class="folder-item-name">Fetcher/</div>
+                    <div class="folder-item-desc">Research agent &mdash; lives near Sources for fast access</div>
+                  </div>
+                </div>
+                <div class="folder-item">
+                  <svg class="folder-item-icon" viewBox="0 0 36 36"><rect rx="6" width="36" height="36" fill="#2a1a4a"/><circle cx="18" cy="14" r="5" fill="none" stroke="#9068b0" stroke-width="1.5"/><line x1="18" y1="19" x2="18" y2="28" stroke="#9068b0" stroke-width="1.5"/><line x1="12" y1="23" x2="18" y2="28" stroke="#d4736a" stroke-width="1"/><line x1="24" y1="23" x2="18" y2="28" stroke="#f0c75e" stroke-width="1"/><circle cx="12" cy="23" r="2" fill="#d4736a"/><circle cx="24" cy="23" r="2" fill="#f0c75e"/><circle cx="18" cy="28" r="2" fill="#9068b0"/></svg>
+                  <div class="folder-item-info">
+                    <div class="folder-item-name">Registry.md</div>
+                    <div class="folder-item-desc">Agent routing truth &mdash; who handles what</div>
+                  </div>
+                </div>
+                <div class="folder-item">
+                  <svg class="folder-item-icon" viewBox="0 0 36 36"><rect rx="6" width="36" height="36" fill="#2a2015"/><rect x="9" y="8" width="18" height="20" rx="2" fill="none" stroke="#e09a3a" stroke-width="1.5"/><line x1="13" y1="13" x2="23" y2="13" stroke="#f0c75e" stroke-width="1.2"/><line x1="13" y1="17" x2="20" y2="17" stroke="#e09a3a" stroke-width="1"/><line x1="13" y1="21" x2="21" y2="21" stroke="#e09a3a" stroke-width="1"/><path d="M22 19l2 2 4-4" fill="none" stroke="#4ae080" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  <div class="folder-item-info">
+                    <div class="folder-item-name">Rules.md</div>
+                    <div class="folder-item-desc">Project constraints and guardrails</div>
+                  </div>
+                </div>
+                <div class="folder-item">
+                  <svg class="folder-item-icon" viewBox="0 0 36 36"><rect rx="6" width="36" height="36" fill="#1a1530"/><rect x="8" y="10" width="8" height="8" rx="2" fill="#d4736a" opacity="0.7"/><rect x="20" y="10" width="8" height="8" rx="2" fill="#4a9ad4" opacity="0.7"/><rect x="8" y="22" width="8" height="6" rx="2" fill="#f0c75e" opacity="0.7"/><rect x="20" y="22" width="8" height="6" rx="2" fill="#9068b0" opacity="0.7"/><line x1="16" y1="14" x2="20" y2="14" stroke="#e8e0f0" stroke-width="0.8" opacity="0.4"/><line x1="12" y1="18" x2="12" y2="22" stroke="#e8e0f0" stroke-width="0.8" opacity="0.4"/><line x1="24" y1="18" x2="24" y2="22" stroke="#e8e0f0" stroke-width="0.8" opacity="0.4"/></svg>
+                  <div class="folder-item-info">
+                    <div class="folder-item-name">Arsenal.yaml</div>
+                    <div class="folder-item-desc">Tools, skills, MCPs, CLIs &mdash; shared registry for all agents</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dashboard -->
+          <div class="folder-card" id="folder-dashboard">
+            <div class="folder-header" onclick="toggleFolder('folder-dashboard')">
+              <img src="Icons/Dashboard.png" alt="Dashboard" class="folder-icon">
+              <div class="folder-info">
+                <div class="folder-name">Dashboard</div>
+                <div class="folder-desc">Where agents coordinate</div>
+              </div>
+              <span class="folder-toggle">&#9662;</span>
+            </div>
+            <div class="folder-contents">
+              <div class="folder-items">
+                <div class="folder-item">
+                  <svg class="folder-item-icon" viewBox="0 0 36 36"><rect rx="6" width="36" height="36" fill="#0f1a30"/><rect x="8" y="6" width="20" height="24" rx="3" fill="none" stroke="#4a9ad4" stroke-width="1.5"/><circle cx="18" cy="14" r="4" fill="none" stroke="#4a9ad4" stroke-width="1.2"/><line x1="18" y1="10" x2="18" y2="14" stroke="#f0c75e" stroke-width="1"/><line x1="18" y1="14" x2="21" y2="13" stroke="#f0c75e" stroke-width="1"/><line x1="12" y1="21" x2="24" y2="21" stroke="#4a9ad4" stroke-width="0.8" opacity="0.5"/><line x1="12" y1="24" x2="20" y2="24" stroke="#4a9ad4" stroke-width="0.8" opacity="0.5"/><circle cx="26" cy="8" r="3" fill="#4ae080"/></svg>
+                  <div class="folder-item-info">
+                    <div class="folder-item-name">Brief.md</div>
+                    <div class="folder-item-desc">Project state, team status, recent activity</div>
+                  </div>
+                </div>
+                <div class="folder-item">
+                  <img src="Icons/Workspace.png" alt="Work_Space" class="folder-item-icon">
+                  <div class="folder-item-info">
+                    <div class="folder-item-name">Work_Space/</div>
+                    <div class="folder-item-desc">Active projects, blueprints, brand assets</div>
+                  </div>
+                </div>
+                <div class="folder-item">
+                  <img src="Icons/Versions.png" alt="Version_Control" class="folder-item-icon">
+                  <div class="folder-item-info">
+                    <div class="folder-item-name">Version_Control/</div>
+                    <div class="folder-item-desc">Git repos &mdash; one per product</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Open Source CTA -->
+    <section class="oss-cta">
+      <div class="container">
+        <div class="oss-card">
+          <h2>Built in the Open</h2>
+          <p class="oss-desc">AutoMates is open source. Star the repo, fork it, make it yours. The best tools are the ones you can shape.</p>
+          <a href="https://github.com/Nate-Vish/Auto-Mates" target="_blank" rel="noopener" class="btn btn-primary">Star on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-left">Built by Nathan Hai Vishnevski</div>
+          <div class="footer-center">AutoMates.AI</div>
+          <div class="footer-right"><a href="https://github.com/Nate-Vish/Auto-Mates" target="_blank" rel="noopener">GitHub</a></div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // ===== FOLDER EXPAND/COLLAPSE =====
+    function toggleFolder(id) {
+      document.getElementById(id).classList.toggle('open');
+    }
+
+    // ===== SUNRISE SCROLL ANIMATION =====
+    var sky = document.querySelector('.sky');
+    var sunSystem = document.querySelector('.sun-system');
+    var sunRaysSystem = document.querySelector('.sun-rays-system');
+    var sun = document.querySelector('.sun');
+    var sunRays = document.querySelector('.sun-rays');
+    var sunBloom = document.querySelector('.sun-bloom');
+    var horizonGlow = document.querySelector('.horizon-glow');
+    var mountainBack = document.getElementById('mountain-back');
+    var mountainMid = document.getElementById('mountain-mid');
+    var mountainFront = document.getElementById('mountain-front');
+    var ticking = false;
+
+    function lerp(a, b, t) { return a + (b - a) * t; }
+
+    function lerpColor(c1, c2, t) {
+      return [
+        Math.round(lerp(c1[0], c2[0], t)),
+        Math.round(lerp(c1[1], c2[1], t)),
+        Math.round(lerp(c1[2], c2[2], t))
+      ];
+    }
+
+    function rgb(c) { return 'rgb(' + c[0] + ',' + c[1] + ',' + c[2] + ')'; }
+    function rgba(c, a) { return 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + a.toFixed(3) + ')'; }
+
+    // ===== 9-STAGE REALISTIC SUNRISE COLOR ENGINE =====
+    var skyStages = [
+      { p: 0.00, top: [26, 18, 65],    mid: [106, 50, 100],  bot: [200, 100, 70] },
+      { p: 0.08, top: [22, 22, 72],    mid: [80, 45, 105],   bot: [195, 95, 75] },
+      { p: 0.18, top: [28, 30, 82],    mid: [100, 55, 108],  bot: [210, 110, 65] },
+      { p: 0.28, top: [30, 40, 90],    mid: [115, 65, 100],  bot: [225, 145, 55] },
+      { p: 0.38, top: [38, 60, 120],   mid: [155, 80, 90],   bot: [235, 170, 55] },
+      { p: 0.50, top: [50, 95, 165],   mid: [180, 110, 80],  bot: [240, 185, 60] },
+      { p: 0.62, top: [65, 120, 190],  mid: [195, 140, 85],  bot: [245, 200, 70] },
+      { p: 0.78, top: [80, 145, 210],  mid: [210, 170, 100], bot: [248, 215, 90] },
+      { p: 1.00, top: [105, 168, 225], mid: [220, 200, 140], bot: [252, 230, 130] }
+    ];
+
+    var sunStages = [
+      { p: 0.00, color: [220, 120, 50] },
+      { p: 0.15, color: [230, 145, 55] },
+      { p: 0.30, color: [240, 170, 65] },
+      { p: 0.45, color: [250, 200, 85] },
+      { p: 0.60, color: [255, 225, 120] },
+      { p: 0.80, color: [255, 240, 170] },
+      { p: 1.00, color: [255, 248, 200] }
+    ];
+
+    // Mountain colors: back=haziest/lightest, front=darkest (aerial perspective)
+    var mountainStages = [
+      { p: 0.00, back: [55, 35, 75],  mid: [32, 18, 48],  front: [14, 8, 25] },
+      { p: 0.30, back: [75, 55, 95],  mid: [45, 30, 60],  front: [20, 14, 35] },
+      { p: 0.50, back: [100, 85, 125], mid: [65, 52, 82],  front: [32, 25, 48] },
+      { p: 0.75, back: [130, 120, 155], mid: [85, 78, 108],  front: [48, 42, 62] },
+      { p: 1.00, back: [155, 148, 175], mid: [105, 98, 128], front: [60, 55, 78] }
+    ];
+
+    function interpStages(stages, p, key) {
+      if (p <= stages[0].p) return key ? stages[0][key] : stages[0].color;
+      if (p >= stages[stages.length - 1].p) return key ? stages[stages.length - 1][key] : stages[stages.length - 1].color;
+      for (var i = 0; i < stages.length - 1; i++) {
+        if (p >= stages[i].p && p <= stages[i + 1].p) {
+          var t = (p - stages[i].p) / (stages[i + 1].p - stages[i].p);
+          t = t * t * (3 - 2 * t); // smoothstep
+          var a = key ? stages[i][key] : stages[i].color;
+          var b = key ? stages[i + 1][key] : stages[i + 1].color;
+          return lerpColor(a, b, t);
+        }
+      }
+      return key ? stages[stages.length - 1][key] : stages[stages.length - 1].color;
+    }
+
+    // Generate conic-gradient for sun rays
+    function buildRays(color, opacity, numRays) {
+      var stops = [];
+      var sliceAngle = 360 / numRays;
+      for (var i = 0; i < numRays; i++) {
+        var startAngle = i * sliceAngle;
+        var midAngle = startAngle + sliceAngle * 0.15;
+        var peakAngle = startAngle + sliceAngle * 0.5;
+        var fadeAngle = startAngle + sliceAngle * 0.85;
+        var endAngle = startAngle + sliceAngle;
+        stops.push(rgba(color, 0) + ' ' + startAngle + 'deg');
+        stops.push(rgba(color, opacity * 0.6) + ' ' + midAngle + 'deg');
+        stops.push(rgba(color, opacity) + ' ' + peakAngle + 'deg');
+        stops.push(rgba(color, opacity * 0.6) + ' ' + fadeAngle + 'deg');
+        stops.push(rgba(color, 0) + ' ' + endAngle + 'deg');
+      }
+      return 'conic-gradient(from 0deg, ' + stops.join(', ') + ')';
+    }
+
+    function updateSunrise() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var p = docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0;
+
+      // === SKY ===
+      var topColor = interpStages(skyStages, p, 'top');
+      var midColor = interpStages(skyStages, p, 'mid');
+      var botColor = interpStages(skyStages, p, 'bot');
+      sky.style.background = 'linear-gradient(180deg, ' + rgb(topColor) + ' 0%, ' + rgb(midColor) + ' 60%, ' + rgb(botColor) + ' 100%)';
+
+      // === SUN + RAYS POSITION ===
+      // Start deep behind mountains (-8%), completely hidden. Rise to 58%.
+      var sunBottom = lerp(-8, 58, Math.min(p * 1.3, 1));
+      sunSystem.style.bottom = sunBottom + '%';
+      sunSystem.style.width = '1px';
+      sunSystem.style.height = '1px';
+      // Rays system tracks the same position but renders above mountains
+      sunRaysSystem.style.bottom = sunBottom + '%';
+      sunRaysSystem.style.width = '1px';
+      sunRaysSystem.style.height = '1px';
+
+      // === SUN CORE — big, brilliant, overexposed ===
+      var coreSize = lerp(64, 80, p);
+      var sunOpacity = p < 0.1 ? lerp(0.85, 0.92, p / 0.1) : lerp(0.92, 1, Math.min((p - 0.1) / 0.4, 1));
+      var sunColor = interpStages(sunStages, p);
+      var coreWhite = [255, 253, 248];
+
+      sun.style.width = coreSize + 'px';
+      sun.style.height = coreSize + 'px';
+      sun.style.background = 'radial-gradient(circle, ' +
+        rgba(coreWhite, sunOpacity) + ' 0%, ' +
+        rgba(coreWhite, sunOpacity * 0.95) + ' 25%, ' +
+        rgba(lerpColor(coreWhite, sunColor, 0.25), sunOpacity * 0.88) + ' 45%, ' +
+        rgba(sunColor, sunOpacity * 0.6) + ' 65%, ' +
+        rgba(sunColor, sunOpacity * 0.2) + ' 85%, ' +
+        'transparent 100%)';
+      sun.style.boxShadow =
+        '0 0 12px 6px ' + rgba(coreWhite, sunOpacity * 0.7) + ', ' +
+        '0 0 35px 15px ' + rgba(sunColor, sunOpacity * 0.45) + ', ' +
+        '0 0 80px 35px ' + rgba(sunColor, sunOpacity * 0.18);
+
+      // === SUN BLOOM — atmospheric glow, starts small behind mountains ===
+      var bloomSize = lerp(250, 550, p);
+      sunBloom.style.width = bloomSize + 'px';
+      sunBloom.style.height = bloomSize + 'px';
+      var bloomStrength = lerp(0.3, 0.22, p);
+      sunBloom.style.background = 'radial-gradient(circle, ' +
+        rgba(sunColor, sunOpacity * bloomStrength) + ' 0%, ' +
+        rgba(sunColor, sunOpacity * bloomStrength * 0.55) + ' 25%, ' +
+        rgba(sunColor, sunOpacity * bloomStrength * 0.2) + ' 55%, ' +
+        'transparent 100%)';
+
+      // === SUN RAYS — grow as sun clears the ridge, fade at full day ===
+      var raySize = lerp(550, 900, Math.min(p * 1.5, 1));
+      var rayOpacity = lerp(0.04, 0.14, Math.min(p * 2, 1));
+      // Rays hidden at start, fade in as sun peeks, then fade out past p=0.7
+      var rayFadeIn = p < 0.1 ? 0 : Math.min((p - 0.1) / 0.15, 1);
+      var rayFadeOut = p > 0.7 ? 1 - Math.min((p - 0.7) / 0.3, 1) : 1;
+      var rayVisibility = rayFadeIn * rayFadeOut;
+      sunRays.style.width = raySize + 'px';
+      sunRays.style.height = raySize + 'px';
+      sunRays.style.opacity = rayVisibility;
+      sunRays.style.background = buildRays(sunColor, rayOpacity, 12);
+      // Slow spin for subtle animation
+      sunRays.style.transform = 'translate(-50%, -50%) rotate(' + (p * 8) + 'deg)';
+
+      // === HORIZON GLOW ===
+      var glowOpacity = p < 0.1 ? lerp(0.25, 0.35, p / 0.1) : lerp(0.35, 0.55, Math.min((p - 0.1) / 0.5, 1));
+      var glowColor = interpStages(sunStages, Math.min(p * 1.2, 1));
+      horizonGlow.style.background = 'linear-gradient(180deg, transparent 0%, ' + rgba(glowColor, glowOpacity * 0.2) + ' 40%, ' + rgba(glowColor, glowOpacity * 0.5) + ' 70%, ' + rgba(glowColor, glowOpacity) + ' 100%)';
+
+      // === MOUNTAINS — colored silhouettes ===
+      var mBack = interpStages(mountainStages, p, 'back');
+      var mMid = interpStages(mountainStages, p, 'mid');
+      var mFront = interpStages(mountainStages, p, 'front');
+      mountainBack.style.color = rgb(mBack);
+      mountainMid.style.color = rgb(mMid);
+      mountainFront.style.color = rgb(mFront);
+
+      // === TEXT & NAV ===
+      // Text darkens more gradually, stays readable longer
+      var textLightness = p > 0.6 ? lerp(232, 50, (p - 0.6) / 0.4) : 232;
+      document.documentElement.style.setProperty('color', 'rgb(' + Math.round(textLightness) + ',' + Math.round(textLightness * 0.94) + ',' + Math.round(textLightness * 1.02) + ')');
+
+      // Nav transitions to frosted glass
+      var navBg = p > 0.55 ? 'rgba(255,255,255,' + lerp(0, 0.65, (p - 0.55) / 0.45) + ')' : 'rgba(20,14,45,' + lerp(0.5, 0.25, p / 0.55) + ')';
+      document.querySelector('.nav').style.background = navBg;
+      // Nav text stays dark once sky is bright
+      var navLinks = document.querySelectorAll('.nav a');
+      if (p > 0.7) {
+        var navDark = lerp(232, 40, (p - 0.7) / 0.3);
+        navLinks.forEach(function(a) { a.style.color = 'rgb(' + Math.round(navDark) + ',' + Math.round(navDark) + ',' + Math.round(navDark) + ')'; });
+      } else {
+        navLinks.forEach(function(a) { a.style.color = ''; });
+      }
+
+      // Cards get stronger backgrounds as sky brightens
+      var cardBgAlpha = p > 0.5 ? lerp(0.55, 0.8, (p - 0.5) / 0.5) : 0.55;
+      document.querySelectorAll('.agent-card, .feature-card, .folder-card, .oss-card').forEach(function(card) {
+        card.style.background = 'rgba(15, 10, 35, ' + cardBgAlpha.toFixed(2) + ')';
+      });
+
+      ticking = false;
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(updateSunrise);
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    updateSunrise();
+
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
