@@ -142,7 +142,9 @@ Read these **during a specific blueprint**, not on startup. Match the file to wh
 | Scoping an MVP / phased delivery | `mvp_scoping_guide.md` |
 | Writing requirements + acceptance criteria | `requirements_to_blueprint.md` |
 | Evaluating technology choices | `tech_stack_evaluation.md` |
+| Build vs buy, OSS maturity scoring | `technology-evaluation.md` |
 | Performance budgets, SLAs, capacity planning | `nfrs_quality_attributes.md` |
+| Product lifecycle stages, tech debt, sunsetting | `lifecycle-management.md` |
 | ADRs, RFCs, technical spec templates | `architecture_documentation_standards.md` |
 
 ### Additional References (Legacy)
@@ -153,4 +155,26 @@ Read these **during a specific blueprint**, not on startup. Match the file to wh
 
 ---
 
-*13 core sources curated 2026-03-05. Audit: job posting research + Gal consultation applied retroactively. Added NFRs, architecture documentation, and data modeling to fill gaps identified in Solutions Architect job requirements.*
+### Technology Evaluation: Build vs Buy & OSS Maturity
+
+- **The 70% Rule:** Most software costs occur after implementation (maintenance, licensing, upgrades, training). Always evaluate total cost of ownership, not just build cost.
+- **Build vs Buy heuristic:** Build your core differentiator; buy commodity capabilities. If uncertain, prototype both paths for 2 weeks, then decide with data.
+- **6 criteria for evaluating any technology:** Maturity, community health, license compatibility, migration/switching cost, security posture, integration fit. Score and weight them in a decision matrix.
+- **20+ OSS maturity models exist** (Navica, CapGemini, etc.). Key evaluation categories: context (industry fit), user (team skills), process (integration effort), quality (code, tests, security, license).
+- **Innovation tokens:** Most projects can afford 1-2 unproven technologies, not 5. Every new/immature choice spends a token and adds risk.
+
+> **When to pull deep-dive:** `technology-evaluation.md` — when evaluating a new technology, making a build-vs-buy decision, or scoring OSS alternatives for a blueprint.
+
+### Lifecycle Management: Product Stages, Tech Debt & Sunsetting
+
+- **4 lifecycle stages with distinct Planner roles:** Introduction (MVP scope, validate assumptions), Growth (scalability architecture, feature prioritization), Maturity (tech debt reduction, hardening), Decline (EOL planning, sunset strategy).
+- **Tech debt: intentional vs unintentional.** Intentional debt is a known trade-off with a repayment plan. Unintentional debt signals systemic issues. Use the quadrant method (risk x ROI) to prioritize: high-risk/high-ROI fixes first, low-risk/low-ROI items accept or defer.
+- **Budget 10-20% of every sprint for debt reduction.** 10% minimum keeps debt from compounding. 20%+ when maintenance exceeds 30% of dev time (debt crisis). Frame debt in business terms: "causes X incidents/month, adds Y days to features."
+- **5-step sunset framework:** Usage analysis, early stakeholder communication, migration support, clear deadlines (published everywhere), documentation preservation. Sunset is a team effort: Planner designs, Builder migrates, Gal communicates, GitDude versions, Daisy positions.
+- **Sunset triggers:** Legacy replaced by modern platform, consistently low usage, outdated/insecure dependencies, maintenance cost exceeds value delivered.
+
+> **When to pull deep-dive:** `lifecycle-management.md` — when a product enters a new lifecycle stage, when tech debt is blocking features, or when planning an EOL/sunset.
+
+---
+
+*15 core sources curated 2026-03-23. Added technology evaluation and lifecycle management to cover pre-architecture decisions and post-launch product health.*

@@ -237,7 +237,7 @@ Retry-After: 30                # Seconds to wait (on 429 response)
 ### API Keys
 
 ```
-Authorization: Bearer <YOUR_API_KEY_HERE>
+Authorization: Bearer sk_live_abc123def456
 ```
 
 - **What they authenticate:** The application, not the user

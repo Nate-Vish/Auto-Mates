@@ -1,6 +1,6 @@
 # Rollback & Incident Response
 
-**When to use:** Production rollback, reverting bad commits, responding to a secret leak, rewriting git history, conducting a postmortem, or managing communication during an incident.
+**When to use:** Production rollback, reverting bad commits, responding to a secret leak, rewriting git history, conducting a postmortem, managing communication during an incident, evidence preservation, or breach notification awareness.
 
 ---
 
@@ -262,6 +262,22 @@ git push --force --all
 git push --force --tags
 ```
 
+### Seven Side Effects of History Rewriting
+
+| # | Side Effect | Impact |
+|---|-------------|--------|
+| 1 | **Recontamination risk** | Old clones that `git pull` then `git push` will reintroduce sensitive data |
+| 2 | **Lost work** | Developers on contaminated branches during cleanup must redo work |
+| 3 | **Changed commit hashes** | All affected commits + descendants get new SHAs — breaks tooling |
+| 4 | **Branch protection issues** | Force-push protections must be temporarily disabled |
+| 5 | **Broken PR diffs** | Closed PR diffs become inaccessible |
+| 6 | **Open PR disruption** | Changed SHAs alter diffs; comments become orphaned |
+| 7 | **Lost signatures** | Cryptographic signatures stripped (invalid after hash change) |
+
+### Impact on Forks
+
+Commits in forks remain accessible. GitHub cannot contact fork owners — you must coordinate directly with each fork owner to request removal or deletion. **History rewriting is inherently incomplete for public repositories with forks.**
+
 ### Post-Cleanup Steps
 
 After rewriting history, every team member must re-clone or reset:
@@ -278,7 +294,7 @@ git reset --hard origin/main
 git clean -fd
 ```
 
-**Alert all contributors.** Anyone with the old history still has the secrets in their local clone and reflog.
+**Alert all contributors.** Anyone with the old history still has the secrets in their local clone and reflog. A single `git pull` + `git push` from an old clone reintroduces contamination — fresh clone is the only safe path.
 
 ---
 
@@ -300,30 +316,90 @@ MINUTE 0-5: CONTAIN
 │   - Deploy the new credential to running services
 │   - Verify services are working with the new credential
 │
-MINUTE 5-30: REMEDIATE
-├── Step 3: REMOVE from Git history (BFG or git-filter-repo)
+MINUTE 5-30: PRESERVE EVIDENCE + REMEDIATE
+├── Step 3: PRESERVE EVIDENCE (before rewriting history)
+│   - Record the exposure window: when committed → when discovered
+│   - Record which branches, tags, and refs contain the data
+│   - Save access logs from the affected service for the exposure window
+│   - Screenshot or export any relevant CI/CD logs showing the leak
+│   - Document: who had access to the repo during the exposure window?
+│   - If the repo was public: assume the secret was harvested by bots
+│   NOTE: History rewriting destroys forensic evidence. Capture it FIRST.
+│
+├── Step 4: REMOVE from Git history (BFG or git-filter-repo)
 │   - Remove from ALL branches, not just main
 │   - Clean reflog and garbage collect
 │
-├── Step 4: FORCE-PUSH cleaned history
+├── Step 5: FORCE-PUSH cleaned history
 │   - git push --force --all
 │   - git push --force --tags
 │   - Notify all team members to re-clone
 │
 MINUTE 30-60: INVESTIGATE
-├── Step 5: NOTIFY the team
+├── Step 6: NOTIFY the team
 │   - Post in team channel: what leaked, when, current status
 │   - If customer data may be affected: notify security team / DPO
 │
-├── Step 6: AUDIT for unauthorized access
+├── Step 7: AUDIT for unauthorized access
 │   - Check access logs for the exposure window
 │   - Determine: when was it committed? When was it discovered?
+│   - Look for: unusual API calls, new resources created, data exports
+│   - Check: was the leaked credential used from unexpected IP addresses?
 │
-AFTER INCIDENT: PREVENT
-└── Step 7: DOCUMENT in post-mortem
+AFTER INCIDENT: ASSESS REGULATORY OBLIGATIONS + PREVENT
+├── Step 8: ASSESS BREACH NOTIFICATION REQUIREMENTS
+│   - Was personal data exposed? (If the leaked secret granted access to PII)
+│   - Determine scope: how many individuals potentially affected?
+│   - Check notification deadlines:
+│     * GDPR: 72 hours to supervisory authority (if personal data at risk)
+│     * US state laws: vary (30-90 days typically)
+│     * PCI-DSS: immediate notification to payment brands if card data at risk
+│   - Escalate to Legal agent for regulatory determination
+│   - Document the decision: why notification is/is not required
+│
+└── Step 9: DOCUMENT in post-mortem
     - Timeline, root cause, impact, remediation, prevention
     - Update pre-commit hooks to catch similar patterns
+    - Record all evidence preservation actions taken
 ```
+
+### Evidence Preservation During Rollback
+
+When rolling back or rewriting history, forensic evidence can be lost. Preserve before you remediate.
+
+| Evidence Type | How to Preserve | Why It Matters |
+|--------------|----------------|---------------|
+| **Exposure window** | `git log --all -p -S '<secret-pattern>' --source` | Establishes timeline for regulatory reporting |
+| **Access logs** | Export from service provider console | Shows if the leaked credential was exploited |
+| **Affected refs** | `git branch --contains <commit>` and `git tag --contains <commit>` | Determines blast radius |
+| **CI/CD logs** | Screenshot or export before history rewrite | Proves detection timeline |
+| **Repo access list** | Export collaborator list with permissions | Identifies who could have seen the secret |
+| **Fork list** | Note all known forks (public repos) | Forks retain original history after rewrite |
+
+**Principle:** History rewriting is destructive by design — it removes data. But during an incident, you may need that data for investigation, audit, or regulatory compliance. Always capture evidence before rewriting.
+
+### Breach Notification Awareness
+
+A leaked secret is not always just a secret rotation problem. If the leaked credential provided access to personal data, the incident may trigger breach notification obligations.
+
+**When a secret leak becomes a data breach:**
+- The leaked API key had read access to a database containing user records
+- The leaked OAuth token granted access to user email accounts or files
+- The leaked service account key had access to storage buckets with customer data
+- The leaked credentials were used by an unauthorized party during the exposure window
+
+**GitDude's role:** Identify the data-access implications of the leaked credential and escalate to Legal when personal data may have been exposed. GitDude does not make the legal determination — but GitDude must raise the flag.
+
+**Key deadlines to be aware of:**
+
+| Regulation | Notification Deadline | To Whom |
+|-----------|----------------------|---------|
+| GDPR (EU) | 72 hours to authority; "without undue delay" to individuals if high risk | Supervisory authority + affected individuals |
+| CCPA/CPRA (California) | "Most expedient time possible" | Affected residents + Attorney General if 500+ |
+| HIPAA (US health) | 60 days | HHS + affected individuals + media if 500+ |
+| PCI-DSS (payment) | Immediately | Payment brands + acquiring bank |
+
+These deadlines start from when the organization becomes **aware** of the breach — not when it occurred. Delayed discovery extends the risk but does not extend the deadline.
 
 ### GitHub Auto-Revocation Partners
 
@@ -346,7 +422,45 @@ git log --all --oneline --diff-filter=A -- path/to/secret-file
 
 # Search for the secret text in history
 git log --all -p -S 'AKIAIOSFODNN7EXAMPLE' --source
+
+# Which branches contain the contaminated commit?
+git branch --contains <commit-sha>
+
+# Which tags contain it?
+git tag --contains <commit-sha>
 ```
+
+---
+
+## Post-Incident Remediation Checklist
+
+After the immediate incident is resolved and the postmortem is complete, work through this checklist to harden against recurrence.
+
+### Immediate Hardening (Within 48 Hours)
+
+- [ ] **Rotate ALL credentials** that could have been exposed — not just the one that was found. Check for other secrets in the same file or directory.
+- [ ] **Install pre-commit hooks** if not already present. Minimum: Gitleaks + detect-private-key.
+- [ ] **Run full-repo scan** with `gitleaks detect --source . -v` and `pre-commit run --all-files` to find any other secrets that may be lurking.
+- [ ] **Verify .gitignore** includes all sensitive file patterns (`.env*`, `*.pem`, `*.key`, `credentials.*`).
+- [ ] **Confirm all team members** have re-cloned or force-reset their local copies.
+- [ ] **Check forks** — contact fork owners to delete or update if repo was public.
+
+### Systemic Prevention (Within 2 Weeks)
+
+- [ ] **Add CI scanning** — Gitleaks in GitHub Actions or equivalent. Commit Gate should not be the only line of defense.
+- [ ] **Enable push protection** if available (GitHub, GitLab). Blocks pushes containing detected secrets.
+- [ ] **Review access controls** — remove unnecessary Write/Admin access. Audit token permissions.
+- [ ] **Implement the Two-Gate System** if not already in place. Sync Gate + Commit Gate.
+- [ ] **Update project setup documentation** to include hook installation as a required step.
+- [ ] **Schedule a quarterly access review** if one is not already in place.
+
+### Process Improvements (Within 30 Days)
+
+- [ ] **Create or update rollback runbook** with exact commands for common scenarios.
+- [ ] **Run a rollback drill** in staging to verify the procedure works.
+- [ ] **Review and update file classification** — has anything changed since last classification?
+- [ ] **Train team** on the Two-Gate System and why `git add .` is dangerous.
+- [ ] **Track action items** from postmortem to completion. Assign owners and due dates.
 
 ---
 
@@ -376,15 +490,20 @@ After the immediate incident is resolved, conduct a blameless postmortem within 
 | HH:MM | [Triggering event] |
 | HH:MM | [Detection] |
 | HH:MM | [First response] |
-| HH:MM | [Diagnosis] |
-| HH:MM | [Mitigation] |
-| HH:MM | [Resolution] |
+| HH:MM | [Evidence preserved] |
+| HH:MM | [Credential revoked/rotated] |
+| HH:MM | [History rewritten (if applicable)] |
+| HH:MM | [Team notified] |
+| HH:MM | [Access audit completed] |
+| HH:MM | [Regulatory assessment completed] |
+| HH:MM | [Resolution confirmed] |
 
 ## Impact
 - **Users affected:** [number or percentage]
 - **Revenue impact:** [if applicable]
 - **Data impact:** [any data loss or exposure]
 - **Duration of user-facing impact:** [minutes/hours]
+- **Regulatory implications:** [notification required? To whom? Deadline?]
 
 ## Root Cause
 [Detailed technical explanation]
@@ -394,6 +513,9 @@ After the immediate incident is resolved, conduct a blameless postmortem within 
 
 ## Resolution
 [Step-by-step: what was done to fix it]
+
+## Evidence Preserved
+[What forensic evidence was captured before remediation?]
 
 ## What Went Well
 - [Things that helped]
@@ -466,6 +588,7 @@ After Resolution
 - [ ] Team channel: "Incident resolved, postmortem scheduled"
 - [ ] Postmortem scheduled within 48 hours
 - [ ] Action items tracked in issue tracker
+- [ ] Regulatory notification sent (if required — see breach notification deadlines)
 ```
 
 ### Status Page Update Stages
@@ -516,13 +639,16 @@ The worst time to test your rollback procedure is during a real incident.
 1. **Tag every production deploy.** Without tagged releases, there is no reliable rollback target. Make tagging an automated step in your deployment pipeline.
 2. **Revert, do not reset, on shared branches.** `git revert` for anything pushed to a shared remote. `git reset` only for local unpushed work.
 3. **Revoke credentials before cleaning history.** The absolute first action when a secret leaks is to revoke or rotate the credential. An attacker with the secret can act in seconds; cleaning history takes minutes.
-4. **Keep a rollback runbook.** Maintain a step-by-step rollback runbook in the repository or wiki. Include exact commands for: redeploy previous tag, revert last merge, rotate database credentials, update status page. Review and update it monthly.
-5. **Practice rollbacks before you need them.** Run a monthly rollback drill in staging. Measure time-to-rollback, verify smoke tests pass, document gaps.
-6. **Communicate early and often.** Update your team channel every 30 minutes during an incident minimum, even if there is nothing new to report. Silence causes panic.
-7. **Write backward-compatible database migrations.** The number one obstacle to clean rollbacks is schema changes. Always make migrations additive.
-8. **Conduct blameless postmortems within 48 hours.** Reconstruct the timeline, identify root cause with Five Whys, assign concrete action items with owners and due dates.
-9. **Audit for unauthorized access after every secret leak.** Check the service's access logs for the entire exposure window. This step is frequently skipped.
-10. **Automate the rollback trigger.** If monitoring detects a critical health check failure after deploy, the rollback should start automatically or with a single button press. Target MTTR under 5 minutes.
+4. **Preserve evidence before rewriting history.** Capture exposure window, access logs, affected refs, and CI logs before git-filter-repo destroys the forensic record. You may need this for audit or regulatory compliance.
+5. **Keep a rollback runbook.** Maintain a step-by-step rollback runbook in the repository or wiki. Include exact commands for: redeploy previous tag, revert last merge, rotate database credentials, update status page. Review and update it monthly.
+6. **Practice rollbacks before you need them.** Run a monthly rollback drill in staging. Measure time-to-rollback, verify smoke tests pass, document gaps.
+7. **Communicate early and often.** Update your team channel every 30 minutes during an incident minimum, even if there is nothing new to report. Silence causes panic.
+8. **Write backward-compatible database migrations.** The number one obstacle to clean rollbacks is schema changes. Always make migrations additive.
+9. **Conduct blameless postmortems within 48 hours.** Reconstruct the timeline, identify root cause with Five Whys, assign concrete action items with owners and due dates.
+10. **Audit for unauthorized access after every secret leak.** Check the service's access logs for the entire exposure window. This step is frequently skipped.
+11. **Assess breach notification obligations.** When a leaked secret granted access to personal data, determine whether regulatory notification is required. Escalate to Legal — do not make the legal determination yourself.
+12. **Automate the rollback trigger.** If monitoring detects a critical health check failure after deploy, the rollback should start automatically or with a single button press. Target MTTR under 5 minutes.
+13. **Complete the post-incident remediation checklist.** Rotate all related credentials, install hooks, run full-repo scan, verify .gitignore, confirm re-clones, check forks, add CI scanning, review access controls.
 
 ---
 

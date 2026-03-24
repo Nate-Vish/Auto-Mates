@@ -109,16 +109,24 @@ Copyright applies to most web content by default, regardless of whether it is pu
 Every source file must include:
 - `source_url` field with the original URL
 - `fetched_date` field
-- `copyright_notice` with inline fair use statement
+- `copyright_notice` pointing to `FETCHING_DISCLAIMER.md`
 
 This creates an auditable record of provenance for every piece of content in the library.
 
-### Standard Copyright Notice
+---
 
-All source files must include this in their YAML metadata:
+## FETCHING_DISCLAIMER.md
+
+**Location:** `Library/Sources/Legal/FETCHING_DISCLAIMER.md`
+
+This file contains the standard disclaimer applied to all fetched content. Every source file references it via the `copyright_notice` metadata field.
+
+All source files must include:
 ```yaml
-copyright_notice: "Content gathered under fair use for research purposes. See Legal agent for IP questions."
+copyright_notice: "See Library/Sources/Legal/FETCHING_DISCLAIMER.md"
 ```
+
+Do not inline the disclaimer text in individual source files — always reference the central file. This ensures consistent legal language across the entire library and allows the disclaimer to be updated in one place.
 
 ---
 
@@ -136,4 +144,4 @@ copyright_notice: "Content gathered under fair use for research purposes. See Le
 
 ---
 
-*All fetching activity is governed by fair use principles. For detailed IP questions, summon the Legal agent.*
+*All fetching activity is governed by the standard disclaimer at `Library/Sources/Legal/FETCHING_DISCLAIMER.md`. For detailed IP questions, summon the Legal agent.*

@@ -10,7 +10,7 @@ content_type: competitor-analysis
 difficulty: intermediate
 description: OpenAI Codex desktop app for macOS with multi-agent capabilities, Skills, and Automations
 keywords: OpenAI, Codex, multi-agent, skills, automations, GPT-5.3-Codex
-copyright_notice: "Content gathered under fair use for research purposes. See Legal agent for IP questions."
+copyright_notice: "See Library/Sources/Legal/FETCHING_DISCLAIMER.md"
 ---
 
 # OpenAI Codex Desktop App

@@ -10,7 +10,7 @@ content_type: industry-analysis
 difficulty: beginner
 description: Karpathy's shift from "vibe coding" to "agentic engineering" and what it means for AI development
 keywords: agentic engineering, vibe coding, Karpathy, terminology, orchestration
-copyright_notice: "Content gathered under fair use for research purposes. See Legal agent for IP questions."
+copyright_notice: "See Library/Sources/Legal/FETCHING_DISCLAIMER.md"
 ---
 
 # Agentic Engineering: The Post-Vibe Coding Era
