@@ -1,0 +1,103 @@
+# ============================================================
+# AutoMates Arsenal
+# Single source of truth for all tools, skills, and services.
+# Read by every agent on startup. Updated by Orca.
+# ============================================================
+# Registry.md routes agents. Arsenal.yaml routes tools.
+
+
+# --- MCP Servers ---
+# Config lives in .mcp.json (project root).
+# MCP servers load at session start only — changes require a new session.
+# Add your own MCP servers here as you install them.
+
+mcp-servers: {}
+  # Example:
+  # my-server:
+  #   package: "@example/my-mcp-server"
+  #   command: npx @example/my-mcp-server
+  #   used-by: [Builder, Daisy]
+  #   status: active
+
+
+# --- Global Agent Skills ---
+# Installed at ~/.agents/skills/ — available in every Claude Code session.
+# These are optional third-party skills you can install separately.
+
+global-skills: {}
+  # Example:
+  # shadcn-ui:
+  #   does: shadcn/ui component guidance
+  #   best-for: Builder — UI component library
+
+
+# --- Project Skills ---
+# Installed at .claude/skills/ — included in this repo.
+
+project-skills:
+
+  agent-switches:
+    /orca:       Orca (Orchestrator)
+    /planner:    Planner (Architect)
+    /builder:    Builder (Developer)
+    /checker:    Checker (QA + Security)
+    /brainstorm: BrainStorm (Knowledge Graph)
+    /legal:      Legal (Compliance)
+    /gitdude:    GitDude (Release Manager)
+    /fetcher:    Fetcher (Researcher)
+    /gal:        Gal (User Advocate)
+    /daisy:      Daisy (Brand Director)
+
+  utilities:
+    /summon:              Launch agent in separate terminal
+    /summon-team-build:   Parallel — Planner + Builder + Checker
+    /summon-team-research: Parallel — Fetcher + BrainStorm + specialist
+    /summon-team-review:  Parallel — Checker + Legal + Gal + GitDude
+    /forge:               Create new agent (6-phase guided process)
+    /brief:               Project state catch-up + team status
+    /memorize:            Save agent memory (Sessions, Lessons, Preferences, Checkpoint, Context)
+    /video:               Create videos — recaps, explainers, comparisons, demos, marketing (Remotion)
+    /slides:              Create PPTX or HTML slideshow from content
+    /automates:           Open AutoMates root folder in Finder
+    /cv:                  Build/tailor resume, cover letter, job application (scoring loop, export)
+    /idea:                Quick-capture idea to BrainStorm's MindMap Inbox (works from any agent)
+
+
+# --- CLI Tools ---
+# These are tools AutoMates agents can use. Install what you need.
+
+cli-tools:
+
+  Node.js:
+    does: JavaScript runtime
+    used-by: Builder, all agents
+    install: https://nodejs.org/ or nvm
+
+  gh:
+    does: GitHub CLI — PRs, issues, releases
+    used-by: [GitDude, Builder]
+    install: brew install gh
+
+  Playwright:
+    command: npx playwright
+    does: Browser automation, screenshots, testing
+    used-by: [Checker, Fetcher, Gal, Daisy]
+    install: npx playwright install
+
+
+# --- APIs & Services ---
+# Add your own API keys and services here as you set them up.
+
+apis: {}
+  # Example:
+  # GitHub:
+  #   purpose: Source control
+  #   auth: gh auth login
+  #   status: active
+
+
+# --- Adding New Tools ---
+# 1. Install and verify it works
+# 2. Add an entry to the right section above
+# 3. Note which agents benefit
+# 4. Update CLAUDE.md if it changes startup protocol

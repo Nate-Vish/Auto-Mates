@@ -1,90 +1,96 @@
 # Changelog
 
-## v1.3 — 2026-02-23
-
-### New: Native Claude Code Integration
-
-AutoMates now uses Claude Code's built-in features instead of manual copy-paste workflows.
-
-**CLAUDE.md (Shared Context)**
-- 151-line shared context auto-loaded every session
-- All agents inherit: Startup Protocol, LEARN FIRST Protocol, Memory Rules, Dashboard Protocol, Session End Protocol
-- Agent Roster with identity paths and when-to-summon guide
-- Agent Teams table for parallel work
-
-**21 Skills (Slash Commands)**
-- `/summon <agent>` — Launch agent in new terminal (supports: single, comma-separated, team, all)
-- `/handoff <agent>` — Switch agents in-session (saves context, loads new identity)
-- `/brief` — Quick project state, team status, pending requests
-- `/memorize` — Save agent memory (Sessions, Lessons, Preferences, Checkpoint, Context) + update Brief.md
-- `/compact [agent]` — Archive old sessions, refresh Context.md
-- `/summon-team-build <task>` — Fetcher → Planner → Builder → Checker pipeline
-- `/summon-team-research <topic>` — Fetcher + BrainStorm + specialist
-- `/summon-team-review <target>` — Checker + Legal + Gal + GitDude quality gate
-- `/watch-summary` — Generate a video-ready narration script of the latest session
-
-**Agent Teams**
-- `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` enabled
-- Orca serves as Team Lead with orchestration rules
-- Three team templates for common workflows
-
-**Library/Knowledge/ (Per-Agent Reading Lists)**
-- 9 curated knowledge sections pointing to Library/Sources/
-- Fetcher auto-updates these when delivering research
-
-**Late Additions (post-audit)**
-- `/watch-summary` skill — session narration for AI video tools
-- `/save` skill renamed to `/memorize` (directory now matches command)
-- `/handoff` now runs full `/memorize` flow before transitioning
-
-**Memory Restructure**
-- Context.md per agent (quick startup snapshot)
-- Archive/ per agent (compacted session storage)
-- `/compact` skill for automated session archival
-
-**Identity Streamlining**
-- Removed ~418 lines of repeated protocol across 9 identities
-- Added "Shared Context" sections referencing CLAUDE.md
-- Orca: Agent Teams section (Team Lead role, orchestration rules)
-- Fetcher: Knowledge Section Updates instruction
-
-**Dashboard**
-- Brief.md replaces Daily_Brief.md + Status.md (single source of truth)
-- Rules.md moved from Dashboard/ to Library/
-- Stop hook reminds agents to update memory on session end
-
-**Infrastructure**
-- summon.sh — Cross-platform launcher (iTerm2, Terminal.app, gnome-terminal, Windows Terminal)
-- Hooks in settings.local.json for session end reminders
-- Agent colors preserved from v1.2
-
-### Changed from v1.2
-- `agents/` → `AgenTeam/` (uppercase, reflects team identity)
-- `dashboard/` → `Dashboard/`
-- `Library/sources/` → `Library/Sources/`
-- Fetcher now lives at `Library/Fetcher/` (near Sources)
-- `Dashboard/Rules.md` → `Library/Rules.md`
-- `Daily_Brief.md` + `Status.md` → `Brief.md`
-- Memory structure: added Context.md, Archive/, removed redundant protocol from identities
+All notable changes to AutoMates.AI will be documented in this file.
 
 ---
 
-## v1.2 — 2026-02-13
+## [Current] - 2026-03-24
 
-- 9 agents with persistent memory
-- File-based coordination via Dashboard/Work_Space
-- Terminal color profiles
-- LEARN FIRST protocol
-- Cross-platform summon.sh launcher
+### Added
+- **Daisy** — Brand Director agent (10th agent). Branding, social media, PR, pitches, content strategy
+- **Arsenal.yaml** — Single source of truth for all tools, MCP servers, skills, and CLIs
+- **21+ slash commands** — Agent switches, `/forge`, `/brief`, `/memorize`, `/compact`, `/video`, `/slides`, `/cv`, `/idea`, `/automates`, team pipelines
+- **Professional Knowledge** — 89 topic files across 10 agents (Library/Knowledge/). Self-contained expertise, no external dependencies
+- **BrainStorm Knowledge Graph** — 60+ nodes, 387+ connections, personal mind map system with MindMap.md index
+- **Landing page** — automate-s.com with HTTPS, "How It Works" guide, sunrise theme
+- **Multi-platform support** — CLAUDE.md (Claude Code), GEMINI.md (Gemini CLI), AGENTS.md (Codex CLI)
+- **`/idea` skill** — Quick-capture ideas to BrainStorm's graph from any agent
+- **`/video` skill** — Create videos via Remotion (recaps, explainers, demos)
+- **`/slides` skill** — Create PPTX or HTML presentations
+- **`/cv` skill** — Build/tailor resumes for job applications
+- **`/forge` skill** — 6-phase guided agent creation
+- **office-skills toolkit** — PPTX, DOCX, XLSX, PDF creation (Library/office-skills/)
+- **Stitch MCP** — Design generation and editing via Google Cloud
+- **Agent Teams** — `/summon-team-build`, `/summon-team-research`, `/summon-team-review` (parallel pipelines)
 
-## v1.1 — 2026-01-27
+### Changed
+- **10 agents** (was 9) — Daisy joins the team
+- **CODEX.md deleted** — Codex CLI auto-loads AGENTS.md, not CODEX.md. Redundant file removed
+- **Tools/ merged into Library/** — office-skills now at Library/office-skills/
+- **Wake-Up Protocol expanded** — Now reads Arsenal.yaml + Knowledge section on startup
+- **LEARN FIRST enforced** — Every agent researches before coding
+- **Registry.md** — Full routing table with boundaries and standard chains
+- **Brief.md** — Unified dashboard (replaces Daily_Brief + Status.md)
+- **All agent identities** — Added boundaries, handoff chains, knowledge sections, shared context
 
-- 7 agents (Orca and Gal added later)
-- Initial memory system
-- Basic README and documentation
+### Improved
+- **Memory system** — Context.md quick snapshots, /memorize auto-saves all memory files
+- **File coordination** — Arsenal.yaml, BLUEPRINT.md, KNOWLEDGE_REQUEST, REVIEW, BRAINSTORM files
+- **Security** — Git history purge (25 rules), pre-commit PII + secret scanning protocol
+- **README** — Personal voice, GIF placeholders, 6-step Getting Started, dev-to-dev tone
 
-## v1.0 — 2026-01-24
+---
 
-- Initial release
-- 6 agents with identity files
-- Basic project structure
+## [v1.3] - 2026-02-25
+
+### Added
+- **Playwright CLI** — Browser automation for Checker, Fetcher, Gal (replaces MCP, 4x fewer tokens)
+- **Knowledge system** — Builder (18 topics), Checker (7), GitDude (10), Planner (17), Gal (29 files), Orca (6 pillars)
+- **`/memorize` skill** — One command to save all agent memory files
+- **`/compact` skill** — Archive old sessions, refresh Context.md
+- **Multi-platform configs** — GEMINI.md and CODEX.md alongside CLAUDE.md
+- **Agent boundary system** — Each agent has defined lanes and handoff chains
+
+### Changed
+- **All agent identities hardened** — Memory sections, Knowledge sections, boundary awareness
+- **Skill renames** — /team-build → /summon-team-build, etc.
+- **Version_Control restructured** — One folder per product, repo root = latest, old versions in git tags
+
+---
+
+## [v1.2] - 2026-01-28
+
+### Added
+- **Gal** — User advocate agent (skeptical senior dev perspective)
+- **Brief.md** — Unified project brief (merged from Daily_Brief + Status.md)
+- **Project_Description.md** — Full AutoMates vision and problem statement
+- **Agent Wake-Up Protocol** — Standardized 3-step startup for all agents
+
+### Changed
+- **9 agents** (was 8) — Gal joins the team
+- **All agent identities updated** — Dashboard reading in wake-up protocol
+
+---
+
+## [v1.1] - 2026-01-27
+
+### Added
+- **Orca** — Orchestrator agent (team management, agent creation)
+- **BrainStorm Ideas/** — Idea capture with `IDEA:` prefix
+- **Agent Memory System** — Fully structured: Checkpoint, Sessions, Notes, Lessons, Preferences
+
+### Changed
+- **8 agents** (was 7) — Orca joins
+- **README completely rewritten**
+- **Fetcher upgraded** — robots.txt respect, Study Files for agent learning
+
+---
+
+## [v1.0] - 2026-01-15
+
+### Initial Release
+- **7 agents:** BrainStorm, Planner, Builder, Checker, Legal, GitDude, Fetcher
+- **Memory system:** Sessions/, Notes/, Lessons.md, Preferences.md, Checkpoint.md
+- **LEARN FIRST protocol** — Agents research before acting
+- **File-based coordination** — Dashboard/Work_Space/
+- **Legal docs:** LICENSE (MIT), CONTRIBUTING.md, TRADEMARK.md

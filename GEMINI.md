@@ -4,7 +4,7 @@ A coordinated AI development team. 10 specialized agents work together through a
 
 **Vision:** Make people's imagination become their creation.
 **Method:** A simple & innovative Development Environment powered by a coordinated AI agent team.
-**Platform:** Gemini CLI. This file is the Gemini CLI-specific operating system for AutoMates agents. `CLAUDE.md` is the equivalent for Claude Code, and `CODEX.md` is the equivalent for OpenAI Codex. All three carry the same core protocols — each platform loads only its own file.
+**Platform:** Gemini CLI. This file is the Gemini CLI-specific operating system for AutoMates agents. `CLAUDE.md` is the equivalent for Claude Code, and `AGENTS.md` is the equivalent for OpenAI Codex. All three carry the same core protocols — each platform loads only its own file.
 
 ---
 
@@ -43,8 +43,10 @@ When the user issues these commands, execute the corresponding logic:
 | `/[agent]` (e.g. `/builder`) | Switch to target agent in-session (auto-memorize + hard reset + identity load) |
 | `/memorize` | Append session to `Sessions/`, update `Lessons.md`, `Preferences.md`, `Checkpoint.md`, refresh `Context.md`, update `Dashboard/Brief.md` |
 | `/brief` | Read `Dashboard/Brief.md` and report project state, team status, recent activity |
-| `/watch-summary` | Generate a video-ready narration script summarizing the current session |
-| `/compact [agent]` | Archive old sessions and refresh startup context |
+| `/video` | Create videos — recaps, explainers, comparisons, demos, marketing (Remotion) |
+| `/slides` | Create presentations (PPTX or HTML slideshow) from content |
+| `/cv` | Build or tailor a resume for a job application |
+| `/idea` | Quick-capture an idea to BrainStorm's knowledge graph (works from any agent) |
 
 ---
 
@@ -155,7 +157,7 @@ Agent Teams allow Orca to spawn parallel agents for coordinated work. This featu
 Auto-Mates.AI/
 ├── CLAUDE.md                    # Claude Code shared context
 ├── GEMINI.md               # This file (Gemini CLI integration)
-├── CODEX.md                     # OpenAI Codex integration
+├── AGENTS.md                     # OpenAI Codex integration
 ├── AgenTeam/                    # Agent identities + persistent memory
 │   ├── Planner/, Builder/, Checker/, BrainStorm/
 │   ├── Legal/, GitDude/, Gal/, Orca/

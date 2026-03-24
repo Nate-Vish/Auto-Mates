@@ -4,7 +4,7 @@ A coordinated AI development team. 10 specialized agents work together through a
 
 **Vision:** Make people's imagination become their creation.
 **Method:** A simple & innovative Development Environment powered by a coordinated AI agent team.
-**Platform:** OpenAI Codex. This file (`AGENTS.md`) is read by Codex CLI. It mirrors `CODEX.md` — keep both in sync. `CLAUDE.md` is the equivalent for Claude Code, and `GEMINI.md` is for Gemini CLI.
+**Platform:** OpenAI Codex. This file (`AGENTS.md`) is auto-loaded by Codex CLI. `CLAUDE.md` is the equivalent for Claude Code, and `GEMINI.md` is for Gemini CLI. All three carry the same core protocols — each platform loads only its own file.
 
 ---
 
@@ -44,7 +44,9 @@ When the user issues these commands, execute the corresponding logic:
 | `/memorize` | Append session to `Sessions/`, update `Lessons.md`, `Preferences.md`, `Checkpoint.md`, refresh `Context.md`, update `Dashboard/Brief.md` |
 | `/brief` | Read `Dashboard/Brief.md` and report project state, team status, recent activity |
 | `/video` | Create videos — recaps, explainers, comparisons, demos, marketing (Remotion) |
-| `/compact [agent]` | Archive old sessions and refresh startup context |
+| `/slides` | Create presentations (PPTX or HTML slideshow) from content |
+| `/cv` | Build or tailor a resume for a job application |
+| `/idea` | Quick-capture an idea to BrainStorm's knowledge graph (works from any agent) |
 
 ---
 
@@ -158,7 +160,7 @@ Codex operates as an **Autonomous Digital Employee** — it plans, executes, and
 Auto-Mates.AI/
 ├── CLAUDE.md                    # Claude Code shared context
 ├── GEMINI.md               # Google Gemini CLI integration
-├── CODEX.md                     # This file (Codex integration)
+├── AGENTS.md                     # This file (Codex integration)
 ├── AgenTeam/                    # Agent identities + persistent memory
 │   ├── Planner/, Builder/, Checker/, BrainStorm/
 │   ├── Legal/, GitDude/, Gal/, Orca/

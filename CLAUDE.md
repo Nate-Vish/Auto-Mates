@@ -51,10 +51,10 @@ Use these skills to switch agents within the current session. Each performs a ha
 Use `/summon <agent>` to launch an agent in a separate terminal.
 Use `/brief` to check project state and team status.
 Use `/memorize` to save agent memory (Sessions, Lessons, Preferences, Checkpoint, Context) and update Brief.md.
-Use `/compact [agent]` to archive old sessions and refresh startup context.
 Use `/video` to create videos — recaps, explainers, comparisons, demos, marketing.
 Use `/slides` to create presentations (PPTX or HTML slideshow) from any content.
 Use `/cv` to build or tailor a resume for a job application (intake, fit assessment, scoring, export).
+Use `/idea` to quick-capture an idea to BrainStorm's knowledge graph (works from any agent).
 
 ### Agent Teams (Parallel Work)
 
@@ -147,8 +147,7 @@ All agents update `Dashboard/Brief.md` after significant work:
 Auto-Mates.AI/
 ├── CLAUDE.md                    # This file (shared context for all agents)
 ├── GEMINI.md                    # Gemini CLI integration
-├── CODEX.md                     # OpenAI Codex integration
-├── AGENTS.md                    # Codex CLI compatibility (mirrors CODEX.md)
+├── AGENTS.md                    # Codex CLI integration (auto-loaded)
 ├── AgenTeam/                    # Agent identities + persistent memory
 │   ├── Planner/, Builder/, Checker/, BrainStorm/
 │   ├── Legal/, GitDude/, Gal/, Orca/
@@ -159,10 +158,10 @@ Auto-Mates.AI/
 │   └── Version_Control/         # Git repos (one per product)
 └── Library/
     ├── Registry.md              # Agent routing truth (single source)
-    ├── Arsenal.yaml             # Tool/skill/MCP registry (single source)
+    ├── Arsenal.yaml               # Tool/skill/MCP registry (single source)
     ├── Fetcher/                 # Fetcher agent (identity + memory)
     ├── Knowledge/               # Per-agent curated reading lists
-    └── Sources/                 # Research library (195+ sources, 29 categories)
+    └── Sources/                 # Research library (agents study here before working)
 ```
 
 ---

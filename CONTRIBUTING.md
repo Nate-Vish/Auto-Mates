@@ -1,32 +1,29 @@
-# Contributing to AutoMates.AI
+# Contributing to AutoMates
 
-Thank you for your interest in contributing! We want to build the best AI engineering framework, and your help is welcome.
+Thanks for your interest! Here's how to contribute and what to know.
 
-## 📝 Contributor License Agreement (CLA)
+## How to Contribute
 
-By submitting a Pull Request (PR) or patch to this project, you agree to the following terms:
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3. **Commit** your changes
+4. **Push** to the branch
+5. **Open** a Pull Request
 
-### 1. Grant of Copyright License
-You grant to **AutoMates.AI** (the project owner) a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare derivative works of, publicly display, sublicense, and distribute your contributions and such derivative works.
+We review PRs regularly. Follow existing code style and conventions.
 
-**Simply put:** You give us permission to use your code forever, in any version of AutoMates (free or paid).
+## Contributor License Agreement
 
-### 2. Right to Re-License
-You acknowledge that AutoMates.AI has the right to re-license the software (including your contribution) under different terms in the future (e.g., a commercial license or "Pro" version), provided that your contribution also remains available under the open-source license it was submitted with.
+By submitting a PR, you agree:
 
-**Simply put:** We promise to keep your code open source, but we reserve the right to ALSO sell a commercial version that includes it.
+1. **License grant** — You give AutoMates a perpetual, worldwide, royalty-free license to use, modify, and distribute your contribution in any version (free or paid).
+2. **Re-licensing** — AutoMates may offer commercial versions that include your contribution, but your code also stays available under the open-source MIT license.
+3. **Originality** — Your contribution is your own work and doesn't violate anyone's copyright.
 
-### 3. Originality
-You represent that your contribution is your original creation (or you have the right to submit it) and that it does not violate anyone else's copyright.
+## Brand Usage
 
----
+You can use our code freely (MIT license), but the **AutoMates** name and logo are not part of the license:
 
-## 🛠️ How to Contribute
-
-1.  **Fork** the repository.
-2.  **Create** a feature branch (`git checkout -b feature/amazing-feature`).
-3.  **Commit** your changes.
-4.  **Push** to the branch.
-5.  **Open** a Pull Request.
-
-*We review PRs regularly. Please follow the existing code style and conventions.*
+- **OK:** Saying "compatible with AutoMates" or discussing the project in articles/talks
+- **Not OK:** Naming your fork "AutoMates Pro" or implying official endorsement
+- **If you fork:** Rename it and replace the branding so users know who's responsible

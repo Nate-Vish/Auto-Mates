@@ -205,12 +205,14 @@ LAUNCHER
 
     osascript <<EOF
 tell application "Terminal"
-    activate
+    -- Open a NEW window (not a tab in the current one)
     do script "'${launcher_script}'"
-    delay 0.5
-    set background color of selected tab of front window to {${r}, ${g}, ${b}}
-    set normal text color of selected tab of front window to {${tr}, ${tg}, ${tb}}
-    set the custom title of front window to "${agent_name}"
+    delay 0.8
+    -- Color only the newly opened window (last window), not the caller's window
+    set newWin to last window
+    set background color of selected tab of newWin to {${r}, ${g}, ${b}}
+    set normal text color of selected tab of newWin to {${tr}, ${tg}, ${tb}}
+    set the custom title of newWin to "${agent_name}"
 end tell
 EOF
 }

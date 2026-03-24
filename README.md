@@ -24,7 +24,7 @@ AutoMates is my answer to that. Not "more AI" — but AI that works like a team:
 
 ## Quick Start
 
-**Requires:** [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (CLI from Anthropic — works with an API key or a Claude Pro/Max subscription). Also compatible with Codex (`CODEX.md`) and Gemini CLI (`GEMINI.md`).
+**Requires:** [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (CLI from Anthropic — works with an API key or a Claude Pro/Max subscription). Also compatible with Codex (`AGENTS.md`) and Gemini CLI (`GEMINI.md`).
 
 ```bash
 git clone https://github.com/Nate-Vish/Auto-Mates.git
@@ -87,11 +87,11 @@ Type any agent skill to switch instantly. Your current agent's memory is saved a
 | `/summon [agent]` | Launch agent in a new terminal |
 | `/brief` | Project state, team status, pending work |
 | `/memorize` | Save agent memory + update dashboard |
-| `/compact [agent]` | Archive old sessions, refresh startup context |
 | `/video` | Create videos — recaps, explainers, comparisons, demos |
 | `/slides` | Create presentations (PPTX or HTML slideshow) |
 | `/cv` | Build or tailor a resume for a job application |
 | `/automates` | Open AutoMates root folder in Finder |
+| `/idea` | Quick-capture an idea to BrainStorm's knowledge graph |
 
 ### Team Pipelines
 
