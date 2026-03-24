@@ -88,7 +88,10 @@ Type any agent skill to switch instantly. Your current agent's memory is saved a
 | `/brief` | Project state, team status, pending work |
 | `/memorize` | Save agent memory + update dashboard |
 | `/compact [agent]` | Archive old sessions, refresh startup context |
-| `/watch-summary` | Generate a video-ready narration of the session |
+| `/video` | Create videos — recaps, explainers, comparisons, demos |
+| `/slides` | Create presentations (PPTX or HTML slideshow) |
+| `/cv` | Build or tailor a resume for a job application |
+| `/automates` | Open AutoMates root folder in Finder |
 
 ### Team Pipelines
 
@@ -159,6 +162,8 @@ Agents check their knowledge section, search `Library/Sources/`, and if needed, 
 ```
 AutoMates/
 ├── CLAUDE.md                    # Shared config (auto-loaded by Claude Code)
+├── GEMINI.md                    # Gemini CLI config
+├── CODEX.md / AGENTS.md         # Codex CLI config
 │
 ├── AgenTeam/                    # Agent identities + persistent memory
 │   ├── Orca/, Planner/, Builder/, Checker/
@@ -167,6 +172,7 @@ AutoMates/
 │
 ├── Library/
 │   ├── Registry.md              # Agent routing truth — who handles what
+│   ├── Arsenal.yaml             # Tools, MCPs, and integrations — shared across all agents
 │   ├── Fetcher/                 # Fetcher agent (lives near Sources)
 │   ├── Knowledge/               # Per-agent professional knowledge (self-contained)
 │   ├── Rules.md                 # Project constraints
@@ -209,15 +215,53 @@ AutoMates/
 
 ## Getting Started
 
-1. **Just talk to Orca** — Describe what you want to build. Orca routes you to the right agents.
+### Step 0: What You Need
 
-2. **Describe your project** — Edit `Dashboard/Project_Description.md` with your vision and `Library/Rules.md` with any constraints.
+One of these AI coding tools (any works, Claude Code has the deepest integration):
 
-3. **Agents coordinate through files** — Planner writes a Blueprint. Fetcher reads it and gathers sources. Builder studies both, then writes code. Checker reviews.
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) — full skill/hook support, native config
+- [Gemini CLI](https://github.com/google-gemini/gemini-cli) — reads `GEMINI.md`
+- [Codex CLI](https://github.com/openai/codex) — reads `AGENTS.md`
 
-4. **Quick ideas** — Tell BrainStorm `IDEA: [your idea]`. Logged instantly. No flow disruption.
+Also works from VS Code and JetBrains IDEs (via their built-in AI integrations).
 
-5. **Switch anytime** — `/builder` saves your current agent's memory and switches instantly.
+### Step 1: Clone and Open
+
+```bash
+git clone https://github.com/Nate-Vish/Auto-Mates.git
+cd Auto-Mates
+```
+
+These files become your AI's team structure.
+
+### Step 2: Meet Your Team Lead
+
+```
+/orca
+```
+
+Orca loads automatically — it reads the project, your past sessions, and walks you through everything.
+
+### Step 3: Tell It What You Want
+
+```
+You: I want to build a budgeting app
+Orca: Let me get the right agents on this...
+```
+
+You're the pilot. Agents are the crew. Describe what you want — Orca routes you to the right agent.
+
+### Step 4: Save Your Progress
+
+```
+/memorize
+```
+
+Saves what happened, lessons learned, and your preferences — as text files in your local folder.
+
+### Step 5: Come Back Anytime
+
+Next session, agents pick up where they left off. No re-explaining. They read their own memory on startup.
 
 ---
 
