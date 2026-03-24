@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AutoMates.AI — Where Your Imagination Becomes Creation</title>
-  <meta name="description" content="A coordinated AI development team. 10 specialized agents work together through shared memory and professional knowledge to turn your ideas into working software.">
+  <meta name="description" content="An open-source folder structure that gives one AI 10 specialized roles. Clone it, use it with Claude Code, Gemini CLI, or Codex. No app, no account — just files.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='50%25' x2='100%25' y2='50%25'%3E%3Cstop offset='0%25' stop-color='%239068b0'/%3E%3Cstop offset='40%25' stop-color='%23d4736a'/%3E%3Cstop offset='75%25' stop-color='%23e09a3a'/%3E%3Cstop offset='100%25' stop-color='%23f0c75e'/%3E%3C/linearGradient%3E%3ClinearGradient id='f' x1='0%25' y1='100%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%237a5295'/%3E%3Cstop offset='50%25' stop-color='%23d4736a'/%3E%3Cstop offset='100%25' stop-color='%23f0c75e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='300' rx='60' fill='%230f0a23'/%3E%3Cpolygon points='150,24 236,66 236,174 150,216 64,174 64,66' fill='rgba(120,80,160,0.15)' stroke='url(%23f)' stroke-width='6'/%3E%3Ctext x='150' y='155' text-anchor='middle' font-family='Arial,sans-serif' font-size='100' font-weight='900' fill='url(%23g)'%3EAM%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -377,6 +377,117 @@
       padding-left: 3.75rem;
     }
 
+    /* ===== HOW IT WORKS ===== */
+    .section-subtitle {
+      color: #b0a0be;
+      font-size: 1.05rem;
+      margin-top: 0.5rem;
+      font-weight: 300;
+    }
+    .steps-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+    .step-card {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      background: rgba(15, 10, 35, 0.55);
+      border: 1px solid rgba(122, 82, 149, 0.2);
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .step-card:hover {
+      border-color: rgba(122, 82, 149, 0.4);
+      background: rgba(15, 10, 35, 0.65);
+    }
+    .step-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #d4736a;
+      min-width: 2.5rem;
+      text-align: center;
+      line-height: 1;
+      padding-top: 0.2rem;
+      opacity: 0.7;
+    }
+    .step-content {
+      flex: 1;
+    }
+    .step-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .step-desc {
+      font-size: 0.9rem;
+      color: #c8c0d4;
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+    .step-desc:last-child { margin-bottom: 0; }
+    .step-desc code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      background: rgba(122, 82, 149, 0.2);
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      color: #e0d0f0;
+    }
+    .step-desc strong {
+      color: #e8e0f0;
+      font-weight: 600;
+    }
+    .step-code {
+      background: rgba(10, 6, 24, 0.7);
+      border: 1px solid rgba(122, 82, 149, 0.15);
+      border-radius: 10px;
+      padding: 0.85rem 1.1rem;
+      margin: 0.6rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .step-code code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: #c8b8e0;
+      display: block;
+    }
+    .step-tools {
+      display: flex;
+      gap: 0.6rem;
+      margin: 0.6rem 0;
+      flex-wrap: wrap;
+    }
+    .tool-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      padding: 0.35rem 0.75rem;
+      border: 1px solid rgba(212, 115, 106, 0.35);
+      border-radius: 20px;
+      color: #e0c0a0;
+      text-decoration: none;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .tool-badge:hover {
+      border-color: rgba(212, 115, 106, 0.6);
+      background: rgba(212, 115, 106, 0.1);
+    }
+    .step-note {
+      font-size: 0.78rem;
+      color: #9088a0;
+      font-style: italic;
+      margin-top: 0.3rem;
+    }
+
     /* ===== FEATURES (Built Different) ===== */
     .features-grid {
       display: grid;
@@ -624,7 +735,7 @@
       section { padding: 70px 0; }
       .nav-links { gap: 1.25rem; }
       .nav-links a { font-size: 0.8rem; }
-      .agents-grid { grid-template-columns: 1fr; }
+      .step-card { padding: 1.25rem; }
       .features-grid { grid-template-columns: 1fr; }
       .hero-headline { font-size: 2rem; }
       .oss-card { padding: 3rem 1.5rem; }
@@ -671,9 +782,9 @@
     <!-- Nav -->
     <nav class="nav">
       <div class="nav-inner">
-        <a href="#" class="nav-logo">AM</a>
+        <a href="#" class="nav-logo">AutoMates</a>
         <ul class="nav-links">
-          <li><a href="#agents">Agents</a></li>
+          <li><a href="#how-it-works">Get Started</a></li>
           <li><a href="#features">Features</a></li>
           <li><a href="#workspace">Structure</a></li>
           <li><a href="https://github.com/Nate-Vish/Auto-Mates" target="_blank" rel="noopener">GitHub</a></li>
@@ -723,10 +834,10 @@
         <div class="hero-brand">AutoMates</div>
         <div class="hero-tagline">connect the dots</div>
         <h1 class="hero-headline">Where your imagination becomes creation</h1>
-        <p class="hero-subtitle">A coordinated AI development team that turns your ideas into structured, working software.</p>
+        <p class="hero-subtitle">An open-source folder structure you clone and use with Claude Code, Gemini CLI, or Codex.<br>No app, no account &mdash; just files that give one AI 10 specialized roles.</p>
         <div class="hero-ctas">
-          <a href="https://github.com/Nate-Vish/Auto-Mates" target="_blank" rel="noopener" class="btn btn-primary">Star on GitHub</a>
-          <a href="#agents" class="btn btn-ghost">See the Agents</a>
+          <a href="https://github.com/Nate-Vish/Auto-Mates" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
+          <a href="#how-it-works" class="btn btn-ghost">Get Started</a>
         </div>
       </div>
     </section>
@@ -746,111 +857,76 @@
 
     <div class="section-divider"></div>
 
-    <!-- Agents -->
-    <section id="agents">
+    <!-- How It Works -->
+    <section id="how-it-works">
       <div class="container">
-        <h2>Meet the Agents</h2>
-        <div class="agents-grid">
-          <div class="agent-card">
-            <div class="agent-card-header">
-              <img src="Icons/Orca_Logo.png" alt="Orca" class="agent-icon">
-              <div class="agent-info">
-                <span class="agent-name">Orca</span>
-                <span class="agent-role">Orchestrator</span>
+        <h2>How It Works</h2>
+        <p class="section-subtitle">From zero to a full AI dev team in 5 minutes.</p>
+        <div class="steps-grid">
+
+          <div class="step-card">
+            <div class="step-number">0</div>
+            <div class="step-content">
+              <h3 class="step-title">What You Need</h3>
+              <p class="step-desc">One of these AI tools installed:</p>
+              <div class="step-tools">
+                <a href="https://docs.anthropic.com/en/docs/claude-code/overview" target="_blank" rel="noopener" class="tool-badge">Claude Code</a>
+                <a href="https://github.com/google-gemini/gemini-cli" target="_blank" rel="noopener" class="tool-badge">Gemini CLI</a>
+                <a href="https://github.com/openai/codex" target="_blank" rel="noopener" class="tool-badge">Codex CLI</a>
               </div>
+              <p class="step-note">Each requires a subscription or API key &mdash; check their pricing pages.</p>
+              <p class="step-desc">Also works inside <strong>VS Code</strong> and <strong>JetBrains</strong> &mdash; not just the terminal.</p>
             </div>
-            <p class="agent-desc">Guides you through AutoMates, designs agents, leads the team</p>
           </div>
-          <div class="agent-card">
-            <div class="agent-card-header">
-              <img src="Icons/Planner.png" alt="Planner" class="agent-icon">
-              <div class="agent-info">
-                <span class="agent-name">Planner</span>
-                <span class="agent-role">Architect</span>
+
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3 class="step-title">Download and Open</h3>
+              <p class="step-desc">In your terminal:</p>
+              <div class="step-code">
+                <code>git clone https://github.com/Nate-Vish/Auto-Mates.git</code>
+                <code>cd Auto-Mates</code>
               </div>
+              <p class="step-desc">Then start your AI tool by typing <code>claude</code>, <code>gemini</code>, or <code>codex</code>.</p>
+              <p class="step-desc">Your AI reads the files in this folder and uses them as instructions, memory, and workspace &mdash; turning one AI into a team of 10 specialists.</p>
             </div>
-            <p class="agent-desc">Creates technical blueprints, roadmaps, and project plans</p>
           </div>
-          <div class="agent-card">
-            <div class="agent-card-header">
-              <img src="Icons/Builder.png" alt="Builder" class="agent-icon">
-              <div class="agent-info">
-                <span class="agent-name">Builder</span>
-                <span class="agent-role">Engineer</span>
-              </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3 class="step-title">Meet Your Team Lead</h3>
+              <p class="step-desc">Inside the AI chat, type <code>/orca</code>. This tells the AI to load the Orca agent &mdash; it reads specific files in the folder you cloned and becomes your team lead.</p>
+              <p class="step-desc">First time? Just say <em>"Give me a tour."</em></p>
             </div>
-            <p class="agent-desc">Writes production code, implements features, ships products</p>
           </div>
-          <div class="agent-card">
-            <div class="agent-card-header">
-              <img src="Icons/Checker.png" alt="Checker" class="agent-icon">
-              <div class="agent-info">
-                <span class="agent-name">Checker</span>
-                <span class="agent-role">Auditor</span>
-              </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3 class="step-title">Tell It What You Want</h3>
+              <p class="step-desc">Describe what you want to build. Orca picks the right specialists &mdash; Planner designs it, Builder codes it, Checker reviews it.</p>
+              <p class="step-desc"><strong>You are the pilot. They are the crew.</strong></p>
             </div>
-            <p class="agent-desc">Adversarial security review, bug hunting, quality gates</p>
           </div>
-          <div class="agent-card">
-            <div class="agent-card-header">
-              <img src="Icons/BrainStorm.png" alt="BrainStorm" class="agent-icon">
-              <div class="agent-info">
-                <span class="agent-name">BrainStorm</span>
-                <span class="agent-role">Knowledge Graph</span>
-              </div>
+
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3 class="step-title">Save Your Progress</h3>
+              <p class="step-desc">When you're done, type <code>/memorize</code> in the chat. Your team saves everything &mdash; what happened, what worked, and your preferences. All saved as text files in your local folder &mdash; no cloud, no account needed.</p>
             </div>
-            <p class="agent-desc">Explores ideas, logs thoughts, connects concepts across domains</p>
           </div>
-          <div class="agent-card">
-            <div class="agent-card-header">
-              <img src="Icons/Legal.png" alt="Legal" class="agent-icon">
-              <div class="agent-info">
-                <span class="agent-name">Legal</span>
-                <span class="agent-role">Compliance</span>
-              </div>
+
+          <div class="step-card">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <h3 class="step-title">Come Back Anytime</h3>
+              <p class="step-desc">Close the terminal. Next time you start up, your team picks up right where you left off &mdash; what you built, where you stopped, and what's ahead.</p>
             </div>
-            <p class="agent-desc">Checks licenses, privacy, regulations, governance</p>
           </div>
-          <div class="agent-card">
-            <div class="agent-card-header">
-              <img src="Icons/GitDude.png" alt="GitDude" class="agent-icon">
-              <div class="agent-info">
-                <span class="agent-name">GitDude</span>
-                <span class="agent-role">Release Manager</span>
-              </div>
-            </div>
-            <p class="agent-desc">Version control, security scanning, commits, releases</p>
-          </div>
-          <div class="agent-card">
-            <div class="agent-card-header">
-              <img src="Icons/Fetcher.png" alt="Fetcher" class="agent-icon">
-              <div class="agent-info">
-                <span class="agent-name">Fetcher</span>
-                <span class="agent-role">Researcher</span>
-              </div>
-            </div>
-            <p class="agent-desc">Gathers knowledge, organizes research, finds sources</p>
-          </div>
-          <div class="agent-card">
-            <div class="agent-card-header">
-              <img src="Icons/Gal_Logo.png" alt="Gal" class="agent-icon">
-              <div class="agent-info">
-                <span class="agent-name">Gal</span>
-                <span class="agent-role">User Advocate</span>
-              </div>
-            </div>
-            <p class="agent-desc">Skeptical senior dev &mdash; asks the hard questions</p>
-          </div>
-          <div class="agent-card">
-            <div class="agent-card-header">
-              <img src="Icons/Daisy_Logo.png" alt="Daisy" class="agent-icon">
-              <div class="agent-info">
-                <span class="agent-name">Daisy</span>
-                <span class="agent-role">Brand Director</span>
-              </div>
-            </div>
-            <p class="agent-desc">Branding, copy, pitches, content strategy, design direction</p>
-          </div>
+
         </div>
       </div>
     </section>
@@ -865,7 +941,7 @@
           <div class="feature-card">
             <svg class="feature-icon" width="28" height="28" viewBox="0 0 28 28"><circle cx="6" cy="6" r="3" fill="#4a9ad4"/><circle cx="22" cy="6" r="3" fill="#d4736a"/><circle cx="14" cy="22" r="3" fill="#f0c75e"/><line x1="6" y1="6" x2="22" y2="6" stroke="#4a9ad4" stroke-width="1" opacity="0.5"/><line x1="22" y1="6" x2="14" y2="22" stroke="#d4736a" stroke-width="1" opacity="0.5"/><line x1="14" y1="22" x2="6" y2="6" stroke="#f0c75e" stroke-width="1" opacity="0.5"/></svg>
             <h3 class="feature-title">Connecting the Dots</h3>
-            <p class="feature-desc">New AI tools, MCPs, repos, and skills drop daily. AutoMates reviews, filters, and integrates what's actually worth your time &mdash; so you don't burn out figuring it out yourself.</p>
+            <p class="feature-desc">New AI tools, MCPs, repos, and skills drop daily. AutoMates reviews, filters, and integrates what's worth your time &mdash; a shared Arsenal.yaml keeps every agent on the same toolset.</p>
           </div>
           <div class="feature-card">
             <svg class="feature-icon" width="28" height="28" viewBox="0 0 28 28"><rect x="4" y="6" width="20" height="16" rx="2" fill="none" stroke="#9068b0" stroke-width="1.5"/><line x1="8" y1="11" x2="20" y2="11" stroke="#9068b0" stroke-width="1" opacity="0.6"/><line x1="8" y1="15" x2="16" y2="15" stroke="#9068b0" stroke-width="1" opacity="0.4"/><circle cx="21" cy="5" r="4" fill="none" stroke="#f0c75e" stroke-width="1.5"/><line x1="21" y1="3" x2="21" y2="5" stroke="#f0c75e" stroke-width="1.2"/><line x1="21" y1="5" x2="23" y2="5" stroke="#f0c75e" stroke-width="1.2"/></svg>
@@ -890,7 +966,7 @@
           <div class="feature-card">
             <svg class="feature-icon" width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="11" r="7" fill="none" stroke="#4a9ad4" stroke-width="1.5"/><path d="M10 10c1-2 3-3 4-3s3 1 4 3" fill="none" stroke="#4a9ad4" stroke-width="1"/><circle cx="11" cy="10" r="1" fill="#4a9ad4"/><circle cx="17" cy="10" r="1" fill="#4a9ad4"/><path d="M11 14c1 1.5 5 1.5 6 0" fill="none" stroke="#4a9ad4" stroke-width="1" stroke-linecap="round"/><path d="M8 21l6-4 6 4" fill="none" stroke="#f0c75e" stroke-width="1.5" stroke-linecap="round"/></svg>
             <h3 class="feature-title">Orca Guides You</h3>
-            <p class="feature-desc">No setup guide needed. Orca meets you where you are, orchestrates the team, and walks you through everything. You don't learn AutoMates &mdash; AutoMates learns you.</p>
+            <p class="feature-desc">Orca routes tasks to the right agent, loads context, and orchestrates the team. Type <code>/orca</code> and tell it what you need &mdash; it handles the rest. Add your own agents with <code>/forge</code>.</p>
           </div>
         </div>
       </div>
@@ -910,7 +986,7 @@
               <img src="Icons/Agents.png" alt="AgenTeam" class="folder-icon">
               <div class="folder-info">
                 <div class="folder-name">AgenTeam</div>
-                <div class="folder-desc">Agent identities + persistent memory</div>
+                <div class="folder-desc">Agent identities, memory, and session history</div>
               </div>
               <span class="folder-toggle">&#9662;</span>
             </div>
@@ -989,7 +1065,7 @@
               <img src="Icons/Library.png" alt="Library" class="folder-icon">
               <div class="folder-info">
                 <div class="folder-name">Library</div>
-                <div class="folder-desc">Knowledge, research, and routing</div>
+                <div class="folder-desc">Knowledge base, research sources, and agent routing</div>
               </div>
               <span class="folder-toggle">&#9662;</span>
             </div>
@@ -1034,7 +1110,7 @@
                   <svg class="folder-item-icon" viewBox="0 0 36 36"><rect rx="6" width="36" height="36" fill="#1a1530"/><rect x="8" y="10" width="8" height="8" rx="2" fill="#d4736a" opacity="0.7"/><rect x="20" y="10" width="8" height="8" rx="2" fill="#4a9ad4" opacity="0.7"/><rect x="8" y="22" width="8" height="6" rx="2" fill="#f0c75e" opacity="0.7"/><rect x="20" y="22" width="8" height="6" rx="2" fill="#9068b0" opacity="0.7"/><line x1="16" y1="14" x2="20" y2="14" stroke="#e8e0f0" stroke-width="0.8" opacity="0.4"/><line x1="12" y1="18" x2="12" y2="22" stroke="#e8e0f0" stroke-width="0.8" opacity="0.4"/><line x1="24" y1="18" x2="24" y2="22" stroke="#e8e0f0" stroke-width="0.8" opacity="0.4"/></svg>
                   <div class="folder-item-info">
                     <div class="folder-item-name">Arsenal.yaml</div>
-                    <div class="folder-item-desc">Tools, skills, MCPs, CLIs &mdash; shared registry for all agents</div>
+                    <div class="folder-item-desc">Tools, MCPs, and integrations &mdash; shared across all agents</div>
                   </div>
                 </div>
               </div>
@@ -1047,7 +1123,7 @@
               <img src="Icons/Dashboard.png" alt="Dashboard" class="folder-icon">
               <div class="folder-info">
                 <div class="folder-name">Dashboard</div>
-                <div class="folder-desc">Where agents coordinate</div>
+                <div class="folder-desc">Active workspace &mdash; projects, state, and version control</div>
               </div>
               <span class="folder-toggle">&#9662;</span>
             </div>
@@ -1084,13 +1160,13 @@
 
     <div class="section-divider"></div>
 
-    <!-- Open Source CTA -->
+    <!-- GitHub CTA -->
     <section class="oss-cta">
       <div class="container">
         <div class="oss-card">
           <h2>Built in the Open</h2>
           <p class="oss-desc">AutoMates is open source. Star the repo, fork it, make it yours. The best tools are the ones you can shape.</p>
-          <a href="https://github.com/Nate-Vish/Auto-Mates" target="_blank" rel="noopener" class="btn btn-primary">Star on GitHub</a>
+          <a href="https://github.com/Nate-Vish/Auto-Mates" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
         </div>
       </div>
     </section>
@@ -1305,7 +1381,7 @@
 
       // Cards get stronger backgrounds as sky brightens
       var cardBgAlpha = p > 0.5 ? lerp(0.55, 0.8, (p - 0.5) / 0.5) : 0.55;
-      document.querySelectorAll('.agent-card, .feature-card, .folder-card, .oss-card').forEach(function(card) {
+      document.querySelectorAll('.step-card, .feature-card, .folder-card, .oss-card').forEach(function(card) {
         card.style.background = 'rgba(15, 10, 35, ' + cardBgAlpha.toFixed(2) + ')';
       });
 
