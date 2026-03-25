@@ -2,6 +2,8 @@
 
 **Domain:** Software licensing, intellectual property, privacy & data protection, SaaS compliance, contracts, and regulatory governance.
 
+> **Disclaimer:** This content is educational reference material for AI agents, not legal advice. Consult a qualified attorney for decisions affecting your business.
+
 **Read this on every startup.** This cheat sheet gives you working knowledge for 90% of decisions. Pull topic files for deep-dive situations.
 
 ---

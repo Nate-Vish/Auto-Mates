@@ -16,7 +16,7 @@ allowed-tools:
 
 # /cv — Resume Builder
 
-Build, tailor, or critique a resume for a job application. Uses a structured process with honest fit assessment, iterative quality scoring, and document export.
+Build, tailor, or critique a resume for a job application. Learns your career story, assesses fit honestly, scores iteratively, and exports clean documents.
 
 ---
 
@@ -33,13 +33,15 @@ Build, tailor, or critique a resume for a job application. Uses a structured pro
 
 ## Career Workspace
 
-All career files live at: `Dashboard/Work_Space/Nathan-Career/`
+All career files live at: `Dashboard/Work_Space/Career/`
+
+If this folder doesn't exist, create it on first run.
 
 | File | Purpose |
 |------|---------|
-| `Nathan-Profile.md` | Complete personal profile (single source of truth) |
-| `resume-template.md` | Master resume template with customization rules |
-| `session-log.md` | All applications, decisions, lessons, preferences |
+| `Profile.md` | Complete personal profile (single source of truth) |
+| `resume-template.md` | Master resume template with learned formatting rules |
+| `session-log.md` | All applications, decisions, lessons, learned preferences |
 | `Applications/<Company>/` | Per-company resume, cover letter, career notes |
 
 ---
@@ -48,7 +50,7 @@ All career files live at: `Dashboard/Work_Space/Nathan-Career/`
 
 ### Phase 1: Intake
 
-**If profile exists** (`Nathan-Profile.md`):
+**If profile exists** (`Profile.md`):
 - Read it — most intake is pre-loaded
 - Read `session-log.md` — past applications, lessons, preferences
 - Read `resume-template.md` — master template and rules
@@ -56,15 +58,15 @@ All career files live at: `Dashboard/Work_Space/Nathan-Career/`
 
 **If no profile exists:**
 Ask these questions in order (skip what's already known):
-1. Name, contact, links
-2. Education (school, year, programs)
-3. Work experience (all roles, dates, what you actually did)
-4. Projects (what you built, what tech, what status — be honest)
+1. Name, contact info, links (GitHub, LinkedIn, portfolio)
+2. Education (school, degree/program, status, graduation year)
+3. Work experience (all roles, dates, what you actually did — not what you wish you did)
+4. Projects (what you built, what tech, what's the current status — be honest)
 5. Skills (only what you can defend in an interview)
-6. Languages spoken
-7. What drives you / personal story
+6. Languages spoken and proficiency level
+7. What drives you / personal story / career direction
 
-**Save the profile** to `Nathan-Profile.md` for future use.
+**Save the profile** to `Profile.md` for future use. Update it whenever the user shares new experience.
 
 ### Phase 2: Job Analysis
 
@@ -75,7 +77,7 @@ If a job URL or description is provided:
 ```
 | Requirement | Match | Evidence |
 |-------------|-------|----------|
-| Python 3+   | Strong | AutoMates, FinCat |
+| Python 3+   | Strong | [user's relevant project] |
 | K8s exp     | Gap   | No direct experience |
 ```
 
@@ -85,18 +87,18 @@ If a job URL or description is provided:
 
 ### Phase 3: Resume Drafting
 
-Follow these **hard rules** (from session lessons):
+Follow these **hard rules:**
 - **DO NOT mirror the job description.** Describe what you actually did. Let the recruiter connect the dots.
 - **DO NOT fabricate, inflate, or embellish.** No fake titles, no invented skills, no exaggerated metrics.
 - **Every bullet starts with what YOU did** (Built, Designed, Shipped, Led, etc.)
-- **"Planning" means planning. "Shipped" means shipped.** Be honest about status.
+- **Be honest about status.** "Planning" means planning. "Shipped" means shipped. "In progress" means in progress.
 - **Only list skills you can defend in an interview.**
 - **Reorder experience** to lead with what matters most for THIS role.
 - **Drop irrelevant sections** — not every project belongs on every resume.
-- **No stack lines in experience bullets** — tools belong in Skills section.
-- **"Half the degree"** not "first year of CS."
-- **"Soldiers"** not "people" for military context.
-- **English = "Fluent"** not "Full Proficiency."
+- **Tools belong in the Skills section** — not scattered through experience bullets.
+- **Use honest framing** — don't inflate partial completion of education, projects, or roles.
+- **Use natural language** for proficiency levels (Fluent, Conversational, Basic — not corporate jargon).
+- **Use precise terminology** — match the industry and context (technical terms for technical roles, business terms for business roles).
 
 Create the tailored resume at: `Applications/<Company>/resume-<company>-ats.md`
 
@@ -148,7 +150,7 @@ Save to: `Applications/<Company>/cover-letter-<company>.md`
    - Key reframing decisions
    - Files created
    - Status: READY TO APPLY / APPLIED / SKIPPED (with reason)
-4. **Update Nathan-Profile.md** if new experience was mentioned
+4. **Update Profile.md** if new experience was mentioned
 
 ---
 
@@ -179,8 +181,8 @@ Read `session-log.md` and present:
 ```
 | # | Company | Role | Status | Date |
 |---|---------|------|--------|------|
-| 1 | Siemens | AI Engineer Student | APPLIED | 2026-03-01 |
-| 2 | Alice   | GenAI Analyst        | APPLIED | 2026-03-01 |
+| 1 | Google  | Software Engineer  | APPLIED | 2026-01-15 |
+| 2 | Stripe  | Backend Developer  | READY   | 2026-01-20 |
 | ...
 ```
 
@@ -193,20 +195,18 @@ Read `session-log.md` and present:
 - **No fake personas.** We don't pretend to be 8 experts. We're one agent doing thorough work. If independent review is needed, route to `/checker` or `/gal`.
 - **No inflated titles.** "Open-Source Developer" not "Lead AI Engineer." "Personal Project" not "Startup."
 - **No buzzword stuffing.** Skills section lists real tools. "Synergistic AI-driven paradigms" is not a skill.
+- **Always audit AI-generated career materials before submitting** — check for fabrications, inflated claims, or mirrored language.
 
 ---
 
-## Session Preferences (Living List)
+## Learning Preferences
 
-These are learned from past sessions. Update as new preferences emerge:
+This skill learns the user's career preferences over time through `session-log.md`. Preferences are discovered during sessions — not hardcoded. Examples of things the skill learns:
 
-- English level: Fluent
-- Sunny description: AI Daily Assistant | In Progress
-- Military briefings: "50+ soldiers" not "50+ people"
-- Degree progress: "half the degree" not "first year of CS"
-- Community: "high-tech meetups such as..." not "Regular at [specific companies]"
-- Stack lines: remove from experience bullets
-- FinCat: do not include (repo is messy, not portfolio-ready)
-- Network Chat: only include when networking is relevant to the role
-- Audit AI-generated career materials before submitting — check for fabrications
-- Designed resumes: use Claude Cowork + Canva MCP (not CLI)
+- How the user prefers to describe their education, experience, and projects
+- Which projects are portfolio-ready and which aren't
+- Preferred resume formatting and section ordering
+- Industry-specific terminology the user prefers
+- Cover letter tone and style
+
+When a new preference is discovered, log it in `session-log.md` so future sessions can apply it automatically.

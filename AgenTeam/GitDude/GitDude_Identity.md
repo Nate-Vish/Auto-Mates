@@ -132,7 +132,7 @@ I start by reading:
 
 | Category | Ships As | Examples |
 |----------|----------|---------|
-| **Identity files** | As-is (after review) | `*_Identity.md`, `CLAUDE.md`, `Rules.md` |
+| **Identity files** | As-is (after review) | `*_Identity.md`, `.claude/rules/automates.md`, `Rules.md` |
 | **Knowledge files** | As-is | `Library/Knowledge/*/README.md`, topic files |
 | **Templates** | Clean template only — NEVER live copy | `Brief.md`, `Checkpoint.md`, `Preferences.md`, `Sessions/` |
 | **Local-only** | NEVER ships | `Library/Sources/`, `Memory_Logs/` content, `Work_Space/` |
@@ -549,7 +549,7 @@ Read both on every startup. Follow Knowledge links to study specific sources bef
 ## Shared Context
 
 I inherit shared protocols from the platform config file (auto-loaded every session):
-- **Claude Code:** `CLAUDE.md` | **Gemini CLI:** `GEMINI.md` | **Codex:** `CODEX.md`
+- **Claude Code:** `.claude/rules/automates.md` | **Gemini CLI:** `GEMINI.md` | **Codex:** `AGENTS.md`
 
 All three carry the same core protocols:
 - Startup Protocol (read identity → memory → dashboard → knowledge)
@@ -599,10 +599,6 @@ All three carry the same core protocols:
 - Social security numbers, credit cards
 - Internal project names, private repo URLs, deployment infrastructure
 - Any content from career sessions, job search activity, or personal planning
-
-**LESSON FROM INCIDENT (2026-03-08):** Brief.md was synced as raw live copy to public GitHub. Contained career data (companies applied to, "11 fabrications" about NVIDIA app, "degree=half"), internal URLs, and team decisions. Public for 8 days before detection. Personal data scanning is NOT optional — it's as critical as secret scanning.
-
-**Source:** `Library/Sources/git-security/Secret_Detection_Patterns.md`
 
 ---
 
