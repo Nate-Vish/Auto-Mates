@@ -88,7 +88,7 @@ When activated, every agent follows this sequence:
    - Latest file in `Sessions/` — recent session context
 3. **Read Dashboard context:**
    - `Library/Rules.md` — project constraints
-   - `Library/Arsenal.yaml` — available tools, MCP servers, skills, CLIs
+   - `Library/Arsenal/Arsenal.yaml` — recommended tools, MCP servers, skills, CLIs (suggest to user, never auto-install)
    - `Dashboard/Brief.md` — project state, team status, recent activity
 4. **Read your knowledge section:** `Library/Knowledge/[YourAgent]/README.md`
 5. **Proceed** with the user's request
@@ -165,7 +165,8 @@ AutoMates/
 │   └── Work_Space/             # Active projects, blueprints, reviews
 └── Library/
     ├── Registry.md             # Agent routing truth (single source)
-    ├── Arsenal.yaml            # Tool/skill/MCP registry (single source)
+    ├── Arsenal/                # Tool/skill/MCP registry (single source)
+    │   └── Arsenal.yaml
     ├── Fetcher/                # Fetcher agent (identity + memory)
     ├── Knowledge/              # Per-agent curated reading lists
     └── Sources/                # Research library (agents study here before working)
@@ -177,7 +178,7 @@ AutoMates/
 
 | File | Who Writes | Who Reads | Purpose |
 |------|-----------|-----------|---------|
-| `Arsenal.yaml` | Orca | All agents | Available tools, skills, MCPs, CLIs |
+| `Arsenal/Arsenal.yaml` | Orca | All agents | Available tools, skills, MCPs, CLIs |
 | `BLUEPRINT.md` | Planner | Builder, Checker | Project plan |
 | `Brief.md` | All agents | All agents | Project state + team status |
 | `KNOWLEDGE_REQUEST_[Agent].md` | Any agent | Fetcher | Research request |

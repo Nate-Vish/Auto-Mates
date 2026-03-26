@@ -180,7 +180,8 @@ AutoMates/
 │
 ├── Library/
 │   ├── Registry.md              # Agent routing truth — who handles what
-│   ├── Arsenal.yaml             # Tools, MCPs, and integrations — shared across all agents
+│   ├── Arsenal/                 # Tools, MCPs, and integrations — shared across all agents
+│   │   └── Arsenal.yaml
 │   ├── Fetcher/                 # Fetcher agent (lives near Sources)
 │   ├── Knowledge/               # Per-agent professional knowledge (self-contained)
 │   ├── Rules.md                 # Project constraints

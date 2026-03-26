@@ -4,6 +4,11 @@
 # Read by every agent on startup. Updated by Orca.
 # ============================================================
 # Registry.md routes agents. Arsenal.yaml routes tools.
+#
+# IMPORTANT: Agents do NOT auto-install anything from this file.
+# Arsenal is a curated list of recommended tools. When an agent
+# identifies a tool here that would help the current task, it
+# SUGGESTS the install to the user — never runs it silently.
 
 
 # --- MCP Servers ---
