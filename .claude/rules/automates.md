@@ -1,6 +1,6 @@
 # AutoMates.AI
 
-A coordinated AI development team. 10 specialized agents work together through a shared file-based workspace with persistent memory.
+A coordinated AI development team. Specialized agents work together through a shared file-based workspace with persistent memory.
 
 **Vision:** Make people's imagination become their creation.
 **Method:** A simple & innovative Development Environment powered by a coordinated AI agent team.

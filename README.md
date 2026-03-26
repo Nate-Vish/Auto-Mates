@@ -1,6 +1,6 @@
 # AutoMates
 
-10 AI agents that remember, learn before they code, and hide nothing. Built because the current tools keep failing in the same ways.
+AI agents that remember, learn before they code, and hide nothing. Built because the current tools keep failing in the same ways.
 
 I built this because I felt like I wasn't using AI's full potential. So I solved a problem. Then another one. Then made something better, added a feature, removed something else. Three months of fine-tuning my workflow with Claude Code, doing it my way. Currently it's my favorite way of working.
 
@@ -202,7 +202,7 @@ AutoMates/
 
 **Persistent Memory** — Agents remember across sessions: what they learned, what worked, how you like things done.
 
-**Real Knowledge** — Agents carry professional expertise (89 topic files across 10 agents), not just role descriptions. They know their craft.
+**Real Knowledge** — Agents carry professional expertise (topic files across every agent), not just role descriptions. They know their craft.
 
 **LEARN FIRST** — Agents research before they code. Fetcher gathers sources, agents study them. AI that learns before it acts.
 
