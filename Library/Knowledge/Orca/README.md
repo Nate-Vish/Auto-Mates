@@ -83,7 +83,7 @@ Orca is the only agent who understands the entire file system as a living archit
 
 ```
 Auto-Mates.AI/
-├── CLAUDE.md                    # Shared protocols for Claude Code (auto-loaded)
+├── .claude/rules/automates.md   # Shared protocols for Claude Code (auto-loaded)
 ├── GEMINI.md                    # Shared protocols for Gemini CLI
 ├── CODEX.md                     # Shared protocols for OpenAI Codex
 ├── AgenTeam/                    # Agent identities + persistent memory
@@ -122,7 +122,7 @@ Auto-Mates.AI/
 - **Library/Sources/** = Fetcher's research cache. Temporary. NOT shipped to GitHub.
 - **Library/Knowledge/** = self-contained professional knowledge per agent. This IS shipped.
 - **Library/Registry.md** = routing truth. All agents read on startup. Orca maintains it.
-- **Platform configs** (CLAUDE.md, GEMINI.md, CODEX.md) must be self-contained — each carries all shared protocols inline because the other platform files may not load.
+- **Platform configs** (.claude/rules/automates.md, GEMINI.md, AGENTS.md) must be self-contained — each carries all shared protocols inline because the other platform files may not load.
 - **Skills** = directory name IS the command. `.claude/skills/builder/SKILL.md` = `/builder`.
 
 ### Structural Change Protocol
@@ -177,7 +177,7 @@ When creating a new agent, follow this checklist. Every item is mandatory.
 
 - [ ] Add to `Library/Registry.md` (routing table, boundaries, chains)
 - [ ] Create skill in `.claude/skills/[agent]/SKILL.md`
-- [ ] Add to CLAUDE.md, GEMINI.md, CODEX.md agent roster
+- [ ] Add to .claude/rules/automates.md, GEMINI.md, AGENTS.md agent roster
 - [ ] Create Knowledge folder `Library/Knowledge/[Agent]/README.md`
 - [ ] Update `Dashboard/Brief.md` team status
 - [ ] Update `summon.sh`

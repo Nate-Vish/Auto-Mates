@@ -13,7 +13,7 @@ All notable changes to AutoMates.AI will be documented in this file.
 - **Professional Knowledge** — 89 topic files across 10 agents (Library/Knowledge/). Self-contained expertise, no external dependencies
 - **BrainStorm Knowledge Graph** — 60+ nodes, 387+ connections, personal mind map system with MindMap.md index
 - **Landing page** — automate-s.com with HTTPS, "How It Works" guide, sunrise theme
-- **Multi-platform support** — CLAUDE.md (Claude Code), GEMINI.md (Gemini CLI), AGENTS.md (Codex CLI)
+- **Multi-platform support** — .claude/rules/automates.md (Claude Code), GEMINI.md (Gemini CLI), AGENTS.md (Codex CLI)
 - **`/idea` skill** — Quick-capture ideas to BrainStorm's graph from any agent
 - **`/video` skill** — Create videos via Remotion (recaps, explainers, demos)
 - **`/slides` skill** — Create PPTX or HTML presentations

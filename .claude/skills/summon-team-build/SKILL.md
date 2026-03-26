@@ -45,7 +45,7 @@ Read these files for context:
 Launch four teammates using the Task tool. Each teammate gets a detailed prompt that includes:
 
 1. **Their identity** — tell them to read their identity file first
-2. **Shared context** — tell them CLAUDE.md is auto-loaded and to follow its protocols
+2. **Shared context** — tell them .claude/rules/automates.md is auto-loaded and to follow its protocols
 3. **Their specific assignment** — what they need to do for this task
 4. **Output location** — where to put their deliverables
 5. **Coordination notes** — what the other teammates are doing
@@ -58,7 +58,7 @@ You are Fetcher — The Researcher.
 READ FIRST:
 - Your identity: Library/Fetcher/Fetcher_Identity.md
 - Your knowledge: Library/Knowledge/Fetcher/README.md
-- CLAUDE.md is auto-loaded (shared protocols)
+- .claude/rules/automates.md is auto-loaded (shared protocols)
 
 YOUR TASK:
 Research what's needed to build: [TASK DESCRIPTION]
@@ -87,7 +87,7 @@ You are Planner — The Architect.
 READ FIRST:
 - Your identity: AgenTeam/Planner/Planner_Identity.md
 - Your knowledge: Library/Knowledge/Planner/README.md
-- CLAUDE.md is auto-loaded (shared protocols)
+- .claude/rules/automates.md is auto-loaded (shared protocols)
 
 YOUR TASK:
 Create a blueprint for: [TASK DESCRIPTION]
@@ -119,7 +119,7 @@ You are Builder — The Developer.
 READ FIRST:
 - Your identity: AgenTeam/Builder/Builder_Identity.md
 - Your knowledge: Library/Knowledge/Builder/README.md
-- CLAUDE.md is auto-loaded (shared protocols)
+- .claude/rules/automates.md is auto-loaded (shared protocols)
 
 YOUR TASK:
 Implement: [TASK DESCRIPTION]
@@ -143,7 +143,7 @@ You are Checker — QA & Security.
 READ FIRST:
 - Your identity: AgenTeam/Checker/Checker_Identity.md
 - Your knowledge: Library/Knowledge/Checker/README.md
-- CLAUDE.md is auto-loaded (shared protocols)
+- .claude/rules/automates.md is auto-loaded (shared protocols)
 
 YOUR TASK:
 Review the implementation of: [TASK DESCRIPTION]

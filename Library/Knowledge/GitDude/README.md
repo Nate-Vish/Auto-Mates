@@ -82,7 +82,7 @@ A live operational file was synced as raw copy to public GitHub. It contained PI
 Dashboard/Version_Control/
 └── AutoMates/          ← .git lives here. This is the repo root.
     ├── .git/           ← The database. Stores ALL versions internally.
-    ├── CLAUDE.md       ← Latest version of every file sits at root
+    ├── .claude/rules/automates.md  ← Latest version of every file sits at root
     ├── README.md
     ├── CHANGELOG.md
     └── ...             ← All files = current (latest) version
@@ -120,7 +120,7 @@ Dashboards, checkpoints, preferences, session logs — any file where real-world
 
 | Category | Ships As | Examples |
 |----------|----------|---------|
-| Identity files | As-is (after review) | `*_Identity.md`, `CLAUDE.md`, `Rules.md` |
+| Identity files | As-is (after review) | `*_Identity.md`, `.claude/rules/automates.md`, `Rules.md` |
 | Knowledge files | As-is | `Library/Knowledge/*/README.md`, topic files |
 | Templates | Clean template ONLY | `Brief.md`, `Checkpoint.md`, `Preferences.md`, `Sessions/` |
 | Local-only | NEVER ships | `Library/Sources/`, `Memory_Logs/` content, `Work_Space/` |

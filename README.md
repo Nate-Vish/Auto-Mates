@@ -4,7 +4,7 @@
 
 I built this because I felt like I wasn't using AI's full potential. So I solved a problem. Then another one. Then made something better, added a feature, removed something else. Three months of fine-tuning my workflow with Claude Code, doing it my way. Currently it's my favorite way of working.
 
-Built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) by [@Nate-Vish](https://github.com/Nate-Vish). Also works with [OpenAI Codex](https://openai.com/index/codex/) and [Gemini CLI](https://github.com/google-gemini/gemini-cli), though Claude Code has the deepest integration (skills, hooks, native config). Free and open source.
+Built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) by [@Nate-Vish](https://github.com/Nate-Vish). Also works with [OpenAI Codex](https://openai.com/index/codex/) and [Gemini CLI](https://github.com/google-gemini/gemini-cli), though Claude Code has the deepest integration (skills, hooks, native config). Won't overwrite your existing config — uses `.claude/rules/` (zero conflict). Free and open source.
 
 Currently used daily by the author for real projects. Early but stable.
 
@@ -161,9 +161,17 @@ Agents check their knowledge section, search `Library/Sources/`, and if needed, 
 
 ```
 AutoMates/
-├── CLAUDE.md                    # Shared config (auto-loaded by Claude Code)
 ├── GEMINI.md                    # Gemini CLI config
-├── CODEX.md / AGENTS.md         # Codex CLI config
+├── AGENTS.md                    # Codex + multi-tool config (23+ AI tools read this)
+│
+├── .claude/
+│   ├── rules/automates.md       # Claude Code config (auto-loaded, zero conflict)
+│   └── skills/                  # All slash commands live here
+│       ├── orca/, builder/, ... # Agent switch skills
+│       ├── forge/               # Create new agents
+│       ├── summon/              # Launch agents in terminals
+│       ├── brief/, memorize/    # Dashboard + memory commands
+│       └── ...
 │
 ├── AgenTeam/                    # Agent identities + persistent memory
 │   ├── Orca/, Planner/, Builder/, Checker/
@@ -177,13 +185,6 @@ AutoMates/
 │   ├── Knowledge/               # Per-agent professional knowledge (self-contained)
 │   ├── Rules.md                 # Project constraints
 │   └── Sources/                 # Research library — agents study here before working
-│
-├── .claude/skills/              # All slash commands live here
-│   ├── orca/, builder/, ...     # Agent switch skills
-│   ├── forge/                   # Create new agents
-│   ├── summon/                  # Launch agents in terminals
-│   ├── brief/, memorize/        # Dashboard + memory commands
-│   └── ...
 │
 └── Dashboard/                   # Where agents coordinate
     ├── Brief.md                 # Project state + team status

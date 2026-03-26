@@ -100,4 +100,4 @@ apis: {}
 # 1. Install and verify it works
 # 2. Add an entry to the right section above
 # 3. Note which agents benefit
-# 4. Update CLAUDE.md if it changes startup protocol
+# 4. Update .claude/rules/automates.md if it changes startup protocol

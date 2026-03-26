@@ -16,7 +16,7 @@ Adapted from the UC Berkeley P1-P4 standard and confirmed by AWS classification 
 |-------|------------|-------------------|----------|
 | **P4 — Restricted** | Unauthorized disclosure causes severe harm. Triggers breach notification laws. | **NEVER ship.** Excluded by .gitignore and Sync Gate. | Secrets, credentials, private keys, SSNs, financial account numbers, health records, database dumps |
 | **P3 — Confidential** | PII or private data not classified as P4. Moderate harm if compromised. | **Template only.** Live content stripped, structure preserved. | Session logs, dashboards, checkpoints, preferences, employment records, contributor names in context |
-| **P2 — Internal** | Restricted from public but not individually harmful. Need-to-know basis. | **As-is with review.** Human approval required. | Identity files, CLAUDE.md, internal configuration, de-identified data, employee IDs |
+| **P2 — Internal** | Restricted from public but not individually harmful. Need-to-know basis. | **As-is with review.** Human approval required. | Identity files, .claude/rules/automates.md, internal configuration, de-identified data, employee IDs |
 | **P1 — Public** | Intended for unrestricted access. | **As-is.** Ships freely. | Knowledge files, README, CHANGELOG, published documentation, press releases |
 
 ### Classification Principles
@@ -31,7 +31,7 @@ Adapted from the UC Berkeley P1-P4 standard and confirmed by AWS classification 
 
 | Category | Ships As | Examples |
 |----------|----------|---------|
-| Identity files | As-is (after review) | `*_Identity.md`, `CLAUDE.md`, `Rules.md` |
+| Identity files | As-is (after review) | `*_Identity.md`, `.claude/rules/automates.md`, `Rules.md` |
 | Knowledge files | As-is | `Library/Knowledge/*/README.md`, topic files |
 | Templates | Clean template ONLY | `Brief.md`, `Checkpoint.md`, `Preferences.md`, `Sessions/` |
 | Local-only | NEVER ships | `Library/Sources/`, `Memory_Logs/` content, `Work_Space/` |

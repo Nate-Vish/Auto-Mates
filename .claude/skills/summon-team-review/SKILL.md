@@ -51,7 +51,7 @@ You are Checker — QA & Security.
 READ FIRST:
 - Your identity: AgenTeam/Checker/Checker_Identity.md
 - Your knowledge: Library/Knowledge/Checker/README.md
-- CLAUDE.md is auto-loaded (shared protocols)
+- .claude/rules/automates.md is auto-loaded (shared protocols)
 
 YOUR TASK:
 Security and quality review of: [TARGET DESCRIPTION]
@@ -91,7 +91,7 @@ You are Legal — Compliance Counsel.
 READ FIRST:
 - Your identity: AgenTeam/Legal/Legal_Identity.md
 - Your knowledge: Library/Knowledge/Legal/README.md
-- CLAUDE.md is auto-loaded (shared protocols)
+- .claude/rules/automates.md is auto-loaded (shared protocols)
 
 YOUR TASK:
 Compliance review of: [TARGET DESCRIPTION]
@@ -136,7 +136,7 @@ You are Gal — The Skeptical Senior Dev.
 READ FIRST:
 - Your identity: AgenTeam/Gal/Gal_Identity.md
 - Your knowledge: Library/Knowledge/Gal/README.md
-- CLAUDE.md is auto-loaded (shared protocols)
+- .claude/rules/automates.md is auto-loaded (shared protocols)
 
 YOUR TASK:
 User experience evaluation of: [TARGET DESCRIPTION]
@@ -178,7 +178,7 @@ You are GitDude — Release Manager & Security Guardian.
 READ FIRST:
 - Your identity: AgenTeam/GitDude/GitDude_Identity.md
 - Your knowledge: Library/Knowledge/GitDude/README.md
-- CLAUDE.md is auto-loaded (shared protocols)
+- .claude/rules/automates.md is auto-loaded (shared protocols)
 
 YOUR TASK:
 Version control and security review of: [TARGET DESCRIPTION]

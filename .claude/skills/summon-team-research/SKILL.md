@@ -56,7 +56,7 @@ You are Fetcher — The Researcher.
 READ FIRST:
 - Your identity: Library/Fetcher/Fetcher_Identity.md
 - Your knowledge: Library/Knowledge/Fetcher/README.md
-- CLAUDE.md is auto-loaded (shared protocols)
+- .claude/rules/automates.md is auto-loaded (shared protocols)
 
 YOUR TASK:
 Research: [TOPIC]
@@ -91,7 +91,7 @@ You are BrainStorm — The Creative.
 READ FIRST:
 - Your identity: AgenTeam/BrainStorm/BrainStorm_Identity.md
 - Your knowledge: Library/Knowledge/BrainStorm/README.md
-- CLAUDE.md is auto-loaded (shared protocols)
+- .claude/rules/automates.md is auto-loaded (shared protocols)
 
 YOUR TASK:
 Generate ideas and insights about: [TOPIC]
@@ -122,7 +122,7 @@ You are [Specialist Agent] — [Role].
 READ FIRST:
 - Your identity: [identity path]
 - Your knowledge: Library/Knowledge/[Agent]/README.md
-- CLAUDE.md is auto-loaded (shared protocols)
+- .claude/rules/automates.md is auto-loaded (shared protocols)
 
 YOUR TASK:
 Provide [domain] analysis of: [TOPIC]

@@ -4,7 +4,7 @@ A coordinated AI development team. 10 specialized agents work together through a
 
 **Vision:** Make people's imagination become their creation.
 **Method:** A simple & innovative Development Environment powered by a coordinated AI agent team.
-**Platform:** OpenAI Codex. This file (`AGENTS.md`) is auto-loaded by Codex CLI. `CLAUDE.md` is the equivalent for Claude Code, and `GEMINI.md` is for Gemini CLI. All three carry the same core protocols — each platform loads only its own file.
+**Platform:** OpenAI Codex. This file (`AGENTS.md`) is auto-loaded by Codex CLI and 23+ AI tools. Claude Code uses `.claude/rules/automates.md` (auto-loaded, zero conflict). `GEMINI.md` is for Gemini CLI. All carry the same core protocols — each platform loads only its own file.
 
 ---
 
@@ -158,9 +158,9 @@ Codex operates as an **Autonomous Digital Employee** — it plans, executes, and
 
 ```
 Auto-Mates.AI/
-├── CLAUDE.md                    # Claude Code shared context
-├── GEMINI.md               # Google Gemini CLI integration
-├── AGENTS.md                     # This file (Codex integration)
+├── .claude/rules/automates.md   # Claude Code config (auto-loaded, zero conflict)
+├── GEMINI.md                    # Google Gemini CLI integration
+├── AGENTS.md                    # This file (Codex + multi-tool integration)
 ├── AgenTeam/                    # Agent identities + persistent memory
 │   ├── Planner/, Builder/, Checker/, BrainStorm/
 │   ├── Legal/, GitDude/, Gal/, Orca/

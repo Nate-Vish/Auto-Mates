@@ -70,7 +70,7 @@ bash "${AUTOMATES_ROOT}/.claude/skills/summon/summon.sh" "$ARGUMENTS"
 - Each agent runs as a separate Claude Code instance
 - Agents have persistent memory in `AgenTeam/<name>/Memory_Logs/`
 - Fetcher's memory is in `Library/Fetcher/Memory_Logs/`
-- CLAUDE.md is automatically loaded in every session (shared context)
+- .claude/rules/automates.md is automatically loaded in every session (shared context)
 - Coordinate work through shared files in `Dashboard/Work_Space/`
 
 ---

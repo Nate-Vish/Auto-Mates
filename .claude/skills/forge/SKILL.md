@@ -82,7 +82,7 @@ AgenTeam/[Agent]/Memory_Logs/
 Update all sync points to acknowledge the new agent:
 
 1. **`Library/Registry.md`** — Add to all 4 sections (registry, routing, chains, boundaries)
-2. **`CLAUDE.md`** — Add to Agent Roster table + skills section + project structure
+2. **`.claude/rules/automates.md`** — Add to Agent Roster table + skills section + project structure
 3. **`GEMINI.md`** — Add to Agent Roster table
 4. **`AGENTS.md`** — Add to Agent Roster table
 5. **`summon.sh`** — Add agent path + color mapping

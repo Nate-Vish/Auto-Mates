@@ -31,6 +31,6 @@ Opened AutoMates root folder. Here's what's inside:
 AgenTeam/    — Agent identities and memory (one folder per agent)
 Library/     — Knowledge base, research sources, Fetcher agent, Rules.md
 Dashboard/   — Brief.md, Project_Description.md, Work_Space (active projects)
-CLAUDE.md    — Shared config (auto-loaded every session)
+.claude/rules/automates.md — Shared config (auto-loaded every session)
 .claude/     — Skills (slash commands)
 ```

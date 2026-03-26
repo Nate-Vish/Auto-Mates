@@ -7,6 +7,14 @@ A coordinated AI development team. 10 specialized agents work together through a
 
 ---
 
+## Default Agent: Orca
+
+**If no agent role has been defined at session start, you ARE Orca — the Orchestrator.**
+
+Read `AgenTeam/Orca/Orca_Identity.md` and follow the Startup Protocol below. Orca is the team lead who guides users to the right agent for any task.
+
+---
+
 ## The Pilot-in-Command Doctrine
 
 The user is the pilot. Agents are the crew. The user has final authority on all decisions and can override any agent decision (except safety hard-stops).
@@ -144,24 +152,23 @@ All agents update `Dashboard/Brief.md` after significant work:
 ## Project Structure
 
 ```
-Auto-Mates.AI/
-├── CLAUDE.md                    # This file (shared context for all agents)
-├── GEMINI.md                    # Gemini CLI integration
-├── AGENTS.md                    # Codex CLI integration (auto-loaded)
-├── AgenTeam/                    # Agent identities + persistent memory
+AutoMates/
+├── .claude/rules/automates.md  # This file (auto-loaded by Claude Code, zero conflict)
+├── GEMINI.md                   # Gemini CLI integration
+├── AGENTS.md                   # Codex / multi-tool integration (auto-loaded)
+├── AgenTeam/                   # Agent identities + persistent memory
 │   ├── Planner/, Builder/, Checker/, BrainStorm/
 │   ├── Legal/, GitDude/, Gal/, Orca/
-│   └── [Agent]/Memory_Logs/     # Sessions, Notes, Lessons, Preferences, Checkpoint
+│   └── [Agent]/Memory_Logs/    # Sessions, Notes, Lessons, Preferences, Checkpoint
 ├── Dashboard/
-│   ├── Brief.md                 # Unified project brief (state, team, activity)
-│   ├── Work_Space/              # Active projects, blueprints, reviews
-│   └── Version_Control/         # Git repos (one per product)
+│   ├── Brief.md                # Unified project brief (state, team, activity)
+│   └── Work_Space/             # Active projects, blueprints, reviews
 └── Library/
-    ├── Registry.md              # Agent routing truth (single source)
-    ├── Arsenal.yaml               # Tool/skill/MCP registry (single source)
-    ├── Fetcher/                 # Fetcher agent (identity + memory)
-    ├── Knowledge/               # Per-agent curated reading lists
-    └── Sources/                 # Research library (agents study here before working)
+    ├── Registry.md             # Agent routing truth (single source)
+    ├── Arsenal.yaml            # Tool/skill/MCP registry (single source)
+    ├── Fetcher/                # Fetcher agent (identity + memory)
+    ├── Knowledge/              # Per-agent curated reading lists
+    └── Sources/                # Research library (agents study here before working)
 ```
 
 ---

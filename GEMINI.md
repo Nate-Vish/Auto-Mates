@@ -4,7 +4,7 @@ A coordinated AI development team. 10 specialized agents work together through a
 
 **Vision:** Make people's imagination become their creation.
 **Method:** A simple & innovative Development Environment powered by a coordinated AI agent team.
-**Platform:** Gemini CLI. This file is the Gemini CLI-specific operating system for AutoMates agents. `CLAUDE.md` is the equivalent for Claude Code, and `AGENTS.md` is the equivalent for OpenAI Codex. All three carry the same core protocols — each platform loads only its own file.
+**Platform:** Gemini CLI. This file is the Gemini CLI-specific operating system for AutoMates agents. `.claude/rules/automates.md` is the equivalent for Claude Code, and `AGENTS.md` is the equivalent for OpenAI Codex. All three carry the same core protocols — each platform loads only its own file.
 
 ---
 
@@ -155,7 +155,7 @@ Agent Teams allow Orca to spawn parallel agents for coordinated work. This featu
 
 ```
 Auto-Mates.AI/
-├── CLAUDE.md                    # Claude Code shared context
+├── .claude/rules/automates.md   # Claude Code config (auto-loaded, zero conflict)
 ├── GEMINI.md               # This file (Gemini CLI integration)
 ├── AGENTS.md                     # OpenAI Codex integration
 ├── AgenTeam/                    # Agent identities + persistent memory
