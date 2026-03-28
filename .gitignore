@@ -35,4 +35,10 @@ Dashboard/Work_Space/**
 Dashboard/Version_Control/**
 !Dashboard/Version_Control/README.md
 
+# Dependencies & build artifacts
+node_modules/
+__pycache__/
+*.pyc
+*.log
+
 Dashboard/Shipyard/

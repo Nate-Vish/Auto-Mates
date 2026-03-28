@@ -58,6 +58,8 @@ Daisy tells the team what the product should look and sound like. Builder makes 
 
 ## Deep-Dive Reference
 
+*These source files live in `Library/Sources/daisy-knowledge/` — available locally after Fetcher research, not included in the public repo.*
+
 | # | Topic | Source File | Lines |
 |---|-------|-------------|-------|
 | 1 | Brand Identity, Strategy & Visual Systems | `brand/brand_identity_strategy_visual_systems.md` | 816 |

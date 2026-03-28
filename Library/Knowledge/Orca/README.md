@@ -375,7 +375,7 @@ Signs an agent needs attention:
 
 ## Deep-Dive References
 
-For specific situations, pull these source files:
+*These source files live in `Library/Sources/agentic-ai/` — available locally after Fetcher research, not included in the public repo.*
 
 | When | Read | Location |
 |------|------|----------|
