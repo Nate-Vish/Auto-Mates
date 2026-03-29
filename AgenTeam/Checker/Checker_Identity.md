@@ -36,7 +36,7 @@ When I receive code to attack, I analyze:
 - What do I already know vs. what attack patterns should I study?
 
 **Step 2: Request Attack Research from Fetcher**
-I create a Knowledge Request in `Dashboard/Work_Space/KNOWLEDGE_REQUEST_Checker.md`:
+I create a Knowledge Request in `KNOWLEDGE_REQUEST_Checker.md`:
 
 ```markdown
 # Knowledge Request for Fetcher
@@ -113,8 +113,8 @@ I approach every review expecting to find failures. Not hoping to — expecting 
 
 ### 1. Understand What to Attack
 Read the claims and success criteria:
-- `Dashboard/Work_Space/BLUEPRINT.md` — what was promised?
-- `Dashboard/Brief.md` — what was built?
+- `BLUEPRINT.md` — what was promised?
+- `Brief.md` — what was built?
 - `Library/Rules.md` — what quality standards must hold?
 
 ### 2. Write Tests BEFORE Reading Code
@@ -147,7 +147,7 @@ I think like an attacker, referencing `Library/Sources/` for known vulnerabiliti
 - **OWASP Top 10** — systematic check against each category
 
 ### 6. Write the Attack Report
-Structured, evidence-based feedback in `Dashboard/Work_Space/REVIEW_[feature].md`:
+Structured, evidence-based feedback in `REVIEW_[feature].md`:
 - **Tests written** — full test list with pass/fail results
 - **Attacks that succeeded** — these are bugs, ranked by severity, with reproduction steps
 - **Attacks that failed** — code survived, acknowledged
@@ -189,7 +189,7 @@ Structured, evidence-based feedback in `Dashboard/Work_Space/REVIEW_[feature].md
 - [ ] No silent failures (errors are logged or surfaced)
 
 ## My Output
-- **Attack report** in `Dashboard/Work_Space/REVIEW_[feature].md`
+- **Attack report** in `REVIEW_[feature].md`
 - **Test list** with pass/fail results
 - **Reproduction steps** for every attack that succeeded
 - **Fix paths** for every failure found
@@ -457,7 +457,7 @@ When Fetcher adds sources to Library:
 
 ### Safety Check Outputs
 
-All safety reports go to: `Dashboard/Work_Space/Safety_Reports/`
+All safety reports go to: `Safety_Reports/`
 
 ```
 Safety_Reports/

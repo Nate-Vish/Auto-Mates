@@ -25,7 +25,7 @@ The user is the pilot. Agents are the crew. The user has final authority on all 
 | **BrainStorm** | Knowledge Graph | `/brainstorm` | `AgenTeam/BrainStorm/BrainStorm_Identity.md` | Generating ideas, solving problems |
 | **Legal** | Compliance | `/legal` | `AgenTeam/Legal/Legal_Identity.md` | Licensing, privacy, regulations |
 | **GitDude** | Release Manager | `/gitdude` | `AgenTeam/GitDude/GitDude_Identity.md` | Commits, versioning, releases |
-| **Fetcher** | Researcher | `/fetcher` | `Library/Fetcher/Fetcher_Identity.md` | Gathering documentation, research |
+| **Fetcher** | Researcher | `/fetcher` | `AgenTeam/Fetcher/Fetcher_Identity.md` | Gathering documentation, research |
 | **Gal** | User Advocate | `/gal` | `AgenTeam/Gal/Gal_Identity.md` | Skeptical evaluation, UX testing |
 | **Daisy** | Brand Director | `/daisy` | `AgenTeam/Daisy/Daisy_Identity.md` | Branding, social media, PR, pitches, speeches, ads |
 
@@ -41,8 +41,8 @@ When the user issues these commands, execute the corresponding logic:
 |---------|--------|
 | `/summon [agent]` | Load the target agent's identity file and `Memory_Logs/` |
 | `/[agent]` (e.g. `/builder`) | Switch to target agent in-session (auto-memorize + hard reset + identity load) |
-| `/memorize` | Append session to `Sessions/`, update `Lessons.md`, `Preferences.md`, `Checkpoint.md`, refresh `Context.md`, update `Dashboard/Brief.md` |
-| `/brief` | Read `Dashboard/Brief.md` and report project state, team status, recent activity |
+| `/memorize` | Append session to `Sessions/`, update `Lessons.md`, `Preferences.md`, `Checkpoint.md`, refresh `Context.md`, update `Brief.md` |
+| `/brief` | Read `Brief.md` and report project state, team status, recent activity |
 | `/video` | Create videos — recaps, explainers, comparisons, demos, marketing (Remotion) |
 | `/slides` | Create presentations (PPTX or HTML slideshow) from content |
 | `/cv` | Build or tailor a resume for a job application |
@@ -60,9 +60,9 @@ When activated, every agent follows this sequence:
    - `Lessons.md` — wisdom to apply
    - `Preferences.md` — how the user likes things done
    - Latest file in `Sessions/` — recent session context
-3. **Read Dashboard context:**
+3. **Read project context:**
    - `Library/Rules.md` — project constraints
-   - `Dashboard/Brief.md` — project state, team status, recent activity
+   - `Brief.md` — project state, team status, recent activity
 4. **Read your knowledge section:** `Library/Knowledge/[YourAgent]/README.md`
 5. **Proceed** with the user's request
 
@@ -75,7 +75,7 @@ Before doing ANY work, every agent asks: *"What do I need to learn to do this be
 1. **Identify knowledge gaps** — what don't I know yet?
 2. **Check my knowledge section** — `Library/Knowledge/[MyAgent]/README.md` for curated sources
 3. **Search Library/Sources/** — browse existing research
-4. **Request if needed** — create `Dashboard/Work_Space/KNOWLEDGE_REQUEST_[Agent].md` for Fetcher
+4. **Request if needed** — create `KNOWLEDGE_REQUEST_[Agent].md` for Fetcher
 5. **Study the sources** — read what's relevant
 6. **Then proceed** — now informed by professional knowledge
 
@@ -104,7 +104,7 @@ When a session ends or a significant task completes:
 
 ## Dashboard Protocol
 
-All agents update `Dashboard/Brief.md` after significant work:
+All agents update `Brief.md` after significant work:
 
 - **Recent Activity:** Add a row: `| [date] | [Agent] | [what happened] |`
 - **Active Projects:** Update status/next if a project changed
@@ -154,23 +154,22 @@ Agent Teams allow Orca to spawn parallel agents for coordinated work. This featu
 ## Project Structure
 
 ```
-Auto-Mates.AI/
+YourWorkFolder/                  # User's existing project folder — AutoMates installs here
 ├── .claude/rules/automates.md   # Claude Code config (auto-loaded, zero conflict)
-├── GEMINI.md               # This file (Gemini CLI integration)
-├── AGENTS.md                     # OpenAI Codex integration
-├── AgenTeam/                    # Agent identities + persistent memory
-│   ├── Planner/, Builder/, Checker/, BrainStorm/
-│   ├── Legal/, GitDude/, Gal/, Orca/
+├── GEMINI.md                    # This file (Gemini CLI integration)
+├── AGENTS.md                    # OpenAI Codex integration
+├── Brief.md                     # Unified project brief (state, team, activity)
+├── AgenTeam/                    # All 10 agent identities + persistent memory
+│   ├── Orca/, Planner/, Builder/, Checker/
+│   ├── BrainStorm/, Legal/, GitDude/, Gal/, Daisy/
+│   ├── Fetcher/                 # Researcher agent
 │   └── [Agent]/Memory_Logs/     # Sessions, Notes, Lessons, Preferences, Checkpoint
-├── Dashboard/
-│   ├── Brief.md                 # Unified project brief (state, team, activity)
-│   ├── Work_Space/              # Active projects, blueprints, reviews
-│   └── Version_Control/         # Git repos (one per product)
 └── Library/
     ├── Registry.md              # Agent routing truth (single source)
-    ├── Fetcher/                 # Fetcher agent (identity + memory)
+    ├── Arsenal/                 # Tool/skill/MCP registry (single source)
+    │   └── Arsenal.yaml
     ├── Knowledge/               # Per-agent curated reading lists
-    └── Sources/                 # Research library (195+ sources, 29 categories)
+    └── Sources/                 # Research library (agents study here before working)
 ```
 
 ---

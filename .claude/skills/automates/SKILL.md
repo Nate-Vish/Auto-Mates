@@ -7,7 +7,7 @@ allowed-tools:
 
 # /automates - Open AutoMates Folder
 
-Opens the AutoMates root folder in your system file browser so you can browse agent identities, the library, dashboard, and everything under the hood.
+Opens the AutoMates root folder in your system file browser so you can browse agent identities, the library, and everything under the hood.
 
 ## Usage
 
@@ -28,9 +28,8 @@ Then tell the user:
 ```
 Opened AutoMates root folder. Here's what's inside:
 
-AgenTeam/    — Agent identities and memory (one folder per agent)
-Library/     — Knowledge base, research sources, Fetcher agent, Rules.md
-Dashboard/   — Brief.md, Project_Description.md, Work_Space (active projects)
-.claude/rules/automates.md — Shared config (auto-loaded every session)
-.claude/     — Skills (slash commands)
+AgenTeam/    — All 10 agent identities and memory (one folder per agent)
+Library/     — Knowledge base, research sources, Rules.md, Arsenal.yaml
+Brief.md     — Project state, team status, recent activity
+.claude/     — Rules (auto-loaded) + Skills (slash commands)
 ```

@@ -239,7 +239,7 @@ Every Knowledge Request gets a Study File delivered to the SAME folder as the re
 3. Deep-dive [source] — for specific questions
 
 ## Task Reference
-See: `Dashboard/Work_Space/[relevant file]`
+See: `[relevant file]`
 ```
 
 ### Study File Quality Standards

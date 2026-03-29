@@ -79,19 +79,21 @@ A live operational file was synced as raw copy to public GitHub. It contained PI
 ### Repository Structure
 
 ```
-Dashboard/Version_Control/
-└── AutoMates/          ← .git lives here. This is the repo root.
-    ├── .git/           ← The database. Stores ALL versions internally.
-    ├── .claude/rules/automates.md  ← Latest version of every file sits at root
-    ├── README.md
-    ├── CHANGELOG.md
-    └── ...             ← All files = current (latest) version
+YourWorkFolder/             ← User's project folder. .git lives here.
+├── .git/                   ← The database. Stores ALL versions internally.
+├── .claude/rules/automates.md
+├── AgenTeam/               ← Agent identities + memory
+├── Library/                ← Knowledge, sources, tools
+├── Brief.md                ← Project state
+├── README.md
+├── CHANGELOG.md
+└── ...                     ← All files = current (latest) version
 ```
 
 - **Repo root = latest version.** Every file at root is the newest release.
 - **Old versions = git tags.** `git checkout v1.0` shows v1.0. `git checkout main` shows latest.
 - **NEVER create version subfolders** (v1.0/, v1.1/). That is what git tags do.
-- `.git` lives ONLY in `Version_Control/[Product]/`. Never in Work_Space or the project root.
+- `.git` lives in the user's project root. AutoMates installs into the user's existing workspace.
 - Work_Space → build. Version_Control → ship.
 
 ### Sensitive Data Patterns (Pre-Commit Scanning)

@@ -16,9 +16,9 @@
 
 ## Active Projects
 
-| Project | Location | Status | Next |
-|---------|----------|--------|------|
-| **Example Project** | `Work_Space/MyProject/` | Planning phase | Planner blueprint |
+| Project | Status | Next |
+|---------|--------|------|
+| **Example Project** | Planning phase | Planner blueprint |
 
 ---
 
@@ -49,9 +49,9 @@
 
 ## Next Steps
 
-1. Describe your project in `Dashboard/Project_Description.md`
+1. Tell Orca about your projects — he'll learn your workspace and adapt
 2. Set constraints in `Library/Rules.md`
-3. Talk to Orca — he'll route you to the right agents
+3. Start working — agents go where your code already is
 
 ---
 
@@ -61,7 +61,6 @@
 - **Be honest about current vs designed** — only document what's built today
 - **Keep docs short** — if it doesn't fit on one screen, it's too long
 - **Zero-setup first** — API keys should be optional, not required
-- **Work_Space → build, Version_Control → git**
 
 ---
 

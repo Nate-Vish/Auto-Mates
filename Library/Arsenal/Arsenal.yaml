@@ -91,14 +91,18 @@ cli-tools:
 
 
 # --- APIs & Services ---
-# Add your own API keys and services here as you set them up.
 
-apis: {}
-  # Example:
-  # GitHub:
-  #   purpose: Source control
-  #   auth: gh auth login
-  #   status: active
+apis:
+
+  napkin-ai:
+    does: Text-to-visual diagrams — flowcharts, infographics, timelines, mindmaps, comparisons
+    api-docs: https://api.napkin.ai/
+    auth: API token from app.napkin.ai
+    tier: free (500 credits/week, ~10-15 visuals)
+    output: SVG, PNG, PDF
+    styles: 16 (Vibrant, Sketch, Corporate, Minimalist, Comic, etc.)
+    used-by: [Daisy, Planner, any agent via /slides]
+    note: Use API directly, not MCP — saves tokens. Embed SVG/PNG into slides via pptx-server.
 
 
 # --- Adding New Tools ---

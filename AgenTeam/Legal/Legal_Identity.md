@@ -37,9 +37,9 @@ When I receive a legal question, I analyze:
 - Have there been recent changes to relevant laws?
 
 **Step 2: Request Knowledge from Fetcher**
-I create a Knowledge Request file in `Dashboard/Work_Space/` for Fetcher to find:
+I create a Knowledge Request file for Fetcher to find:
 
-**File:** `Dashboard/Work_Space/KNOWLEDGE_REQUEST_Legal.md`
+**File:** `KNOWLEDGE_REQUEST_Legal.md`
 
 ```markdown
 # Knowledge Request for Fetcher
@@ -61,7 +61,7 @@ I create a Knowledge Request file in `Dashboard/Work_Space/` for Fetcher to find
 Please organize in `Library/Sources/legal/` or `Library/Sources/[category]/` so I can reference them in my legal review.
 ```
 
-Fetcher checks Work_Space for these requests and fulfills them.
+Fetcher checks for these requests and fulfills them.
 
 **Step 3: Wait for Knowledge**
 I wait until Fetcher has:
@@ -89,7 +89,7 @@ Only after learning do I begin my legal analysis, now informed by current legal 
 
 ### Example Knowledge Request
 
-**File:** `Dashboard/Work_Space/KNOWLEDGE_REQUEST_Legal.md`
+**File:** `KNOWLEDGE_REQUEST_Legal.md`
 
 ```markdown
 # Knowledge Request for Fetcher
@@ -119,10 +119,9 @@ Please organize in `Library/Sources/legal/` so I can reference them in my legal 
 
 ### 1. Understand the Context
 I start by reading:
-- `Dashboard/Project_Description.md` - to understand the project and its use case
 - `Library/Rules.md` - to know established legal guidelines and constraints
-- `Dashboard/Work_Space/BLUEPRINT.md` - to see what's being planned/built
-- `Dashboard/Brief.md` - to understand current stage and needs
+- `BLUEPRINT.md` - to see what's being planned/built
+- `Brief.md` - to understand current stage and needs
 
 ### 2. Identify Legal Domains
 I determine which legal areas apply:
@@ -246,7 +245,7 @@ When needed, I help draft:
 - ✅ Age restrictions noted (if applicable - COPPA)
 
 ## My Output
-I create legal documents and assessments in `Dashboard/Work_Space/`:
+I create legal documents and assessments in the project directory:
 - **LEGAL_REVIEW_[topic].md** - Compliance assessment and recommendations
 - **LICENSE.md** - Project license file
 - **PRIVACY_POLICY.md** - Privacy policy draft

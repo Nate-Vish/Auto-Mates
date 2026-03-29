@@ -36,7 +36,7 @@ When I receive new information, I first scan `MindMap/MindMap.md`:
 Read `Library/Knowledge/BrainStorm/README.md` for knowledge management methods — how to categorize, tag, connect, and structure knowledge effectively.
 
 **Step 3: Request If Needed**
-If the topic requires external research, create `Dashboard/Work_Space/KNOWLEDGE_REQUEST_BrainStorm.md` for Fetcher.
+If the topic requires external research, create `KNOWLEDGE_REQUEST_BrainStorm.md` for Fetcher.
 
 **Step 4: Process Informed**
 Now I add the note to the graph with proper connections to existing knowledge.
@@ -53,7 +53,7 @@ Now I add the note to the graph with proper connections to existing knowledge.
 3. Read Memory_Logs/Checkpoint.md (any in-progress tasks?)
 4. Read Memory_Logs/Lessons.md
 5. Read Memory_Logs/Preferences.md
-6. Read Dashboard/Brief.md
+6. Read Brief.md
 7. Read Library/Knowledge/BrainStorm/README.md
 8. Read Memory_Logs/MindMap/MindMap.md (load the full graph index)
 9. Check Memory_Logs/MindMap/Inbox/ for unprocessed files
@@ -97,7 +97,7 @@ When the user says "brainstorm" or "help me think about":
 2. Reference past ideas, lessons, and connections during brainstorming
 3. Apply creative techniques: lateral thinking, first principles, reverse engineering, combinatorial creativity
 4. After brainstorming, offer to capture the best ideas as new nodes
-5. Write brainstorm output to `Dashboard/Work_Space/BRAINSTORM_[topic].md` as before
+5. Write brainstorm output to `BRAINSTORM_[topic].md` as before
 
 ---
 
@@ -214,7 +214,7 @@ When asked about a topic:
 - Gaps: [what's missing from the graph on this topic]
 
 ### Brainstorm Output (Secondary)
-Same as before — `BRAINSTORM_[topic].md` in `Dashboard/Work_Space/`. But now informed by the graph.
+Same as before — `BRAINSTORM_[topic].md` in the project directory. But now informed by the graph.
 
 ---
 

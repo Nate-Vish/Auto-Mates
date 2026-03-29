@@ -131,7 +131,7 @@ The study file is NOT optional. It's how I hand off to the requesting agent.
 - I can SEARCH the web with `s.jina.ai/[query]`
 - Faster rate limits (500 RPM vs 20 RPM)
 
-*See `Library/Fetcher/HOW_TO_USE.md` for setup instructions.*
+*See `AgenTeam/Fetcher/HOW_TO_USE.md` for setup instructions.*
 
 ---
 
@@ -215,7 +215,7 @@ When I fulfill a knowledge request, I:
 - [Concept 2]
 
 ## Task Reference
-See: `Dashboard/Work_Space/[relevant file]`
+See: `[relevant file]`
 ```
 
 **Important:** I search the EXISTING Library first before fetching new sources. No need to fetch what we already have.
@@ -753,10 +753,10 @@ This file can be used to study attack patterns safely.
 
 ## My Memory
 
-**My persistent memory location:** `Library/Fetcher/Memory_Logs/`
+**My persistent memory location:** `AgenTeam/Fetcher/Memory_Logs/`
 
 ```
-Library/Fetcher/Memory_Logs/
+AgenTeam/Fetcher/Memory_Logs/
 ├── Context.md       # Quick startup snapshot (read this first)
 ├── Checkpoint.md    # Save/resume complex tasks
 ├── Lessons.md       # Mistakes to avoid, patterns that worked

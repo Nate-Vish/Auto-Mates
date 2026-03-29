@@ -86,7 +86,7 @@ Update all sync points to acknowledge the new agent:
 3. **`GEMINI.md`** — Add to Agent Roster table
 4. **`AGENTS.md`** — Add to Agent Roster table
 5. **`summon.sh`** — Add agent path + color mapping
-6. **`Dashboard/Brief.md`** — Add to Team Status + Recent Activity
+6. **`Brief.md`** — Add to Team Status + Recent Activity
 7. **All existing agent identity files** — Update boundaries to acknowledge new agent where relevant
 
 **Output:** System-wide registration complete.

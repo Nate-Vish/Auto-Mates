@@ -82,11 +82,12 @@ Orca is the only agent who understands the entire file system as a living archit
 ### Project Root: `Auto-Mates.AI/`
 
 ```
-Auto-Mates.AI/
+YourWorkFolder/                  # User's existing project folder — AutoMates installs here
 ├── .claude/rules/automates.md   # Shared protocols for Claude Code (auto-loaded)
 ├── GEMINI.md                    # Shared protocols for Gemini CLI
-├── CODEX.md                     # Shared protocols for OpenAI Codex
-├── AgenTeam/                    # Agent identities + persistent memory
+├── AGENTS.md                    # Shared protocols for OpenAI Codex
+├── Brief.md                     # Unified project state (ALL agents read + write)
+├── AgenTeam/                    # All 10 agent identities + persistent memory
 │   ├── Orca/                    #   Orchestrator
 │   ├── Planner/                 #   Architect
 │   ├── Builder/                 #   Developer
@@ -95,16 +96,12 @@ Auto-Mates.AI/
 │   ├── Legal/                   #   Compliance
 │   ├── GitDude/                 #   Release Manager
 │   ├── Gal/                     #   User Advocate
-│   └── Daisy/                   #   Brand Director
-├── Dashboard/
-│   ├── Brief.md                 #   Unified project state (ALL agents read + write)
-│   ├── Work_Space/              #   Active projects, blueprints, reviews, tasks
-│   ├── Version_Control/         #   Git repos (one per product, .git lives HERE)
-│   └── Archive/                 #   Completed/paused projects
+│   ├── Daisy/                   #   Brand Director
+│   └── Fetcher/                 #   Researcher
 ├── Library/
 │   ├── Registry.md              #   Agent routing truth (all agents read on startup)
 │   ├── Rules.md                 #   Project constraints and principles
-│   ├── Fetcher/                 #   Fetcher agent (identity + memory, lives here not AgenTeam)
+│   ├── Arsenal/                 #   Tool/skill/MCP registry
 │   ├── Knowledge/               #   Per-agent curated knowledge (self-contained)
 │   │   └── [Agent]/README.md    #     Cheat sheet + topic files
 │   └── Sources/                 #   Research cache (Fetcher's workspace, NOT shipped)
@@ -113,12 +110,10 @@ Auto-Mates.AI/
 
 ### Key Structural Rules
 
-- **AgenTeam/** = agent identities + memory. Each agent has: `[Agent]_Identity.md`, `Memory_Logs/` (Sessions, Notes, Lessons.md, Preferences.md, Checkpoint.md)
-- **Fetcher** lives in `Library/Fetcher/`, not AgenTeam — it's a support agent serving the library
-- **Dashboard/Brief.md** = the single dashboard everyone reads and writes. Replaces all previous status files.
-- **Work_Space/** = active development. Projects only, no utility folders.
-- **Version_Control/** = git repos. `.git` belongs ONLY here, never at project root.
-- **Archive/** = completed or paused projects, preserved for reference.
+- **AgenTeam/** = ALL 10 agent identities + memory. Each agent has: `[Agent]_Identity.md`, `Memory_Logs/` (Sessions, Notes, Lessons.md, Preferences.md, Checkpoint.md)
+- **Fetcher** lives in `AgenTeam/Fetcher/` alongside all other agents
+- **Brief.md** = the single project brief everyone reads and writes. Lives at root level.
+- **Agents work in the user's project directories** — no centralized Work_Space. Coordination files (BLUEPRINT.md, REVIEW_*.md) go in the project being worked on.
 - **Library/Sources/** = Fetcher's research cache. Temporary. NOT shipped to GitHub.
 - **Library/Knowledge/** = self-contained professional knowledge per agent. This IS shipped.
 - **Library/Registry.md** = routing truth. All agents read on startup. Orca maintains it.
@@ -179,7 +174,7 @@ When creating a new agent, follow this checklist. Every item is mandatory.
 - [ ] Create skill in `.claude/skills/[agent]/SKILL.md`
 - [ ] Add to .claude/rules/automates.md, GEMINI.md, AGENTS.md agent roster
 - [ ] Create Knowledge folder `Library/Knowledge/[Agent]/README.md`
-- [ ] Update `Dashboard/Brief.md` team status
+- [ ] Update `Brief.md` team status
 - [ ] Update `summon.sh`
 
 ### Creation Rules (From Lessons Learned)
@@ -236,7 +231,7 @@ When a user arrives for the first time — or seems unfamiliar with AutoMates �
 
 **The onboarding flow:**
 1. **They talk, Orca listens.** Ask what they want to build or accomplish. Don't explain the system first — understand the goal first.
-2. **Fill in Project_Description.md together.** Recommend `/brainstorm` — BrainStorm helps ground vague ideas into structured, realistic project descriptions. Then guide them to fill `Dashboard/Project_Description.md` (vision, problem, solution, target users) and `Library/Rules.md` (any constraints).
+2. **Understand the project together.** Recommend `/brainstorm` — BrainStorm helps ground vague ideas into structured, realistic project descriptions. Guide them to set constraints in `Library/Rules.md`.
 3. **Route to the right agent.** Based on their goal:
    - Exploring an idea → `/brainstorm`
    - Ready to plan → `/planner` (creates a Blueprint)

@@ -3,7 +3,7 @@
 **Single source of truth** for agent routing, boundaries, and coordination.
 All agents read this file for system-wide awareness.
 
-**Last Updated:** 2026-03-11
+**Last Updated:** 2026-03-29
 
 ---
 
@@ -18,7 +18,7 @@ All agents read this file for system-wide awareness.
 | **BrainStorm** | `AgenTeam/BrainStorm/` | `AgenTeam/BrainStorm/BrainStorm_Identity.md` | `/brainstorm` | Magenta | Active |
 | **Legal** | `AgenTeam/Legal/` | `AgenTeam/Legal/Legal_Identity.md` | `/legal` | Green | Active |
 | **GitDude** | `AgenTeam/GitDude/` | `AgenTeam/GitDude/GitDude_Identity.md` | `/gitdude` | Yellow | Active |
-| **Fetcher** | `Library/Fetcher/` | `Library/Fetcher/Fetcher_Identity.md` | `/fetcher` | Cyan | Active |
+| **Fetcher** | `AgenTeam/Fetcher/` | `AgenTeam/Fetcher/Fetcher_Identity.md` | `/fetcher` | Cyan | Active |
 | **Gal** | `AgenTeam/Gal/` | `AgenTeam/Gal/Gal_Identity.md` | `/gal` | Teal | Active |
 | **Daisy** | `AgenTeam/Daisy/` | `AgenTeam/Daisy/Daisy_Identity.md` | `/daisy` | Pink | Active |
 
@@ -68,7 +68,7 @@ After an agent finishes work, they suggest the next logical agent.
 Each agent has a defined lane. When a task falls outside that lane, the agent names the right agent and suggests the switch. No agent does another agent's job.
 
 ### Orca — Orchestrator
-- **Handles:** Navigation, orientation, agent creation (`/forge`), system design, team architecture
+- **Handles:** Navigation, orientation, agent creation (`/forge`), system design, team architecture, **first-run workspace adaptation**
 - **Routes to:** Any implementation task → appropriate specialist agent
 - **After done:** Routes user to right agent
 

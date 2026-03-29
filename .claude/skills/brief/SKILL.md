@@ -20,12 +20,12 @@ Two jobs: (1) catch yourself up on what happened in parallel sessions, (2) tell 
 
 ### Step 1: Catch Up (for the agent)
 
-Read `Dashboard/Brief.md` and scan **Recent Activity** for entries you haven't seen yet — anything from other agents or sessions since your last read. Internalize what changed: new decisions, status updates, completed work, blockers.
+Read `Brief.md` and scan **Recent Activity** for entries you haven't seen yet — anything from other agents or sessions since your last read. Internalize what changed: new decisions, status updates, completed work, blockers.
 
 Also check for handoff messages or new files:
-- `Dashboard/Work_Space/HANDOFF_*.md` — pending handoffs
-- `Dashboard/Work_Space/KNOWLEDGE_REQUEST_*.md` — unfulfilled research requests
-- `Dashboard/Work_Space/**/MESSAGE_FROM_*.md` — messages left by other agents
+- `HANDOFF_*.md` — pending handoffs
+- `KNOWLEDGE_REQUEST_*.md` — unfulfilled research requests
+- `**/MESSAGE_FROM_*.md` — messages left by other agents
 
 ### Step 2: Brief the User
 

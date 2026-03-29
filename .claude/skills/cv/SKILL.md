@@ -33,7 +33,7 @@ Build, tailor, or critique a resume for a job application. Learns your career st
 
 ## Career Workspace
 
-All career files live at: `Dashboard/Work_Space/Career/`
+All career files live at: `Career/`
 
 If this folder doesn't exist, create it on first run.
 

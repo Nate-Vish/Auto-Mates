@@ -20,7 +20,7 @@ get_agent_identity_path() {
         gal)        echo "AgenTeam/Gal/Gal_Identity.md" ;;
         legal)      echo "AgenTeam/Legal/Legal_Identity.md" ;;
         gitdude)    echo "AgenTeam/GitDude/GitDude_Identity.md" ;;
-        fetcher)    echo "Library/Fetcher/Fetcher_Identity.md" ;;
+        fetcher)    echo "AgenTeam/Fetcher/Fetcher_Identity.md" ;;
         orca)       echo "AgenTeam/Orca/Orca_Identity.md" ;;
         daisy)      echo "AgenTeam/Daisy/Daisy_Identity.md" ;;
         *)          echo "" ;;
@@ -133,7 +133,7 @@ STARTUP="
 STARTUP INSTRUCTION: You are an AutoMates agent. Execute your startup protocol:
 1. You've just read your identity (above).
 2. Read your Memory_Logs (Checkpoint, Lessons, Preferences, latest Session).
-3. Read Dashboard (Brief.md).
+3. Read Brief.md (project state).
 4. Read your knowledge section from Library/Knowledge/.
 5. Greet the user and ask what they'd like you to work on.
 Begin now."
@@ -192,7 +192,7 @@ STARTUP="
 STARTUP INSTRUCTION: You are an AutoMates agent. Execute your startup protocol:
 1. You've just read your identity (above).
 2. Read your Memory_Logs (Checkpoint, Lessons, Preferences, latest Session).
-3. Read Dashboard (Brief.md).
+3. Read Brief.md (project state).
 4. Read your knowledge section from Library/Knowledge/.
 5. Greet the user and ask what they'd like you to work on.
 Begin now."
@@ -234,7 +234,7 @@ STARTUP="
 STARTUP INSTRUCTION: You are an AutoMates agent. Execute your startup protocol:
 1. You've just read your identity (above).
 2. Read your Memory_Logs (Checkpoint, Lessons, Preferences, latest Session).
-3. Read Dashboard (Brief.md).
+3. Read Brief.md (project state).
 4. Read your knowledge section from Library/Knowledge/.
 5. Greet the user and ask what they'd like you to work on.
 Begin now."
@@ -264,7 +264,7 @@ STARTUP="
 STARTUP INSTRUCTION: You are an AutoMates agent. Execute your startup protocol:
 1. You've just read your identity (above).
 2. Read your Memory_Logs (Checkpoint, Lessons, Preferences, latest Session).
-3. Read Dashboard (Brief.md).
+3. Read Brief.md (project state).
 4. Read your knowledge section from Library/Knowledge/.
 5. Greet the user and ask what they'd like you to work on.
 Begin now."
@@ -292,7 +292,7 @@ Set-Location '${project_root}'
 STARTUP INSTRUCTION: You are an AutoMates agent. Execute your startup protocol:
 1. You've just read your identity (above).
 2. Read your Memory_Logs (Checkpoint, Lessons, Preferences, latest Session).
-3. Read Dashboard (Brief.md).
+3. Read Brief.md (project state).
 4. Read your knowledge section from Library/Knowledge/.
 5. Greet the user and ask what they'd like you to work on.
 Begin now.
@@ -320,7 +320,7 @@ Set-Location '${project_root}'
 STARTUP INSTRUCTION: You are an AutoMates agent. Execute your startup protocol:
 1. You've just read your identity (above).
 2. Read your Memory_Logs (Checkpoint, Lessons, Preferences, latest Session).
-3. Read Dashboard (Brief.md).
+3. Read Brief.md (project state).
 4. Read your knowledge section from Library/Knowledge/.
 5. Greet the user and ask what they'd like you to work on.
 Begin now.

@@ -4,7 +4,22 @@ All notable changes to AutoMates.AI will be documented in this file.
 
 ---
 
-## [Current] - 2026-03-24
+## [Current] - 2026-03-29
+
+### Added
+- **Napkin.ai API** — Text-to-visual diagrams (flowcharts, infographics, timelines) for `/slides`. Free tier, API-based (not MCP — saves tokens)
+
+### Changed
+- **Workspace-agnostic structure** — Removed Dashboard/, Work_Space/, Version_Control/. Users install `AgenTeam/` + `Library/` + `Brief.md` into their existing project folder. No folder migration required.
+- **Fetcher moved to AgenTeam/** — All 10 agents now live in `AgenTeam/`. Fetcher no longer in `Library/`.
+- **Brief.md moved to root** — Was `Dashboard/Brief.md`, now at project root for simpler access.
+- **Orca first-run adaptation** — Orca's #1 job on first startup: learn the user's existing workspace and adapt AutoMates to fit. Never ask users to reorganize.
+- **175+ path references updated** — All identity files, skills, system configs, and knowledge files updated to reflect new structure.
+- **Registry.md** — Updated Fetcher path to `AgenTeam/Fetcher/`
+
+---
+
+## [v2.0] - 2026-03-24
 
 ### Added
 - **Daisy** — Brand Director agent (10th agent). Branding, social media, PR, pitches, content strategy
@@ -92,5 +107,5 @@ All notable changes to AutoMates.AI will be documented in this file.
 - **7 agents:** BrainStorm, Planner, Builder, Checker, Legal, GitDude, Fetcher
 - **Memory system:** Sessions/, Notes/, Lessons.md, Preferences.md, Checkpoint.md
 - **LEARN FIRST protocol** — Agents research before acting
-- **File-based coordination** — Dashboard/Work_Space/
+- **File-based coordination** — Brief.md + markdown files
 - **Legal docs:** LICENSE (MIT), CONTRIBUTING.md, TRADEMARK.md

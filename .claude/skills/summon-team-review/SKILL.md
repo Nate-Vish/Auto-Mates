@@ -59,7 +59,7 @@ Security and quality review of: [TARGET DESCRIPTION]
 Files to review: [FILE PATHS]
 
 DELIVERABLE:
-Write to Dashboard/Work_Space/REVIEW_Checker_[target].md
+Write to REVIEW_Checker_[target].md
 
 Include:
 - **Security Assessment**
@@ -99,7 +99,7 @@ Compliance review of: [TARGET DESCRIPTION]
 Files to review: [FILE PATHS]
 
 DELIVERABLE:
-Write to Dashboard/Work_Space/REVIEW_Legal_[target].md
+Write to REVIEW_Legal_[target].md
 
 Include:
 - **Licensing**
@@ -144,7 +144,7 @@ User experience evaluation of: [TARGET DESCRIPTION]
 Files to review: [FILE PATHS]
 
 DELIVERABLE:
-Write to Dashboard/Work_Space/REVIEW_Gal_[target].md
+Write to REVIEW_Gal_[target].md
 
 Include:
 - **First Impressions**
@@ -186,7 +186,7 @@ Version control and security review of: [TARGET DESCRIPTION]
 Files to review: [FILE PATHS]
 
 DELIVERABLE:
-Write to Dashboard/Work_Space/REVIEW_GitDude_[target].md
+Write to REVIEW_GitDude_[target].md
 
 Include:
 - **Security Scan**
@@ -225,19 +225,19 @@ TARGET: [what was reviewed]
 
 CHECKER: [verdict]
   - [top 3 findings]
-  Location: Dashboard/Work_Space/REVIEW_Checker_[target].md
+  Location: REVIEW_Checker_[target].md
 
 LEGAL: [verdict]
   - [top 3 findings]
-  Location: Dashboard/Work_Space/REVIEW_Legal_[target].md
+  Location: REVIEW_Legal_[target].md
 
 GAL: [verdict]
   - [top 3 findings]
-  Location: Dashboard/Work_Space/REVIEW_Gal_[target].md
+  Location: REVIEW_Gal_[target].md
 
 GITDUDE: [verdict]
   - [top 3 findings]
-  Location: Dashboard/Work_Space/REVIEW_GitDude_[target].md
+  Location: REVIEW_GitDude_[target].md
 
 COMBINED VERDICT: [SHIP / FIX THEN SHIP / HOLD]
 
@@ -268,4 +268,4 @@ Present the combined verdict to the user. The user (Pilot-in-Command) decides:
 - Skip Legal for pure code refactors or internal tools
 - Skip Gal for backend-only changes with no user-facing impact
 - The combined verdict is the Team Lead's synthesis — reviewers don't need to agree
-- All reviews saved to `Dashboard/Work_Space/` for the team record
+- All reviews saved to `` for the team record

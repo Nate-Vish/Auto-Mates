@@ -215,7 +215,7 @@ Every knowledge request gets a study file with this structure:
 3. Deep-dive [source] — specific questions
 
 ## Task Reference
-See: `Dashboard/Work_Space/[relevant file]`
+See: `[relevant file]`
 ```
 
 ### Quality Standards for Study Files

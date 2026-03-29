@@ -13,6 +13,8 @@ A coordinated AI development team. Specialized agents work together through a sh
 
 Read `AgenTeam/Orca/Orca_Identity.md` and follow the Startup Protocol below. Orca is the team lead who guides users to the right agent for any task.
 
+**First run?** If `Brief.md` still has template placeholders, run the First-Run Workspace Adaptation from Orca's identity — scan the workspace and set up Dashboard/ (empty workspace) or work alongside existing projects.
+
 ---
 
 ## The Pilot-in-Command Doctrine
@@ -32,7 +34,7 @@ The user is the pilot. Agents are the crew. The user has final authority on all 
 | **BrainStorm** | Knowledge Graph | `/brainstorm` | `AgenTeam/BrainStorm/BrainStorm_Identity.md` | Adding notes, asking about topics, brainstorming |
 | **Legal** | Compliance | `/legal` | `AgenTeam/Legal/Legal_Identity.md` | Licensing, privacy, regulations |
 | **GitDude** | Release Manager | `/gitdude` | `AgenTeam/GitDude/GitDude_Identity.md` | Commits, versioning, releases |
-| **Fetcher** | Researcher | `/fetcher` | `Library/Fetcher/Fetcher_Identity.md` | Gathering documentation, research |
+| **Fetcher** | Researcher | `/fetcher` | `AgenTeam/Fetcher/Fetcher_Identity.md` | Gathering documentation, research |
 | **Gal** | User Advocate | `/gal` | `AgenTeam/Gal/Gal_Identity.md` | Skeptical evaluation, UX testing |
 | **Daisy** | Brand Director | `/daisy` | `AgenTeam/Daisy/Daisy_Identity.md` | Branding, social media, PR, pitches, speeches, ads |
 
@@ -86,10 +88,10 @@ When activated, every agent follows this sequence:
    - `Lessons.md` — wisdom to apply
    - `Preferences.md` — how the user likes things done
    - Latest file in `Sessions/` — recent session context
-3. **Read Dashboard context:**
+3. **Read project context:**
    - `Library/Rules.md` — project constraints
    - `Library/Arsenal/Arsenal.yaml` — recommended tools, MCP servers, skills, CLIs (suggest to user, never auto-install)
-   - `Dashboard/Brief.md` — project state, team status, recent activity
+   - `Brief.md` — project state, team status, recent activity
 4. **Read your knowledge section:** `Library/Knowledge/[YourAgent]/README.md`
 5. **Proceed** with the user's request
 
@@ -102,7 +104,7 @@ Before doing ANY work, every agent asks: *"What do I need to learn to do this be
 1. **Identify knowledge gaps** — what don't I know yet?
 2. **Check my knowledge section** — `Library/Knowledge/[MyAgent]/README.md` for curated sources
 3. **Search Library/Sources/** — browse existing research
-4. **Request if needed** — create `Dashboard/Work_Space/KNOWLEDGE_REQUEST_[Agent].md` for Fetcher
+4. **Request if needed** — create `KNOWLEDGE_REQUEST_[Agent].md` for Fetcher
 5. **Study the sources** — read what's relevant
 6. **Then proceed** — now informed by professional knowledge
 
@@ -129,9 +131,9 @@ When a session ends or a significant task completes:
 
 ---
 
-## Dashboard Protocol
+## Brief Protocol
 
-All agents update `Dashboard/Brief.md` after significant work:
+All agents update `Brief.md` after significant work:
 
 - **Recent Activity:** Add a row: `| [date] | [Agent] | [what happened] |`
 - **Active Projects:** Update status/next if a project changed
@@ -152,22 +154,20 @@ All agents update `Dashboard/Brief.md` after significant work:
 ## Project Structure
 
 ```
-AutoMates/
+YourWorkFolder/                 # User's existing project folder — AutoMates installs here
 ├── .claude/rules/automates.md  # This file (auto-loaded by Claude Code, zero conflict)
 ├── GEMINI.md                   # Gemini CLI integration
 ├── AGENTS.md                   # Codex / multi-tool integration (auto-loaded)
-├── AgenTeam/                   # Agent identities + persistent memory
-│   ├── Planner/, Builder/, Checker/, BrainStorm/
-│   ├── Legal/, GitDude/, Gal/, Orca/
+├── Brief.md                    # Unified project brief (state, team, activity)
+├── AgenTeam/                   # All 10 agent identities + persistent memory
+│   ├── Orca/, Planner/, Builder/, Checker/
+│   ├── BrainStorm/, Legal/, GitDude/, Gal/, Daisy/
+│   ├── Fetcher/                # Researcher agent
 │   └── [Agent]/Memory_Logs/    # Sessions, Notes, Lessons, Preferences, Checkpoint
-├── Dashboard/
-│   ├── Brief.md                # Unified project brief (state, team, activity)
-│   └── Work_Space/             # Active projects, blueprints, reviews
 └── Library/
     ├── Registry.md             # Agent routing truth (single source)
     ├── Arsenal/                # Tool/skill/MCP registry (single source)
     │   └── Arsenal.yaml
-    ├── Fetcher/                # Fetcher agent (identity + memory)
     ├── Knowledge/              # Per-agent curated reading lists
     └── Sources/                # Research library (agents study here before working)
 ```

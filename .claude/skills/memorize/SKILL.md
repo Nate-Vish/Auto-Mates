@@ -8,7 +8,7 @@ allowed-tools:
   - Glob
 ---
 
-# /memorize - Save Agent Memory + Update Dashboard
+# /memorize - Save Agent Memory + Update Brief
 
 One command to update all memory files and Brief.md. Replaces manually asking "update your memory."
 
@@ -37,7 +37,7 @@ Determine the agent's Memory_Logs path:
 - gal: `AgenTeam/Gal/Memory_Logs/`
 - legal: `AgenTeam/Legal/Memory_Logs/`
 - gitdude: `AgenTeam/GitDude/Memory_Logs/`
-- fetcher: `Library/Fetcher/Memory_Logs/`
+- fetcher: `AgenTeam/Fetcher/Memory_Logs/`
 - orca: `AgenTeam/Orca/Memory_Logs/`
 
 If no agent specified, use the current agent (the one active in this session).
@@ -49,7 +49,7 @@ Read these files to understand what needs updating:
 2. `Memory_Logs/Lessons.md` — existing lessons
 3. `Memory_Logs/Preferences.md` — existing preferences
 4. Latest file in `Memory_Logs/Sessions/` — recent session context
-5. `Dashboard/Brief.md` — current project state
+5. `Brief.md` — current project state
 
 ### Step 3: Append to Sessions/
 
@@ -121,7 +121,7 @@ Overwrite `Memory_Logs/Context.md` with a fresh snapshot:
 ---
 
 ## Project Summary
-[2-3 sentences from Dashboard/Brief.md current focus]
+[2-3 sentences from Brief.md current focus]
 
 ## Current Task
 [From Checkpoint.md — status and description, or "No active task"]
@@ -133,13 +133,13 @@ Overwrite `Memory_Logs/Context.md` with a fresh snapshot:
 [Key preferences from Preferences.md]
 
 ## Team Status
-See Dashboard/Brief.md for full team status.
+See Brief.md for full team status.
 
 ## My Recent Sessions
 [1-2 line summary of last 2-3 sessions]
 ```
 
-### Step 8: Update Dashboard/Brief.md
+### Step 8: Update Brief.md
 
 **Only if project-wide changes happened.** READ first, then:
 

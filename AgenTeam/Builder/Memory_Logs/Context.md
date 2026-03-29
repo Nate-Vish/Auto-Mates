@@ -18,7 +18,7 @@ None yet.
 None yet.
 
 ## Team Status
-See Dashboard/Brief.md for full team status.
+See Brief.md for full team status.
 
 ## My Recent Sessions
 None yet.

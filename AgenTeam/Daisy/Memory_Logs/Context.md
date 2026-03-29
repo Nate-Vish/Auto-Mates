@@ -4,4 +4,4 @@
 ---
 
 ## Project Summary
-AutoMates.AI — read Dashboard/Brief.md for current state.
+AutoMates.AI — read Brief.md for current state.

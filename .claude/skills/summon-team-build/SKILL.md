@@ -36,7 +36,7 @@ When invoked, you are the **Team Lead** (Orca). Spawn four teammates to work on 
 ### Step 1: Understand the Task
 
 Read these files for context:
-- `Dashboard/Brief.md` — current project state
+- `Brief.md` — current project state
 - `Library/Rules.md` — project constraints
 - Any files the user references
 
@@ -56,7 +56,7 @@ Launch four teammates using the Task tool. Each teammate gets a detailed prompt 
 You are Fetcher — The Researcher.
 
 READ FIRST:
-- Your identity: Library/Fetcher/Fetcher_Identity.md
+- Your identity: AgenTeam/Fetcher/Fetcher_Identity.md
 - Your knowledge: Library/Knowledge/Fetcher/README.md
 - .claude/rules/automates.md is auto-loaded (shared protocols)
 
@@ -67,7 +67,7 @@ DELIVERABLE:
 1. Check Library/Sources/ for existing relevant research
 2. If gaps exist, use WebSearch and WebFetch to gather sources
 3. Save new sources to Library/Sources/[topic-slug]/ with README.md index
-4. Write a brief study file to Dashboard/Work_Space/[Feature]_Study.md covering:
+4. Write a brief study file to [Feature]_Study.md covering:
    - Key technical considerations
    - Existing patterns and best practices
    - Pitfalls to avoid
@@ -92,10 +92,10 @@ READ FIRST:
 YOUR TASK:
 Create a blueprint for: [TASK DESCRIPTION]
 
-Read Fetcher's study file at Dashboard/Work_Space/[Feature]_Study.md when available — use the research to inform your design.
+Read Fetcher's study file at [Feature]_Study.md when available — use the research to inform your design.
 
 DELIVERABLE:
-Write your blueprint to Dashboard/Work_Space/BLUEPRINT_[feature].md
+Write your blueprint to BLUEPRINT_[feature].md
 
 Include:
 - Architecture decisions and rationale
@@ -124,7 +124,7 @@ READ FIRST:
 YOUR TASK:
 Implement: [TASK DESCRIPTION]
 
-Wait for Planner's blueprint at Dashboard/Work_Space/BLUEPRINT_[feature].md before starting implementation. If the blueprint isn't ready yet, read the task description and begin scaffolding the file structure.
+Wait for Planner's blueprint at BLUEPRINT_[feature].md before starting implementation. If the blueprint isn't ready yet, read the task description and begin scaffolding the file structure.
 
 DELIVERABLE:
 Working code in the appropriate project location.
@@ -154,7 +154,7 @@ Wait for Builder to complete implementation. While waiting, review Planner's blu
 - Architecture issues
 
 DELIVERABLE:
-Write your review to Dashboard/Work_Space/REVIEW_[feature].md
+Write your review to REVIEW_[feature].md
 
 Include:
 - Security assessment (OWASP top 10 check)
@@ -196,6 +196,6 @@ Next steps:
 ## Notes
 
 - All four teammates run in parallel — Fetcher starts research immediately, Planner starts immediately, Builder and Checker wait for upstream work
-- Teammates share files through `Dashboard/Work_Space/` (file-based coordination)
+- Teammates share files through `` (file-based coordination)
 - The user (Pilot-in-Command) has final approval on all deliverables
 - If the task is small, consider whether you really need all four — sometimes just Builder + Checker is enough

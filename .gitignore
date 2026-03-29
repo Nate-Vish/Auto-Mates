@@ -27,18 +27,8 @@ Library/Sources/**
 .env
 .env.*
 
-# Dashboard working files (project-specific)
-Dashboard/Work_Space/**
-!Dashboard/Work_Space/README.md
-
-# Version Control contents (user-specific repos)
-Dashboard/Version_Control/**
-!Dashboard/Version_Control/README.md
-
 # Dependencies & build artifacts
 node_modules/
 __pycache__/
 *.pyc
 *.log
-
-Dashboard/Shipyard/

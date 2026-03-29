@@ -45,8 +45,8 @@ Summarize the latest session visually. Good for catching up without reading.
 - Lead with impact, skip internal mechanics
 - Be specific ("updated 3 Knowledge files" not "made some updates")
 
-**Script file location:** `Dashboard/Work_Space/[ProjectFolder]/Recap_[YYYY-MM-DD].md`
-- If no specific project: `Dashboard/Work_Space/Recap_[YYYY-MM-DD].md`
+**Script file location:** `[ProjectFolder]/Recap_[YYYY-MM-DD].md`
+- If no specific project: `Recap_[YYYY-MM-DD].md`
 - Do NOT create subfolders for recaps
 
 **Script format:**
@@ -150,7 +150,7 @@ All video types follow the same production pipeline:
 ### Setup (first time only)
 
 ```bash
-cd Dashboard/Work_Space/video-studio && npm create video@latest -- --blank
+cd video-studio && npm create video@latest -- --blank
 npm install @remotion/transitions @remotion/animated-emoji
 ```
 

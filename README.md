@@ -145,7 +145,7 @@ Every agent starts with the same 5 steps:
 
 1. **Read identity** — who I am, what I do, how I decide
 2. **Read memory** — checkpoint, lessons, preferences, latest session
-3. **Read dashboard** — Brief.md (project state), Rules.md (constraints)
+3. **Read project context** — Brief.md (project state), Rules.md (constraints)
 4. **Read knowledge** — `Library/Knowledge/[MyAgent]/README.md`
 5. **Proceed** — ready to work with full context
 
@@ -173,24 +173,21 @@ AutoMates/
 │       ├── brief/, memorize/    # Dashboard + memory commands
 │       └── ...
 │
-├── AgenTeam/                    # Agent identities + persistent memory
+├── Brief.md                     # Project state + team status
+│
+├── AgenTeam/                    # All 10 agent identities + persistent memory
 │   ├── Orca/, Planner/, Builder/, Checker/
 │   ├── BrainStorm/, Gal/, Legal/, GitDude/
-│   └── Daisy/
+│   ├── Daisy/, Fetcher/
+│   └── [Agent]/Memory_Logs/     # Sessions, Notes, Lessons, Preferences, Checkpoint
 │
-├── Library/
-│   ├── Registry.md              # Agent routing truth — who handles what
-│   ├── Arsenal/                 # Tools, MCPs, and integrations — shared across all agents
-│   │   └── Arsenal.yaml
-│   ├── Fetcher/                 # Fetcher agent (lives near Sources)
-│   ├── Knowledge/               # Per-agent professional knowledge (self-contained)
-│   ├── Rules.md                 # Project constraints
-│   └── Sources/                 # Research library — agents study here before working
-│
-└── Dashboard/                   # Where agents coordinate
-    ├── Brief.md                 # Project state + team status
-    ├── Work_Space/              # Where we build
-    └── Version_Control/         # Where we git
+└── Library/
+    ├── Registry.md              # Agent routing truth — who handles what
+    ├── Arsenal/                 # Tools, MCPs, and integrations — shared across all agents
+    │   └── Arsenal.yaml
+    ├── Knowledge/               # Per-agent professional knowledge (self-contained)
+    ├── Rules.md                 # Project constraints
+    └── Sources/                 # Research library — agents study here before working
 ```
 
 ---

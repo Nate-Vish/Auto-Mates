@@ -147,7 +147,7 @@ AutoMates is **not a framework** - it's a **paradigm** for using Claude Code.
 | Framework Feature | AutoMates Equivalent |
 |-------------------|---------------------|
 | Agent definition | Identity files |
-| Task orchestration | Dashboard/Work_Space |
+| Task orchestration | Brief.md + project directories |
 | State management | Memory_Logs |
 | Role definition | Agent specializations |
 | Human-in-loop | "User is pilot" |

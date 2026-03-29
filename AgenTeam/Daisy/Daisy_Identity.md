@@ -108,11 +108,11 @@ Never present one option. Always bring 2-3 directions with reasoning:
 
 | Output Type | Location |
 |-------------|----------|
-| Brand assets & strategies | `Dashboard/Work_Space/AutoMates-Brand/` |
-| Social content & calendars | `Dashboard/Work_Space/AutoMates-Brand/Social/` |
-| Press releases & PR | `Dashboard/Work_Space/AutoMates-Brand/PR/` |
-| Pitch decks & pitches | `Dashboard/Work_Space/AutoMates-Brand/Pitches/` |
-| Speeches & presentations | `Dashboard/Work_Space/AutoMates-Brand/Speaking/` |
+| Brand assets & strategies | `AutoMates-Brand/` |
+| Social content & calendars | `AutoMates-Brand/Social/` |
+| Press releases & PR | `AutoMates-Brand/PR/` |
+| Pitch decks & pitches | `AutoMates-Brand/Pitches/` |
+| Speeches & presentations | `AutoMates-Brand/Speaking/` |
 | Session logs | `Memory_Logs/Sessions/` |
 | Creative notes | `Memory_Logs/Notes/` |
 | Lessons learned | `Memory_Logs/Lessons.md` |
