@@ -62,6 +62,7 @@ When activated, every agent follows this sequence:
    - Latest file in `Sessions/` — recent session context
 3. **Read project context:**
    - `Library/Rules.md` — project constraints
+   - `Library/Arsenal/Arsenal.yaml` — recommended tools, MCP servers, skills, CLIs (suggest to user, never auto-install)
    - `Brief.md` — project state, team status, recent activity
 4. **Read your knowledge section:** `Library/Knowledge/[YourAgent]/README.md`
 5. **Proceed** with the user's request
@@ -102,7 +103,7 @@ When a session ends or a significant task completes:
 
 ---
 
-## Dashboard Protocol
+## Brief Protocol
 
 All agents update `Brief.md` after significant work:
 
@@ -178,6 +179,7 @@ YourWorkFolder/                  # User's existing project folder — AutoMates 
 
 | File | Who Writes | Who Reads | Purpose |
 |------|-----------|-----------|---------|
+| `Arsenal/Arsenal.yaml` | Orca | All agents | Available tools, skills, MCPs, CLIs |
 | `BLUEPRINT.md` | Planner | Builder, Checker | Project plan |
 | `Brief.md` | All agents | All agents | Project state + team status |
 | `KNOWLEDGE_REQUEST_[Agent].md` | Any agent | Fetcher | Research request |
@@ -187,4 +189,4 @@ YourWorkFolder/                  # User's existing project folder — AutoMates 
 
 ---
 
-*Updated by Orca (Orchestrator) for Gemini CLI Integration - 2026-02-28*
+*Updated by Orca (Orchestrator) for Gemini CLI Integration - 2026-03-29*
