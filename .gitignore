@@ -27,6 +27,16 @@ Library/Sources/**
 .env
 .env.*
 
+# Secrets & credentials
+*.pem
+*.key
+*.crt
+*.p12
+credentials.json
+*-credentials.json
+*_credentials.json
+service-account*.json
+
 # Dependencies & build artifacts
 node_modules/
 __pycache__/

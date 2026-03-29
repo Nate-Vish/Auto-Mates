@@ -170,7 +170,7 @@ AutoMates/
 │       ├── orca/, builder/, ... # Agent switch skills
 │       ├── forge/               # Create new agents
 │       ├── summon/              # Launch agents in terminals
-│       ├── brief/, memorize/    # Dashboard + memory commands
+│       ├── brief/, memorize/    # Brief + memory commands
 │       └── ...
 │
 ├── Brief.md                     # Project state + team status
