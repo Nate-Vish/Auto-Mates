@@ -54,8 +54,8 @@ bash "${AUTOMATES_ROOT}/.claude/skills/summon/summon.sh" "$ARGUMENTS"
 
 1. A new terminal window/tab opens for each agent
 2. Claude Code starts with that agent's identity loaded via `--append-system-prompt`
-3. The agent reads their memory, dashboard, and knowledge section
-4. Agents share files via ``
+3. The agent reads their memory, Brief.md, and knowledge section (mandatory)
+4. Agents share files through the workspace
 
 ## Cross-Platform Support
 
@@ -71,7 +71,7 @@ bash "${AUTOMATES_ROOT}/.claude/skills/summon/summon.sh" "$ARGUMENTS"
 - Agents have persistent memory in `AgenTeam/<name>/Memory_Logs/`
 - Fetcher's memory is in `AgenTeam/Fetcher/Memory_Logs/`
 - .claude/rules/automates.md is automatically loaded in every session (shared context)
-- Coordinate work through shared files in ``
+- Coordinate work through shared files in the workspace
 
 ---
 *Part of AutoMates.AI — Your AI dev team*

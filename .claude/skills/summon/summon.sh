@@ -130,13 +130,23 @@ IDENTITY=\$(cat '${identity_path}')
 STARTUP="
 
 ---
-STARTUP INSTRUCTION: You are an AutoMates agent. Execute your startup protocol:
-1. You've just read your identity (above).
-2. Read your Memory_Logs (Checkpoint, Lessons, Preferences, latest Session).
-3. Read Brief.md (project state).
-4. Read your knowledge section from Library/Knowledge/.
-5. Greet the user and ask what they'd like you to work on.
-Begin now."
+STARTUP INSTRUCTION: You are an AutoMates agent. Execute your startup protocol NOW — complete ALL steps before responding to the user:
+
+1. IDENTITY — Already loaded (above). Note your agent name.
+2. MEMORY — Read ALL of these with the Read tool:
+   - Your Memory_Logs/Checkpoint.md (any in-progress task?)
+   - Your Memory_Logs/Lessons.md (mistakes to avoid)
+   - Your Memory_Logs/Preferences.md (how user likes things)
+   - Latest file in your Memory_Logs/Sessions/ (recent context)
+3. PROJECT CONTEXT — Read these:
+   - Library/Rules.md (constraints)
+   - Brief.md (project state, team status, recent activity)
+4. KNOWLEDGE — THIS IS MANDATORY, DO NOT SKIP:
+   - Read Library/Knowledge/[YourAgentName]/README.md
+   - This is your professional expertise. You must read it every session.
+5. READY — Now greet the user and ask what they need.
+
+You MUST complete steps 2-4 before step 5. Do not greet the user until you have read your knowledge."
 
 # Launch claude with identity in system prompt
 claude --append-system-prompt "\${IDENTITY}\${STARTUP}"
@@ -189,13 +199,23 @@ IDENTITY=\$(cat '${identity_path}')
 STARTUP="
 
 ---
-STARTUP INSTRUCTION: You are an AutoMates agent. Execute your startup protocol:
-1. You've just read your identity (above).
-2. Read your Memory_Logs (Checkpoint, Lessons, Preferences, latest Session).
-3. Read Brief.md (project state).
-4. Read your knowledge section from Library/Knowledge/.
-5. Greet the user and ask what they'd like you to work on.
-Begin now."
+STARTUP INSTRUCTION: You are an AutoMates agent. Execute your startup protocol NOW — complete ALL steps before responding to the user:
+
+1. IDENTITY — Already loaded (above). Note your agent name.
+2. MEMORY — Read ALL of these with the Read tool:
+   - Your Memory_Logs/Checkpoint.md (any in-progress task?)
+   - Your Memory_Logs/Lessons.md (mistakes to avoid)
+   - Your Memory_Logs/Preferences.md (how user likes things)
+   - Latest file in your Memory_Logs/Sessions/ (recent context)
+3. PROJECT CONTEXT — Read these:
+   - Library/Rules.md (constraints)
+   - Brief.md (project state, team status, recent activity)
+4. KNOWLEDGE — THIS IS MANDATORY, DO NOT SKIP:
+   - Read Library/Knowledge/[YourAgentName]/README.md
+   - This is your professional expertise. You must read it every session.
+5. READY — Now greet the user and ask what they need.
+
+You MUST complete steps 2-4 before step 5. Do not greet the user until you have read your knowledge."
 
 claude --append-system-prompt "\${IDENTITY}\${STARTUP}"
 
@@ -231,13 +251,23 @@ IDENTITY=\$(cat '${identity_path}')
 STARTUP="
 
 ---
-STARTUP INSTRUCTION: You are an AutoMates agent. Execute your startup protocol:
-1. You've just read your identity (above).
-2. Read your Memory_Logs (Checkpoint, Lessons, Preferences, latest Session).
-3. Read Brief.md (project state).
-4. Read your knowledge section from Library/Knowledge/.
-5. Greet the user and ask what they'd like you to work on.
-Begin now."
+STARTUP INSTRUCTION: You are an AutoMates agent. Execute your startup protocol NOW — complete ALL steps before responding to the user:
+
+1. IDENTITY — Already loaded (above). Note your agent name.
+2. MEMORY — Read ALL of these with the Read tool:
+   - Your Memory_Logs/Checkpoint.md (any in-progress task?)
+   - Your Memory_Logs/Lessons.md (mistakes to avoid)
+   - Your Memory_Logs/Preferences.md (how user likes things)
+   - Latest file in your Memory_Logs/Sessions/ (recent context)
+3. PROJECT CONTEXT — Read these:
+   - Library/Rules.md (constraints)
+   - Brief.md (project state, team status, recent activity)
+4. KNOWLEDGE — THIS IS MANDATORY, DO NOT SKIP:
+   - Read Library/Knowledge/[YourAgentName]/README.md
+   - This is your professional expertise. You must read it every session.
+5. READY — Now greet the user and ask what they need.
+
+You MUST complete steps 2-4 before step 5. Do not greet the user until you have read your knowledge."
 claude --append-system-prompt "\${IDENTITY}\${STARTUP}"
 rm '$launcher_script'
 exec bash
@@ -261,13 +291,23 @@ IDENTITY=\$(cat '${identity_path}')
 STARTUP="
 
 ---
-STARTUP INSTRUCTION: You are an AutoMates agent. Execute your startup protocol:
-1. You've just read your identity (above).
-2. Read your Memory_Logs (Checkpoint, Lessons, Preferences, latest Session).
-3. Read Brief.md (project state).
-4. Read your knowledge section from Library/Knowledge/.
-5. Greet the user and ask what they'd like you to work on.
-Begin now."
+STARTUP INSTRUCTION: You are an AutoMates agent. Execute your startup protocol NOW — complete ALL steps before responding to the user:
+
+1. IDENTITY — Already loaded (above). Note your agent name.
+2. MEMORY — Read ALL of these with the Read tool:
+   - Your Memory_Logs/Checkpoint.md (any in-progress task?)
+   - Your Memory_Logs/Lessons.md (mistakes to avoid)
+   - Your Memory_Logs/Preferences.md (how user likes things)
+   - Latest file in your Memory_Logs/Sessions/ (recent context)
+3. PROJECT CONTEXT — Read these:
+   - Library/Rules.md (constraints)
+   - Brief.md (project state, team status, recent activity)
+4. KNOWLEDGE — THIS IS MANDATORY, DO NOT SKIP:
+   - Read Library/Knowledge/[YourAgentName]/README.md
+   - This is your professional expertise. You must read it every session.
+5. READY — Now greet the user and ask what they need.
+
+You MUST complete steps 2-4 before step 5. Do not greet the user until you have read your knowledge."
 claude --append-system-prompt "\${IDENTITY}\${STARTUP}"
 rm '$launcher_script'
 LAUNCHER
@@ -289,13 +329,23 @@ Set-Location '${project_root}'
 \$startup = @"
 
 ---
-STARTUP INSTRUCTION: You are an AutoMates agent. Execute your startup protocol:
-1. You've just read your identity (above).
-2. Read your Memory_Logs (Checkpoint, Lessons, Preferences, latest Session).
-3. Read Brief.md (project state).
-4. Read your knowledge section from Library/Knowledge/.
-5. Greet the user and ask what they'd like you to work on.
-Begin now.
+STARTUP INSTRUCTION: You are an AutoMates agent. Execute your startup protocol NOW — complete ALL steps before responding to the user:
+
+1. IDENTITY — Already loaded (above). Note your agent name.
+2. MEMORY — Read ALL of these with the Read tool:
+   - Your Memory_Logs/Checkpoint.md (any in-progress task?)
+   - Your Memory_Logs/Lessons.md (mistakes to avoid)
+   - Your Memory_Logs/Preferences.md (how user likes things)
+   - Latest file in your Memory_Logs/Sessions/ (recent context)
+3. PROJECT CONTEXT — Read these:
+   - Library/Rules.md (constraints)
+   - Brief.md (project state, team status, recent activity)
+4. KNOWLEDGE — THIS IS MANDATORY, DO NOT SKIP:
+   - Read Library/Knowledge/[YourAgentName]/README.md
+   - This is your professional expertise. You must read it every session.
+5. READY — Now greet the user and ask what they need.
+
+You MUST complete steps 2-4 before step 5. Do not greet the user until you have read your knowledge.
 "@
 claude --append-system-prompt (\$identity + \$startup)
 Remove-Item '${ps_script}'
@@ -317,13 +367,23 @@ Set-Location '${project_root}'
 \$startup = @"
 
 ---
-STARTUP INSTRUCTION: You are an AutoMates agent. Execute your startup protocol:
-1. You've just read your identity (above).
-2. Read your Memory_Logs (Checkpoint, Lessons, Preferences, latest Session).
-3. Read Brief.md (project state).
-4. Read your knowledge section from Library/Knowledge/.
-5. Greet the user and ask what they'd like you to work on.
-Begin now.
+STARTUP INSTRUCTION: You are an AutoMates agent. Execute your startup protocol NOW — complete ALL steps before responding to the user:
+
+1. IDENTITY — Already loaded (above). Note your agent name.
+2. MEMORY — Read ALL of these with the Read tool:
+   - Your Memory_Logs/Checkpoint.md (any in-progress task?)
+   - Your Memory_Logs/Lessons.md (mistakes to avoid)
+   - Your Memory_Logs/Preferences.md (how user likes things)
+   - Latest file in your Memory_Logs/Sessions/ (recent context)
+3. PROJECT CONTEXT — Read these:
+   - Library/Rules.md (constraints)
+   - Brief.md (project state, team status, recent activity)
+4. KNOWLEDGE — THIS IS MANDATORY, DO NOT SKIP:
+   - Read Library/Knowledge/[YourAgentName]/README.md
+   - This is your professional expertise. You must read it every session.
+5. READY — Now greet the user and ask what they need.
+
+You MUST complete steps 2-4 before step 5. Do not greet the user until you have read your knowledge.
 "@
 claude --append-system-prompt (\$identity + \$startup)
 Remove-Item '${ps_script}'
