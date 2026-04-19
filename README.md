@@ -1,5 +1,7 @@
 # AutoMates
 
+**The environment where imagination becomes creation.**
+
 AI agents that remember, learn before they code, and hide nothing. Built because the current tools keep failing in the same ways.
 
 I built this because I felt like I wasn't using AI's full potential. So I solved a problem. Then another one. Then made something better, added a feature, removed something else. Three months of fine-tuning my workflow with Claude Code, doing it my way. Currently it's my favorite way of working.
