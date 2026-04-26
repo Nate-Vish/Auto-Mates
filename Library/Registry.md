@@ -3,7 +3,7 @@
 **Single source of truth** for agent routing, boundaries, and coordination.
 All agents read this file for system-wide awareness.
 
-**Last Updated:** 2026-03-29
+**Last Updated:** 2026-04-26
 
 ---
 
@@ -21,6 +21,8 @@ All agents read this file for system-wide awareness.
 | **Fetcher** | `AgenTeam/Fetcher/` | `AgenTeam/Fetcher/Fetcher_Identity.md` | `/fetcher` | Cyan | Active |
 | **Gal** | `AgenTeam/Gal/` | `AgenTeam/Gal/Gal_Identity.md` | `/gal` | Teal | Active |
 | **Daisy** | `AgenTeam/Daisy/` | `AgenTeam/Daisy/Daisy_Identity.md` | `/daisy` | Pink | Active |
+| **Sunny** | `AgenTeam/Sunny/` | `AgenTeam/Sunny/Sunny_Identity.md` | `/sunny` | Teal | Active |
+| **Dubi** | `AgenTeam/Dubi/` | `AgenTeam/Dubi/Dubi_Identity.md` | `/dubi` | Gold | Active |
 
 ---
 
@@ -40,6 +42,8 @@ When a task matches a signal, route to the designated agent.
 | Agent design, system architecture, navigation | **Orca** | Full |
 | User perspective, skeptical evaluation, UX review | **Gal** | Full |
 | Branding, social media, PR, pitch, ads | **Daisy** | Full |
+| Personal life, mentoring, tutoring, emotional support | **Sunny** | Full |
+| Business strategy, venture building, validation, unit economics, go-to-market | **Dubi** | Full |
 | Create new agent | **Orca** (`/forge`) | Full |
 
 ---
@@ -60,6 +64,8 @@ After an agent finishes work, they suggest the next logical agent.
 | **Gal** | Builder or Planner | UX feedback → fix code or rethink design |
 | **Daisy** | Builder or GitDude | Brand assets ready → implement or ship |
 | **Fetcher** | Requesting agent | Research done → return findings |
+| **Sunny** | Specialist agent or Orca | Personal task needs specialist → invoke or delegate |
+| **Dubi** | Planner or Builder or Daisy | Business validated → design or build or market |
 
 ---
 
@@ -116,3 +122,13 @@ Each agent has a defined lane. When a task falls outside that lane, the agent na
 - **Handles:** Branding, social media, PR, pitches, ads, brand voice, visual identity — for whatever product the user is building
 - **Routes to:** Build it → Builder | Legal copy → Legal | Dev opinion → Gal
 - **After done:** Suggest Builder or GitDude
+
+### Sunny — Personal Partner
+- **Handles:** Personal life support — mentoring, tutoring, emotional support, life admin, daily management, memory keeping, mission tracking, delegation to specialists
+- **Routes to:** Brainstorm → BrainStorm | Plan → Planner | Code → Builder | Research → Fetcher | Career → `/cv` | Complex multi-agent → Orca
+- **After done:** Stays active — Sunny is the user's home base
+
+### Dubi — Business Strategist
+- **Handles:** Business strategy, venture validation, unit economics, market sizing, go-to-market, distribution, sales, retention, scaling
+- **Routes to:** Build it → Builder | Research → Fetcher | Brand/marketing → Daisy | Architecture → Planner | Legal → Legal
+- **After done:** Suggest Planner or Builder (ready to build) or Daisy (ready to market)

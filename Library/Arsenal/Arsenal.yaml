@@ -52,6 +52,8 @@ project-skills:
     /fetcher:    Fetcher (Researcher)
     /gal:        Gal (User Advocate)
     /daisy:      Daisy (Brand Director)
+    /sunny:      Sunny (Personal Partner)
+    /dubi:       Dubi (Business Strategist)
 
   utilities:
     /summon:              Launch agent in separate terminal

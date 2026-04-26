@@ -13,7 +13,7 @@ A coordinated AI development team. Specialized agents work together through a sh
 
 Read `AgenTeam/Orca/Orca_Identity.md` and follow the Startup Protocol below. Orca is the team lead who guides users to the right agent for any task.
 
-**First run?** If `Brief.md` still has template placeholders, run the First-Run Workspace Adaptation from Orca's identity — scan the workspace and set up Dashboard/ (empty workspace) or work alongside existing projects.
+**First run?** If `Brief.md` has `[not set]` in the Workspace field, this is a first run. Orca will: (1) ask where projects live, (2) deep-read the entire codebase, (3) map code to agents, (4) seed each agent's memory with codebase knowledge, (5) populate Brief.md and Rules.md with real project data. Done once — after this, every agent knows the codebase. See Orca's skill for the full flow.
 
 ---
 
@@ -37,6 +37,8 @@ The user is the pilot. Agents are the crew. The user has final authority on all 
 | **Fetcher** | Researcher | `/fetcher` | `AgenTeam/Fetcher/Fetcher_Identity.md` | Gathering documentation, research |
 | **Gal** | User Advocate | `/gal` | `AgenTeam/Gal/Gal_Identity.md` | Skeptical evaluation, UX testing |
 | **Daisy** | Brand Director | `/daisy` | `AgenTeam/Daisy/Daisy_Identity.md` | Branding, social media, PR, pitches, speeches, ads |
+| **Sunny** | Personal Partner | `/sunny` | `AgenTeam/Sunny/Sunny_Identity.md` | Mentoring, tutoring, life admin, emotional support |
+| **Dubi** | Business Strategist | `/dubi` | `AgenTeam/Dubi/Dubi_Identity.md` | Business strategy, venture building, unit economics |
 
 ### Agent Skills (In-Session Switch)
 
@@ -54,6 +56,8 @@ Use these skills to switch agents within the current session. Each performs a ha
 | `/fetcher` | Switch to Fetcher (Researcher) |
 | `/gal` | Switch to Gal (User Advocate) |
 | `/daisy` | Switch to Daisy (Brand Director) |
+| `/sunny` | Switch to Sunny (Personal Partner) |
+| `/dubi` | Switch to Dubi (Business Strategist) |
 | `/forge` | Create a new agent (6-phase guided process) |
 
 ### Other Commands
@@ -84,6 +88,8 @@ When activated, every agent follows this sequence:
 
 1. **Read your identity file** (the one for YOUR agent role)
 2. **Read your Memory_Logs/** in order:
+   - `Context.md` — quick snapshot (read this first)
+   - `Notes/codebase_overview.md` — your domain's files, patterns, conventions (if it exists)
    - `Checkpoint.md` — any in-progress tasks to resume?
    - `Lessons.md` — wisdom to apply
    - `Preferences.md` — how the user likes things done
@@ -159,7 +165,7 @@ YourWorkFolder/                 # User's existing project folder — AutoMates i
 ├── GEMINI.md                   # Gemini CLI integration
 ├── AGENTS.md                   # Codex / multi-tool integration (auto-loaded)
 ├── Brief.md                    # Unified project brief (state, team, activity)
-├── AgenTeam/                   # All 10 agent identities + persistent memory
+├── AgenTeam/                   # All 12 agent identities + persistent memory
 │   ├── Orca/, Planner/, Builder/, Checker/
 │   ├── BrainStorm/, Legal/, GitDude/, Gal/, Daisy/
 │   ├── Fetcher/                # Researcher agent
